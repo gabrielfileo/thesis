@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+ <!--Import Google Icon Font-->
+ <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <!--Import materialize.css-->
+ <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+ <!--Import custom.css-->
+ <link type="text/css" rel="stylesheet" href="css/custom.css">
+ 
+ <style>
+	body {
+	 background-image : url("images/symphony.png");
+
+  
+    header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+	}
+ </style>
+</head>
+
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<div id="wrapper">
+	<div id="header">
+        <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper">
+          <a class="logo"><img src="images/logos.png">:</a></div>
+          <a class="page-title">SideNav</a></div>
+        </div>
+      </nav>
+        </div>
+    </div>  
+    
+      
+         <ul id="slide-out" class="side-nav fixed">
+            <li><div class="userView">
+              <img class="background" src="images/concert.jpg">
+              <a href="#!user"><img class="circle" src="images/adele.jpg"></a>
+              <a href="#!name"><span class="white-text name">Gabriel FS</span></a>
+            </div></li>
+            
+            <li><a class="subheader">Welcome!</a></li>
+            
+            <li><div class="divider"></div></li>
+            
+            
+            <!--Buttons sideNav-->
+            <li><a class="waves-effect" href="#!">Dashboard</a></li>
+            <li><a class="waves-effect" href="#!">Course</a></li>
+            <li><a class="waves-effect" href="#!">Exam</a></li>
+            <li><a class="waves-effect" href="#!">Report</a></li>
+            <li><a class="waves-effect" href="#!">Help</a></li>
+          </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            
+        
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014-2016 Materialize, All rights reserved.
+        </div>
+      </div>
+    </footer>
+</div>
+
+</body>
+<script>
+      $(document).ready(function(){
+      $(".button-collapse").sideNav();
+      $('.collapsible').collapsible();
+    });
+</script>
+</html>
