@@ -25,6 +25,20 @@
       }
     }
 	}
+	footer{
+		position: fixed;
+		bottom: 0;
+		left:0;
+		width: 100%; 
+	}
+	.button-collapse{
+		position: fixed;
+		left: 30px;
+		top: 15px;	
+	}
+	.logo{
+		display: inline-block;
+	}
  </style>
 </head>
 
@@ -37,15 +51,31 @@
         <nav class="top-nav">
         <div class="container">
           <div class="nav-wrapper">
-          <a class="logo"><img src="images/logos.png">:</a></div>
+          <a class="logo"><img src="images/logos.png">:</a>
+          <label>Design Learning Center</label>
+          </div>
           <a class="page-title">SideNav</a></div>
         </div>
       </nav>
         </div>
     </div>  
     
+    <div id="content">
+    	<div class="box" style="padding: 10px 0px; border: 1px solid gray; background-color:white; display:inline-block; width: 300px; border-radius: 8px;">
+        	<div class="box-title" style="border-bottom: 1px solid gray; padding: 5px 30px; text-align:center;">
+            <label>Adobe Photoshop</label>
+            </div>
+            <div class="box-content" style="padding: 10px 30px; text-align:center;">
+            <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+            </div>
+            <div class="box-button" style="padding: 10px 30px;">
+            <a class="waves-effect waves-light btn" style="width: 100%;">button</a>
+            </div>
+        </div>
+    </div>
+    
       
-         <ul id="slide-out" class="side-nav fixed">
+         <ul id="slide-out" class="side-nav">
             <li><div class="userView">
               <img class="background" src="images/concert.jpg">
               <a href="#!user"><img class="circle" src="images/adele.jpg"></a>
@@ -68,11 +98,11 @@
             
         
     <footer class="page-footer">
-      <div class="footer-copyright">
+
         <div class="container">
         © 2014-2016 Materialize, All rights reserved.
         </div>
-      </div>
+
     </footer>
 </div>
 
