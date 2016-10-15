@@ -25,6 +25,7 @@ body{
 	font-size:75%;
 	text-align:left;
 	line-height:2;
+	min-height: 950px;
 }
 
 html:not(:target) body{
