@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Update Trainee</title>
+    <title>Add Exam</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -45,9 +45,7 @@
 </head>
 
 <body>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+
     <div id="wrapper">
         <div id="header">
             <nav class="top-nav">
@@ -56,7 +54,6 @@
                         <a class="logo"><img src="images/logos.png" width="130" height="53">
                         </a>
                         <h1>Design Learning Center</h1>
-
                     </div>
                 </div>
             </nav>
@@ -67,95 +64,102 @@
 
         <div class="box">
             <div class="box-title">
-                <h2>Administrator</h2>
+                <h2>[USER NAME]</h2>
             </div>
             <div class="box-content-material clearfix">
-                <div class="box-trainee-view clearfix">
-                    <div class="box-title ">
-                        <h3>Update Member</h3>
+                <div class="box-course-add clearfix">
+                    <div class="box-title">
+                        <h3>Upload Result</h3>
                     </div>
                     <div class="box-content ">
                         <div class="row">
-                        
-                            <form class="col s12">
+                            <form class="col s12" style="padding:0 0">
                                 <div class="row">
-                                    <div class="input-field col s6">
-                                      <input disabled value="1701340240" id="NIK" type="text" class="validate" style="width:100%;  margin-left:0%;">
-                                      <label for="NIK">NIK</label>
-                                    </div>
-                                    <div class="input-field col s16">
+                                    <div class="input-field col s12" style="padding:0 0">
                                         <select style="height:50px !important;">
-                                            <option value="1">Gabriel</option>
-                                            <option value="2">Kevin</option>
-                                            <option value="3">Yosua</option>
-                                            <option value="4">Nakae-San</option>
-                                            <option value="5">Masa-San</option>
+                                            <option value="1">Photoshop</option>
+                                            <option value="2">Illustrator</option>
                                         </select>
-                                        <label style="margin-left:0px; font-size:16px; margin-top:-10px;">Member</label>
+                                        <label style="margin-left:-11px; font-size:16px; margin-top:-10px;">Course</label>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="password_curr" type="password" class="validate">
-                                        <label for="password">Current Password</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="password_new" type="password" class="validate">
-                                        <label for="password">New Password</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="password_confirm" type="password" class="validate">
-                                        <label for="password">Confirm Password</label>
-                                    </div>
-                                </div>
-                            </form>
 
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12" style="padding:0 0">
+                                        <select style="height:50px !important;">
+                                            <option value="1">Course 1</option>
+                                            <option value="2">Course 2</option>
+                                            <option value="2">Course 3</option>
+                                        </select>
+                                        <label style="margin-left:-11px; font-size:16px; margin-top:-10px;">Sub-Course</label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="course_desc" class="materialize-textarea" style="margin-left:-11px;" length="150"></textarea>
+                                        <label for="course_desc" style="margin-left:-11px;">Comment</label>
+                                    </div>
+                                </div>
+
+                            </form>
                         </div>
+
+                        <form action="#">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </form>
+                        
+                         <label>Firstly, please ZIP the file</label>
+
                     </div>
                     <div class="box-button ">
                         <div class="row">
                             <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">send</i>Done</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="admin-trainee-update.html"><i class="material-icons right">replay</i>Reset</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="admin-dashboard.html"><i class="material-icons right">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="user-exam-upload.html"><i class="material-icons right">replay</i>Reset</a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="user-dashboard.html"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 
 
     <ul id="slide-out" class="side-nav">
         <li>
             <div class="userView">
-                <img class="background" src="images/concert.jpg">
-                <a href="#!user"><img class="circle" src="images/adele.jpg">
+                <img class="background " src="images/concert.jpg ">
+                <a href="#!user "><img class="circle " src="images/adele.jpg ">
                 </a>
-                <a href="#!name"><span class="white-text name">Gabriel FS</span></a>
+                <a href="#!name "><span class="white-text name ">Gabriel FS</span></a>
             </div>
         </li>
 
         <!--Buttons sideNav-->
-        <li><a class="waves-effect" href="admin-dashboard.html">Dashboard</a>
+        <li><a class="waves-effect" href="user-dashboard.html">Dashboard</a>
         </li>
 
         <li>
             <div class="divider"></div>
         </li>
 
-        <li><a class="waves-effect" href="account.html">Account Setting</a>
+        <li><a class="waves-effect" href="user-account.html">Account Setting</a>
         </li>
-        <li><a class="waves-effect" href="help.html">Help</a>
+        <li><a class="waves-effect" href="">Help</a>
         </li>
         <li><a class="waves-effect" href="#!">Log Out</a>
         </li>
     </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
+    <a href="# " data-activates="slide-out " class="button-collapse " id="fixedbutton"><i class="material-icons ">menu</i></a>
 
 
     <footer class="page-footer ">
@@ -163,10 +167,10 @@
             Made with Passion by GY
         </div>
     </footer>
-
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
-
-
 <script>
     $(document).ready(function() {
         $(".button-collapse ").sideNav();
@@ -184,14 +188,6 @@
     $(document).ready(function() {
         Materialize.updateTextFields();
     });
-	
-	$('input.autocomplete').autocomplete({
-    data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": null
-    }
-  });
 </script>
 
-</html>
+</html>y

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Course - Photoshop</title>
+    <title>Dashboard</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -56,7 +56,6 @@
                         <a class="logo"><img src="images/logos.png" width="130" height="53">
                         </a>
                         <h1>Design Learning Center</h1>
-
                     </div>
                 </div>
             </nav>
@@ -65,30 +64,65 @@
 
     <div id="content">
 
-        <div class="box-course-content">
+        <div class="box-user">
             <div class="box-title">
-                <h2>Adobe Photoshop</h2>
+                <h2>Dashboard - [USER NAME]</h2>
             </div>
-            <div class="box-content-material clearfix">
-                <div class="box-video clearfix">
-                    <div class="box-title">
-                        <h3>Course 1</h3>
-                    </div>
-                    <div class="box-content">
-                        <video class="responsive-video" controls>
-                            <source src="videos/Wildlife.wmv" type="video/wmv">
-                        </video>
-                        <div class="divider vivid"></div>
-                        <p>This will teach you the fundamentals of Adobe Photoshop with easy to follow, practical examples. By the conclusion of this video tutorial, you will be fully versed in the use of the basic tools of Adobe Photoshop CS5, and able to open, edit and prepare images for use in print, or digital media such as PDF’s or the Internet. Included are full work files, to allow you to learn right along with the instructor using the exact same files that he does.</p>
-                    </div>
-                    <div class="box-button">
-                        <a class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;;"><i class="material-icons left">person_pin</i>ASK</a>
-                        <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;;"><i class="material-icons left">skip_previous</i>PREV</a>
-                        <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;;"><i class="material-icons right">skip_next</i>NEXT</a>
-                        <a href="exam-psd-main.html" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;;"><i class="material-icons left">mode_edit</i>TEST</a>
+            <blockquote>
+                Welcome, [USER NAME].
+            </blockquote>
+
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a href="#user-course">Course</a>
+                        </li>
+                        <li class="tab col s3"><a href="#user-exam">Exam</a>
+                        </li>
+                        <li class="tab col s3"><a href="#user-reports">Report</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="user-course" class="col s12">
+                    <br>
+                    <div class="row">
+                        <div class="col s3">
+                            <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="course.html">View Course List</a>
+                        </div>
+
+                        <div class="col s9">
+                            <p class="user">You can delete trainee member</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div id="user-exam" class="col s12">
+                    <br>
+                    <div class="row">
+                        <div class="col s3">
+                            <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="user-exam-review.html">View Exam List</a>
+                        </div>
+
+                        <div class="col s9">
+                            <p class="user">You can delete trainee member</p>
+                        </div>
+                    </div>
+            	</div>
+                
+                <div id="user-reports" class="col s12">
+                    <br>
+                    <div class="row">
+                        <div class="col s3">
+                            <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="user-score-view.html">Review Score</a>
+                        </div>
+
+                        <div class="col s9">
+                            <p class="user">You can delete trainee member</p>
+                        </div>
+                    </div>
+                </div>
+
         </div>
     </div>
 
@@ -113,7 +147,7 @@
 
         <li><a class="waves-effect" href="user-account.html">Account Setting</a>
         </li>
-        <li><a class="waves-effect" href="#!">Help</a>
+        <li><a class="waves-effect" href="">Help</a>
         </li>
         <li><a class="waves-effect" href="#!">Log Out</a>
         </li>
@@ -122,10 +156,13 @@
 
 
     <footer class="page-footer">
+
         <div class="footer">
             Made with Passion by GY
         </div>
+
     </footer>
+    </div>
 
 </body>
 <script>

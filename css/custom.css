@@ -170,6 +170,15 @@ footer.page-footer {
     margin-top: 25px;
 }
 
+.box-user{
+	border: 2px solid #c7c7c7;
+    background-color: white;
+    display: inline-block;
+    width: 1200px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
 .box-title{
 	border-bottom: 2px solid #c7c7c7;
 	padding: 15px 0;
@@ -222,6 +231,14 @@ footer.page-footer {
     display: inline-block;
     border-radius: 8px;
     width: 550px;
+}
+
+.box-course-view {
+    border: 2px solid #c7c7c7;
+    background-color: white;
+    display: inline-block;
+    border-radius: 8px;
+    width: 100%;
 }
 
 .box-course{
@@ -391,6 +408,11 @@ ul .pagination{
 	text-align:left;
 }
 
+.user{
+	font-size:16px;
+	text-align:left;
+}
+
 .picker__box {
     width: 350px;
 }
@@ -471,4 +493,18 @@ table.centered thead th{
 
 .select-wrapper+label {
     top: -23px;
+}
+
+.materialboxed{
+	margin:0 65%;
+	text-align:center;
+}
+
+.materialboxed.active {
+    margin: 0;
+}
+
+box p .help{
+	text-align:left;
+	margin-left:20px;
 }
