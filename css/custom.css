@@ -183,12 +183,12 @@ footer.page-footer {
 	border-bottom: 2px solid #c7c7c7;
 	padding: 15px 0;
 	background-color:#f8f8f8;
-	
+
 }
 
 .box2{
 	width: 400px;
-    border: 2px solid #c7c7c7;	
+    border: 2px solid #c7c7c7;
 	border-radius: 8px;
 	margin:10px 10px;
 	float: left;
@@ -267,7 +267,7 @@ footer.page-footer {
 	float: left;
 }
 .fR{
-	float:right;	
+	float:right;
 }
 
 .box-content{
@@ -286,7 +286,7 @@ label{
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;
 }
 
-p{ 
+p{
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;
 	font-size:16px;
 }
@@ -329,7 +329,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label{
    box-shadow: 0 1px 0 0 red !important;
    font-size:14px;
  }
- 
+
 .input-field.col label {
     font-size:16px;
 }
@@ -337,7 +337,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label{
 .input-field.col input:focus + label {
      color: #ce152b;
 	 font-size:16px;
-	 
+
 }
 
 .row label{
@@ -359,7 +359,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label{
 #fixedbutton {
     position: fixed;
     top: 23px;
-    left: 45px; 
+    left: 45px;
 }
 
 img.responsive-img, video.responsive-video {
@@ -449,7 +449,7 @@ textarea.materialize-textarea:focus:not([readonly]){
  	border-bottom: 1px solid #ce152b;
 	box-shadow: 0 1px 0 0 #ce152b;
  }
- 
+
  .select-wrapper input.select-dropdown {
     position: relative;
     cursor: pointer;
@@ -507,4 +507,8 @@ table.centered thead th{
 box p .help{
 	text-align:left;
 	margin-left:20px;
+}
+
+.input-opt{
+	height:50px !important;
 }
