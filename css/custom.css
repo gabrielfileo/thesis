@@ -142,11 +142,6 @@ footer.page-footer {
 	font-size:33px;
 }
 
-.material-icons .side{
-    position: absolute;
-    font-size:33px;
-}
-
 .box{
 	border: 2px solid #c7c7c7;
     background-color: white;
@@ -501,7 +496,8 @@ table.centered thead th{
 }
 
 .materialboxed{
-	margin:0 auto !important;
+	margin:0 65%;
+	text-align:center;
 }
 
 .materialboxed.active {

@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+.navbar-brand{
+	padding: 5px;
+}
+.huge{
+	font-size: 20px;
+}
+.loginBox{
+	width: 320px;
+	background-color: white;
+	margin: 0 auto;
+	position: absolute;
+	left: 42%;
+	top: 26%;
+	border: 1px solid black;
+	border-radius: 20px;
+	z-index: 1;
+}
+
+a#az {
+	display: block;
+}
+.pdBot20{
+	padding-bottom: 20px;
+}
+.postRelative{
+	position: relative;
+}
+.setPost01{
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+#wrapper{
+	z-index: -1;
+}
+.dspN{
+	display: none;
+}
+.dspB{
+	display: block;
+}
+.opcty{
+	opacity: 0.3;
+}
+.disable{
+	pointer-events: none;
+}
+.mgR15{
+	margin-right: 15px;
+}
+.bdrL{
+	border-left: 1px solid #e7e7e7;
+}
+.message{
+	text-align: center;
+	color: #F4060A;
+	margin-top: 15px;
+}
+.wd20{
+	width: 20px;
+}
+.fR{
+	float: right;
+}
+.mgB15{
+	margin-bottom: 15px;
+}
+.wd50{
+	width: 50%;
+}
+.fL{
+	float: left;
+}

@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+.chat-panel{
+	width: 25%;
+	float: left;
+}
+.pie-pannel{
+	width: 45%;
+	float: left;
+}
+.panel-body2{
+	height: 200px !important;
+}
+.chat-panel .panel-body {
+    height: 380px;
+    overflow-y: scroll;
+}
+.navbar-brand{
+	padding: 5px;
+}
