@@ -76,7 +76,7 @@
                     </div>
                     <div class="box-content ">
                         <div class="row">
-                        
+
                             <form class="col s12">
                                 <div class="row">
                                     <div class="input-field col s6">
@@ -126,38 +126,39 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 
-    <ul id="slide-out" class="side-nav">
-        <li>
-            <div class="userView">
-                <img class="background" src="images/concert.jpg">
-                <a href="#!user"><img class="circle" src="images/adele.jpg">
-                </a>
-                <a href="#!name"><span class="white-text name">Gabriel FS</span></a>
-            </div>
-        </li>
+    <div class="sidebar">
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="userView">
+                    <img class="background" src="images/concert.jpg">
+                    <a href="#!user"><img class="circle" src="images/adele.jpg">
+                    </a>
+                    <a href="#!name"><span class="white-text name">Gabriel FS</span></a>
+                </div>
+            </li>
 
-        <!--Buttons sideNav-->
-        <li><a class="waves-effect" href="admin-dashboard.html">Dashboard</a>
-        </li>
+            <!--Buttons sideNav-->
+            <li><a class="waves-effect" href="admin-dashboard.html">Dashboard</a>
+            </li>
 
-        <li>
-            <div class="divider"></div>
-        </li>
+            <li>
+                <div class="divider"></div>
+            </li>
 
-        <li><a class="waves-effect" href="account.html">Account Setting</a>
-        </li>
-        <li><a class="waves-effect" href="help.html">Help</a>
-        </li>
-        <li><a class="waves-effect" href="#!">Log Out</a>
-        </li>
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
-
-
+            <li><a class="waves-effect" href="account.html">Account Setting</a>
+            </li>
+            <li><a class="waves-effect" href="">Help</a>
+            </li>
+            <li><a class="waves-effect" href="#!">Log Out</a>
+            </li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
+    </div>
+    
     <footer class="page-footer ">
         <div class="footer ">
             Made with Passion by GY
@@ -184,7 +185,7 @@
     $(document).ready(function() {
         Materialize.updateTextFields();
     });
-	
+
 	$('input.autocomplete').autocomplete({
     data: {
       "Apple": null,
