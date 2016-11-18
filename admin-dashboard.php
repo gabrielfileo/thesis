@@ -103,7 +103,7 @@
                             <p class="admin">You can delete trainee member</p>
                         </div>
                     </div>
-            	</div>
+                </div>
 
                 <div id="admin-reports" class="col s12">
                     <br>
@@ -130,7 +130,8 @@
 
         </div>
     </div>
-    <?php include '_include/sidebar.php';?>  
+    <?php include '_include/sidebar.php';?>
+      
     <?php include '_include/footer.php';?>    
 </body>
 
@@ -148,7 +149,7 @@
     $(document).ready(function() {
         $('select').material_select();
     });
-	 $(document).ready(function() {
+     $(document).ready(function() {
     Materialize.updateTextFields();
   });
 </script>
