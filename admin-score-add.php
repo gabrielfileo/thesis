@@ -1,67 +1,5 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>View Score</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <!--Import custom.css-->
-    <link type="text/css" rel="stylesheet" href="css/custom.css">
-    <link type="text/css" rel="stylesheet" href="css/reset.css">
-
-    <style>
-        body {
-            background-image: url("images/symphony.png");
-            header, main, footer {
-                padding-left: 300px;
-            }
-            @media only screen and (max-width: 992px) {
-                header, main, footer {
-                    padding-left: 0;
-                }
-            }
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        .button-collapse {
-            position: absolute;
-            left: 30px;
-            top: 15px;
-        }
-        .logo {
-            display: inline-block;
-            width: 100%;
-            height: 53px;
-        }
-    </style>
-</head>
-
-<body>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <div id="wrapper">
-        <div id="header">
-            <nav class="top-nav">
-                <div class="container">
-                    <div class="nav-wrapper">
-                        <a class="logo"><img src="images/logos.png" width="130" height="53">
-                        </a>
-                        <h1>Design Learning Center</h1>
-
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+//head
+//header
 
     <div id="content">
 
@@ -138,40 +76,9 @@
         </div>
     </div>
 
-    <div class="sidebar">
-        <ul id="slide-out" class="side-nav">
-            <li>
-                <div class="userView">
-                    <img class="background" src="images/concert.jpg">
-                    <a href="#!user"><img class="circle" src="images/adele.jpg">
-                    </a>
-                    <a href="#!name"><span class="white-text name">Gabriel FS</span></a>
-                </div>
-            </li>
+    //sidebar
 
-            <!--Buttons sideNav-->
-            <li><a class="waves-effect" href="admin-dashboard.html">Dashboard</a>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <li><a class="waves-effect" href="account.html">Account Setting</a>
-            </li>
-            <li><a class="waves-effect" href="">Help</a>
-            </li>
-            <li><a class="waves-effect" href="#!">Log Out</a>
-            </li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
-    </div>
-    
-    <footer class="page-footer ">
-        <div class="footer ">
-            Made with Passion by GY
-        </div>
-    </footer>
+    //footer
 
 </body>
 
