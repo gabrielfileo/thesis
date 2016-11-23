@@ -17,7 +17,7 @@
             <div class="divider"></div>
         </li>
 
-        <li><a class="waves-effect" href="account.html">Account Setting</a>
+        <li><a class="waves-effect" href="admin-account.html">Account Setting</a>
         </li>
         <li><a class="waves-effect" href="">Help</a>
         </li>

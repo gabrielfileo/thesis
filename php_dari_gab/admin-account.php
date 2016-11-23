@@ -15,13 +15,13 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input disabled value="1701340240" id="disabled" type="text" class="validate" style="margin-left:0px; width:100%">
+                            <input disabled value="admin" id="disabled" type="text" class="validate" style="margin-left:0px; width:100%">
                             <label for="disabled">NIK</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input value="Gabriel Fileo" id="first_name2" type="text" class="validate" style="margin-left:0px; width:100%">
+                            <input value="Administrator" id="first_name2" type="text" class="validate" style="margin-left:0px; width:100%">
                             <label class="active" for="first_name2" style="font-size:14px;">Full Name</label>
                         </div>
                     </div>
