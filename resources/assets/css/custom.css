@@ -23,7 +23,7 @@ flex: 1 0 auto;
     text-align: -webkit-center;
     color: #ffffff;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 35	px;
     padding: 10px 0;
 
 }
@@ -518,7 +518,7 @@ box p .help{
 
 body {
     min-height: auto !important;
-    background-image: url("{{asset('assets/images/logos.png')}}");
+    background-image: url("assets/images/symphony.png");
     header, main, footer {
         padding-left: 300px;
     }

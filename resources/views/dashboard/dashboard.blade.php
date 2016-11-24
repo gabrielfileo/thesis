@@ -2,20 +2,8 @@
 
 @section('title','Dashboard')
 
-@section('head')
-    <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/materialize.min.css')}}" media="screen,projection" />
-    <!--Import custom.css-->
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
-    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/reset.css')}}">
 
-        <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('assets/js/materialize.min.js')}}"></script>
-@endsection
+
 
 @section('header')
   <div id="wrapper">
@@ -34,37 +22,6 @@
         </nav>
     </header>
   </div>
-@endsection
-
-@section('sidebar')
-      <div class="sidebar">
-          <ul id="slide-out" class="side-nav">
-              <li>
-                  <div class="userView">
-                      <img class="background" src="{{asset('assets/images/concert.jpg')}}">
-                      <a href="#!user"><img class="circle" src="{{asset('assets/images/adele.jpg')}}">
-                      </a>
-                      <a href="#!name"><span class="white-text name">{{Auth::user()->name}}</span></a>
-                  </div>
-              </li>
-
-              <!--Buttons sideNav-->
-              <li><a class="waves-effect" href="admin-dashboard.html">Dashboard</a>
-              </li>
-
-              <li>
-                  <div class="divider"></div>
-              </li>
-
-              <li><a class="waves-effect" href="account.html">Account Setting</a>
-              </li>
-              <li><a class="waves-effect" href="">Help</a>
-              </li>
-              <li><a class="waves-effect" href="{{ url('/logout') }}">Log Out</a>
-              </li>
-          </ul>
-          <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
-      </div>
 @endsection
 
 @if(Auth::user()->role == 'administrator')
@@ -266,6 +223,9 @@
   @endsection
 @endif
 
+@section('sidebar')
+
+@endsection
 
 @section('footer')
       <footer class="page-footer">
@@ -273,25 +233,4 @@
               インドネシア製
            </div>
       </footer>
-@endsection
-
-@section('javascript')
-  <script>
-      $(document).ready(function() {
-          $(".button-collapse ").sideNav();
-          $('.collapsible').collapsible();
-      });
-
-      $('.datepicker').pickadate({
-          selectMonths: true, // Creates a dropdown to control month
-          selectYears: 15 // Creates a dropdown of 15 years to control year
-      });
-
-      $(document).ready(function() {
-          $('select').material_select();
-      });
-       $(document).ready(function() {
-      Materialize.updateTextFields();
-    });
-  </script>
 @endsection

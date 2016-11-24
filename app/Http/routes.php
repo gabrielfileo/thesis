@@ -1,5 +1,8 @@
 <?php
 
+
+
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,7 +15,12 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    if  (Auth::guard()->guest()) {
+      return view('auth/login');
+    }
+    else {
+      return redirect('/dashboard');
+    }
 });
 
 Route::auth();
