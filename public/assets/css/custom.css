@@ -517,8 +517,7 @@ box p .help{
 }
 
 body {
-    min-height: auto !important;
-    background-image: url("assets/images/symphony.png");
+    background-image: url("/assets/images/symphony.png");
     header, main, footer {
         padding-left: 300px;
     }

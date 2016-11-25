@@ -4,19 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>DLC - @yield('title')</title>
-  @if(Auth::guard()->guest())     {{--css buat login--}}
-        <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}" >
-        <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
-        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-        <style>
-            body {
-                background-image: url({{asset('assets/images/symphony.png')}});
-                background-color: #ffffff;
-            }
-        </style>
 
-  @else {{--css selain login--}}
       <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
 
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,13 +17,16 @@
           <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="{{asset('assets/js/materialize.min.js')}}"></script>
-  @endif
+      <style>
+          body {
+              background-image: url({{asset('assets/images/symphony.png')}});
+              background-color: #ffffff;
+          }
+      </style>
 </head>
 
 <body>
     @yield('header')
-@if(Auth::guard()->guest()) {{--sidebar biar ga muncul di login--}}
-@else
     <div class="sidebar">
         <ul id="slide-out" class="side-nav">
             <li>
@@ -64,17 +55,9 @@
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
     </div>
-@endif
     @yield('content')
     @yield('footer')
 </body>
-@if(Auth::guard()->guest()){{--javascript cuma di login--}}
-
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="{{asset('assets/js/index.js')}}"></script>
-
-@else{{--script selain login--}}
-
     <script>
         $(document).ready(function() {
             $(".button-collapse ").sideNav();
@@ -93,5 +76,4 @@
         Materialize.updateTextFields();
       });
     </script>
-@endif
 </html>

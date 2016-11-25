@@ -1,18 +1,10 @@
 @extends('layouts.app')
-
 @section('title','Dashboard')
-
-
-
-
 @section('header')
   <div id="wrapper">
     <header>
-
         <nav class="top-nav">
-
             <div class="container">
-
                 <div class="nav-wrapper">
                     <a class="logo"><img src="{{asset('assets/images/logos.png')}}" width="130" height="53">
                     </a>
@@ -34,7 +26,6 @@
               <blockquote>
                   Welcome to The Admin page.
               </blockquote>
-
               <div class="row">
                   <div class="col s12">
                       <ul class="tabs">
@@ -222,10 +213,6 @@
    </div>
   @endsection
 @endif
-
-@section('sidebar')
-
-@endsection
 
 @section('footer')
       <footer class="page-footer">
