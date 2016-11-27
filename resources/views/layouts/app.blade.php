@@ -39,14 +39,14 @@
             </li>
 
             <!--Buttons sideNav-->
-            <li><a class="waves-effect" href="admin-dashboard.html">Dashboard</a>
+            <li><a class="waves-effect" href="dashboard">Dashboard</a>
             </li>
 
             <li>
                 <div class="divider"></div>
             </li>
 
-            <li><a class="waves-effect" href="account.html">Account Setting</a>
+            <li><a class="waves-effect" href="account">Account Setting</a>
             </li>
             <li><a class="waves-effect" href="">Help</a>
             </li>
@@ -56,7 +56,16 @@
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-top:8px;margin-left:15px;">menu</i></a>
     </div>
     @yield('content')
-    @yield('footer')
+
+    {{--
+    footer dihilangkan dulu untuk sementara
+    <footer class="page-footer">
+        <div class="footer">
+            インドネシア製
+        </div>
+    </footer>
+    --}}
+
 </body>
     <script>
         $(document).ready(function() {
@@ -75,5 +84,7 @@
          $(document).ready(function() {
         Materialize.updateTextFields();
       });
+
     </script>
+    @yield('script')
 </html>

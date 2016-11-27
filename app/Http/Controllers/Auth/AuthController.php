@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -81,5 +83,11 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'join_date' => new \DateTime($data['join_date']),
         ]);
+    }
+
+
+    public function editAccount(Request $request)
+    {
+
     }
 }

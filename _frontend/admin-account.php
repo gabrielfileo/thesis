@@ -1,8 +1,9 @@
-    //head
-    
-    //header
+<html>
+<?php include '_include/head.php';?>
 
-    <div id="content">
+<?php include '_include/header.php';?>
+
+<div id="content">
 
         <div class="box-account">
             <div class="box-title">
@@ -62,11 +63,11 @@
         </div>
     </div>
 
-    //sidebar
+</div>
+<?php include '_include/sidebar.php';?>
 
-    //footer
-    
-    </div>
+<?php include '_include/footer.php';?>
+
 
 </body>
 <script>
