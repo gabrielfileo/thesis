@@ -36,32 +36,32 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input value="{{Auth::user()->name}}" id="first_name2" name="fullName" type="text" class="validate" required="" minlength="5" style="margin-left:0px; width:100%">
-                                <label class="active" for="first_name2" data-error="wrong" style="font-size:14px;">Full Name</label>
+                                <input value="{{Auth::user()->name}}" id="first_name2" name="fullName" type="text" class="validate" required minlength="3" style="margin-left:0px; width:100%">
+                                <label class="active" for="first_name2" data-error="must be 3 characters or more" style="font-size:14px;">Full Name</label>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="input-field col s12">   
-                                <input id="password" type="password" name="old_password" class="validate">
-                                <label for="password">Current Password</label>
+                            <div class="input-field col s12">
+                                <input id="old_password" type="password" name="old_password" class="validate" required>
+                                <label for="password"  style="font-size:14px;">Current Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" type="password" name="new_password" class="validate">
-                                <label for="password">New Password</label>
+                                <input id="password" type="password" name="new_password" class="validate" minlength="6">
+                                <label for="password" data-error="must be 6 characters or more" style="font-size:14px;">New Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" type="password" name="cpassword" class="validate">
-                                <label for="password">Confirm Password</label>
+                                <input id="cpassword" type="password" name="cpassword" class="validate" required >
+                                <label for="cpassword" data-error="Password not match" data-success="Password match" style="font-size:14px;">Confirm Password</label>
                             </div>
                         </div>
 
                             <p>
-                                <input type="checkbox" id="test5" />
+                                <input type="checkbox" id="test5" required />
                                 <label for="test5">I agree with my password change.</label>
                             </p>
 
@@ -78,30 +78,64 @@
     </div>
 @endsection
 
-{{--@section('script')
-        $("#formValidate").validate({
-            rules: {
-                first_name2: {
-                    required: true,
-                    minlength: 5
-                },
-            },
-            //For custom messages
-            messages: {
-                first_name2:{
-                    required: "Name cannot be empty",
-                    minlength: "Enter at least 5 characters"
-                }
-            },
-            errorElement : 'div',
-            errorPlacement: function(error, element) {
-                var placement = $(element).data('error');
-                if (placement) {
-                    $(placement).append(error)
-                } else {
-                    error.insertAfter(element);
-                }
-            }
-        });
-@endsection--}}
+@section('script')
+  <script>
+      $(document).ready(function() {
+          $(".button-collapse ").sideNav();
+          $('.collapsible').collapsible();
+      });
 
+      $('.datepicker').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15 // Creates a dropdown of 15 years to control year
+      });
+
+      $(document).ready(function() {
+          $('select').material_select();
+      });
+       $(document).ready(function() {
+      Materialize.updateTextFields();
+      });
+
+
+
+
+
+        var password = document.getElementById("password"), cpassword = document.getElementById("cpassword");
+
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+              confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+              confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+    </script>
+@endsection
+{{--$("#password").on("focusout", function (e) {
+      if ($(this).val() != $("#cpassword").val()) {
+          $("#cpassword").removeClass("valid").addClass("invalid");
+      } else {
+          $("#cpassword").removeClass("invalid").addClass("valid");
+      }
+  });
+
+  $("#cpassword").on("keyup", function (e) {
+      if ($("#password").val() != $(this).val()) {
+          $(this).removeClass("valid").addClass("invalid");
+      } else {
+          $(this).removeClass("invalid").addClass("valid");
+      }
+  });
+  var password = $("password").val();
+  var c_password = $("cpassword").val();
+
+  if (password != c_password){
+    $("cpassword").addClass("invalid");
+  }
+
+  --}}

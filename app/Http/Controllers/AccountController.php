@@ -66,7 +66,7 @@ class AccountController extends Controller
         $entity->password = Hash::make($request->input('new_password'));
         $entity->save();
         Auth::logout();
-        return view('auth.login');
+        return redirect('/');
     }
 
     /**
