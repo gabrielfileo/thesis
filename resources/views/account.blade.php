@@ -1,20 +1,6 @@
 @extends('layouts.app')
 @section('title','Account Setting')
-@section('header')
-    <div id="wrapper">
-        <header>
-            <nav class="top-nav">
-                <div class="container">
-                    <div class="nav-wrapper">
-                        <a class="logo"><img src="{{asset('assets/images/logos.png')}}" width="130" height="53">
-                        </a>
-                        <h1>Design Learning Center</h1>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
-@endsection
+
 
 @section('content')
     <div id="content">
@@ -96,9 +82,6 @@
        $(document).ready(function() {
       Materialize.updateTextFields();
       });
-
-
-
 
 
         var password = document.getElementById("password"), cpassword = document.getElementById("cpassword");

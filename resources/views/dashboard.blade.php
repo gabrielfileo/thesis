@@ -1,20 +1,5 @@
 @extends('layouts.app')
 @section('title','Dashboard')
-@section('header')
-  <div id="wrapper">
-    <header>
-        <nav class="top-nav">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a class="logo"><img src="{{asset('assets/images/logos.png')}}" width="130" height="53">
-                    </a>
-                    <h1>Design Learning Center</h1>
-                </div>
-            </div>
-        </nav>
-    </header>
-  </div>
-@endsection
 
 @if(Auth::user()->role == 'administrator')
   @section('content')
@@ -77,21 +62,21 @@
                       <br>
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="admin-course-add.html">Upload Course</a>
+                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="course/add">Upload Course</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can add new trainee member</p>
+                              <p class="admin">You can upload new course</p>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="admin-course-view.html">View Course List</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="course/view">View Course List</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can delete trainee member</p>
+                              <p class="admin">You can view course list</p>
                           </div>
                       </div>
                   </div>
@@ -100,21 +85,21 @@
                       <br>
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="admin-exam-add.html">Upload Exam</a>
+                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="exam/add">Upload Exam</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can add new trainee member</p>
+                              <p class="admin">You can upload new exam</p>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="admin-exam-review.html">Review Exam</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="exam/review">Review Exam</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can delete trainee member</p>
+                              <p class="admin">You can review existing exam</p>
                           </div>
                       </div>
                   </div>
