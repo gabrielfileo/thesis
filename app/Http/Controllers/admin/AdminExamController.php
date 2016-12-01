@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AddCourseController extends Controller
+class AdminExamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,12 @@ class AddCourseController extends Controller
      */
     public function index()
     {
-          return view('users/admin/course-add');
+       //
+    }
+
+    public function review()
+    {
+        return view('users/admin/exam-review');
     }
 
     /**
@@ -26,7 +31,7 @@ class AddCourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('users/admin/exam-add');
     }
 
     /**

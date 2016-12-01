@@ -1,7 +1,4 @@
 <?php
-
-
-
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -31,16 +28,15 @@ Route::post('/account/save', 'AccountController@editPassword');
 
 Route::get('/account', 'AccountController@index');
 
-Route::get('/course/add', 'admin\AddCourseController@index');
+Route::get('/manage/course', 'admin\AdminCourseController@index');
+Route::get('/manage/course/add', 'admin\AdminCourseController@create');
 
-Route::get('/course/view', function () {
-  return view('users/admin/course-view');
-});
+Route::get('/manage/exam/add', 'admin\AdminExamController@create');
+Route::get('/manage/exam/review', 'admin\AdminExamController@review');
 
-Route::get('/exam/add', function () {
-  return view('users/admin/exam-add');
-});
+Route::get('/manage/score', 'admin\AdminScoreController@index');
+Route::get('/manage/score/add', 'admin\AdminScoreController@create');
 
-Route::get('/exam/review', function () {
-  return view('users/admin/exam-review');
-});
+Route::get('/manage/trainee', 'admin\AdminTraineeController@index');
+Route::get('/manage/trainee/add', 'admin\AdminTraineeController@create');
+Route::get('/manage/trainee/edit', 'admin\AdminTraineeController@testedit');

@@ -51,14 +51,14 @@
             </li>
 
             <!--Buttons sideNav-->
-            <li><a class="waves-effect" href="dashboard">Dashboard</a>
+            <li><a class="waves-effect" href="{{url('/')}}">Dashboard</a>
             </li>
 
             <li>
                 <div class="divider"></div>
             </li>
 
-            <li><a class="waves-effect" href="account">Account Setting</a>
+            <li><a class="waves-effect" href="{{url('/account')}}">Account Setting</a>
             </li>
             <li><a class="waves-effect" href="">Help</a>
             </li>

@@ -25,6 +25,7 @@
 
                                 </div>
 
+                                <form action="" method="post">
                                 <div class="row">
                                     <div class="input-field col s12" style="padding:0 0">
                                         <select style="height:50px !important;">
@@ -94,5 +95,3 @@
       });
   </script>
 @endsection
-
-</html>

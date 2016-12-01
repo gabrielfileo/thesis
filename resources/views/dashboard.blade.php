@@ -9,7 +9,7 @@
                   <h2>Dashboard - Administrator</h2>
               </div>
               <blockquote>
-                  Welcome to The Admin page.
+                  Welcome to The Admin Page, {{Auth::user()->name}} :)
               </blockquote>
               <div class="row">
                   <div class="col s12">
@@ -29,7 +29,7 @@
                       <br>
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="admin-trainee-add.html">Add New Trainee Member</a>
+                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="manage/trainee/add">Add New Trainee Member</a>
                           </div>
 
                           <div class="col s9">
@@ -39,7 +39,7 @@
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="admin-trainee-update.html">Update Trainee Member</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/trainee/edit">Update Trainee Member</a>
                           </div>
 
                           <div class="col s9">
@@ -49,7 +49,7 @@
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="admin-trainee-view.html">View Trainee Member</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/trainee">View Trainee Member</a>
                           </div>
 
                           <div class="col s9">
@@ -62,7 +62,7 @@
                       <br>
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="course/add">Upload Course</a>
+                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="manage/course/add">Upload Course</a>
                           </div>
 
                           <div class="col s9">
@@ -72,7 +72,7 @@
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="course/view">View Course List</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/course">View Course List</a>
                           </div>
 
                           <div class="col s9">
@@ -85,7 +85,7 @@
                       <br>
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="exam/add">Upload Exam</a>
+                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="manage/exam/add">Upload Exam</a>
                           </div>
 
                           <div class="col s9">
@@ -95,7 +95,7 @@
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="exam/review">Review Exam</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/exam/review">Review Exam</a>
                           </div>
 
                           <div class="col s9">
@@ -108,21 +108,21 @@
                       <br>
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="admin-score-add.html">Input Score</a>
+                              <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="manage/score/add">Input Score</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can add new trainee member</p>
+                              <p class="admin">You can input exam score for a member</p>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="admin-score-view.html">Review Score</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/score">View Score</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can delete trainee member</p>
+                              <p class="admin">You can view score</p>
                           </div>
                       </div>
                   </div>

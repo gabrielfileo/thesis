@@ -6,7 +6,9 @@
             <div class="box-title">
                 <h2>Administrator</h2>
             </div>
+
             <div class="box-content-material clearfix">
+              <form action="#">
                 <div class="box-course-add clearfix">
                     <div class="box-title">
                         <h3>Upload New Course</h3>
@@ -20,6 +22,7 @@
                             <label style="margin-left:-11px; font-size:16px;">Course</label>
                         </div>
 
+                        <form action="" method="post">
                         <div class="row">
                             <form class="col s12">
                                 <div class="row">
@@ -37,7 +40,7 @@
                             </form>
                         </div>
 
-                        <form action="#">
+                        <div class="row">
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
@@ -47,18 +50,19 @@
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
-                        </form>
-
+                        </div>
+                      </form>
 
                     </div>
                     <div class="box-button ">
                         <div class="row">
-                            <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">send</i>Done</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="admin-course-add.html"><i class="material-icons right">replay</i>Reset</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="/dashboard"><i class="material-icons right">dashboard</i>Back</a>
+                            <a ><button class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
+                            <a ><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-course')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>
+              </form>
             </div>
         </div>
     </div>

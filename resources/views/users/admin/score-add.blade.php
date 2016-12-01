@@ -14,6 +14,7 @@
                     <div class="box-content ">
                         <div class="row">
 
+                          <form action="" method="post">
                             <form class="col s12">
                                 <div class="row">
                                     <div class="input-field col s12">
@@ -60,6 +61,7 @@
                             </form>
                         </div>
                     </div>
+                  </form>
 
                     <div class="box-button ">
                         <div class="row">

@@ -2,7 +2,6 @@
 @section('title','Update Member')
 @section('content')
     <div id="content">
-
         <div class="box">
             <div class="box-title">
                 <h2>Administrator</h2>
@@ -96,4 +95,3 @@
     });
   </script>
 @endsection
-</html>
