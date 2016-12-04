@@ -472,10 +472,18 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 input[type=text], textarea.materialize-textarea, .file-field input.file-path {
     margin: 5px 0;
-    width: 486px;
+    width: 100%;
 	font-size:14px;
     /* padding-left: 5px; */
-    margin-left: -23px;
+    /*margin-left: -23px;*/
+}
+.select-wrapper span.caret {
+    color: initial;
+    position: absolute;
+    right: 0;
+    top: 16px;
+    transform: translateX(-10px);
+    font-size: 10px;
 }
 
 .view_member{

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminTraineeController extends Controller
+class AdminExamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,12 @@ class AdminTraineeController extends Controller
      */
     public function index()
     {
-        return view('users/admin/trainee-view');
+       //
+    }
+
+    public function review()
+    {
+        return view('users/Admin/exam-review');
     }
 
     /**
@@ -26,7 +31,7 @@ class AdminTraineeController extends Controller
      */
     public function create()
     {
-        return view('users/admin/trainee-add');
+        return view('users/Admin/exam-add');
     }
 
     /**
@@ -57,16 +62,9 @@ class AdminTraineeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-     public function testedit()
-     {
-         return view('users/admin/trainee-update');
-     }
-
-
     public function edit($id)
     {
-        return view('users/admin/trainee-edit');
+        //
     }
 
     /**

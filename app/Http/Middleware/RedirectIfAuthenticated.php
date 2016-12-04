@@ -18,6 +18,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+            Session::flash('info','Welcome to the App  :)');
             return redirect('/dashboard');
         }
 

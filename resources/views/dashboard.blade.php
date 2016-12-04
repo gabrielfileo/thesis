@@ -205,6 +205,11 @@
           $(".button-collapse ").sideNav();
           $('.collapsible').collapsible();
       });
+      $(document).ready(function(){
+          @if (Session::has('info'))
+                   Materialize.toast('{{Session::get('info')}}', 4000); // 4000 is the duration of the toast
+          @endif
+      });
 
       $('.datepicker').pickadate({
           selectMonths: true, // Creates a dropdown to control month

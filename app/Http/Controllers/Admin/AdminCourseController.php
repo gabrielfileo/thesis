@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Course;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminScoreController extends Controller
+class AdminCourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class AdminScoreController extends Controller
      */
     public function index()
     {
-        return view('users/admin/score-view');
+        return view('users/Admin/course-view');
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminScoreController extends Controller
      */
     public function create()
     {
-        return view('users/admin/score-add');
+        return view('users/Admin/course-add');
     }
 
     /**
@@ -37,7 +37,12 @@ class AdminScoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entity = new Course();
+        $entity->name = $request->input("course_name");
+        $entity->description = $request->input("course_desc");
+        $entity->topics_id =$request->input("topics_id");
+        $entity->save();
+        return view('users/Admin/course-view');
     }
 
     /**

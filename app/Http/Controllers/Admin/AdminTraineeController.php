@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminCourseController extends Controller
+class AdminTraineeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,11 @@ class AdminCourseController extends Controller
      */
     public function index()
     {
-        return view('users/admin/course-view');
+        $users = User::where('role', 'trainee')
+        ->orderBy('name', 'asc')
+        ->get();
+
+        return view('users.Admin.trainee-view')->with('trainees', $users);
     }
 
     /**
@@ -26,7 +31,7 @@ class AdminCourseController extends Controller
      */
     public function create()
     {
-        return view('users/admin/course-add');
+        return view('users/Admin/trainee-add');
     }
 
     /**
@@ -37,7 +42,18 @@ class AdminCourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entity = new User();
+        $entity->username = $request->input('username');
+        $entity->name = $request->input('fullName');
+        $entity->password = Hash::make($request->input('password'));
+        $date = strtotime($request->input('join_date'));
+        $newformat = date('Y-m-d',$date);
+        $entity->join_date = $newformat;
+        $entity->role = "trainee";
+        $entity->save();
+        $request->session()->flash('status', 'New data submitted successfully!');
+        return view('users/Admin/trainee-add');
+
     }
 
     /**
@@ -57,9 +73,17 @@ class AdminCourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function testedit()
+     {
+
+         return view('users/Admin/trainee-update');
+     }
+
+
     public function edit($id)
     {
-        //
+        return view('users/Admin/trainee-edit');
     }
 
     /**
@@ -71,7 +95,7 @@ class AdminCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

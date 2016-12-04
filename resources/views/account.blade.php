@@ -14,6 +14,9 @@
                 <div class="row">
                     <form method="POST" action="{{url('/account/save')}}" class="col s12">
                         {{csrf_field()}}
+                        @if(Session::has("error"))
+                            {{Session::get("error")}}
+                        @endif
                         <div class="row">
                             <div class="input-field col s12">
                                 <input disabled value="{{Auth::user()->username}}" id="disabled" type="text" class="validate" name="username"  style="margin-left:0px; width:100%">
@@ -42,30 +45,34 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="cpassword" type="password" name="cpassword" class="validate" required >
-                                <label for="cpassword" data-error="Password not match" data-success="Password match" style="font-size:14px;">Confirm Password</label>
+                                <label for="cpassword" style="font-size:14px;">Confirm Password</label>
                             </div>
                         </div>
 
-                            <p>
-                                <input type="checkbox" id="test5" required />
-                                <label for="test5">I agree with my password change.</label>
-                            </p>
-
 
                         <div class="row">
-                            <a ><button class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons left">done</i>Save</button></a>
+                            <a><button class="waves-effect waves-light btn red darken-4" data-target="modal1" id="submitForm" type="submit"><i class="material-icons left">done</i>Save</button></a>
                             <a class="waves-effect waves-light btn grey darken-3"><i class="material-icons left">replay</i>Reset</a>
+                        </div>
+                        <div id="modal1" class="modal bottom-sheet">
+                            <div class="modal-content">
+                                <h4>Modal Header</h4>
+                                <p>A bunch of text</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
 
-    </div>
+
 @endsection
 
 @section('script')
-  <script>
+    <script>
       $(document).ready(function() {
           $(".button-collapse ").sideNav();
           $('.collapsible').collapsible();
@@ -84,41 +91,19 @@
       });
 
 
-        var password = document.getElementById("password"), cpassword = document.getElementById("cpassword");
+      /*
+       $("#submitForm").click(function (e) {
+           var pass = $("#password").val();
+           var c_pass = $("#cpassword").val();
 
-        function validatePassword(){
-            if(password.value != confirm_password.value) {
-              confirm_password.setCustomValidity("Passwords Don't Match");
-            } else {
-              confirm_password.setCustomValidity('');
-            }
-        }
+           e.preventDefault();
 
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
+           if(pass !== c_pass){
+               Materialize.toast('Password not the same!', 4000) // 4000 is the duration of the toast
+           }else{
+               $(this).submit();
+           }
+       })*/
+</script>
 
-    </script>
 @endsection
-{{--$("#password").on("focusout", function (e) {
-      if ($(this).val() != $("#cpassword").val()) {
-          $("#cpassword").removeClass("valid").addClass("invalid");
-      } else {
-          $("#cpassword").removeClass("invalid").addClass("valid");
-      }
-  });
-
-  $("#cpassword").on("keyup", function (e) {
-      if ($("#password").val() != $(this).val()) {
-          $(this).removeClass("valid").addClass("invalid");
-      } else {
-          $(this).removeClass("invalid").addClass("valid");
-      }
-  });
-  var password = $("password").val();
-  var c_password = $("cpassword").val();
-
-  if (password != c_password){
-    $("cpassword").addClass("invalid");
-  }
-
-  --}}

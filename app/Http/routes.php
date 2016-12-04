@@ -22,21 +22,28 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/dashboard', 'DashboardController@index');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'DashboardController@index');
 
-Route::post('/account/save', 'AccountController@editPassword');
+    Route::post('/account/save', 'AccountController@editPassword');
 
-Route::get('/account', 'AccountController@index');
+    Route::get('/account', 'AccountController@index');
 
-Route::get('/manage/course', 'admin\AdminCourseController@index');
-Route::get('/manage/course/add', 'admin\AdminCourseController@create');
+    Route::get('/manage/course', 'Admin\AdminCourseController@index');
+    Route::get('/manage/course/add', 'Admin\AdminCourseController@create');
+    Route::post('/manage/course/add/save', 'Admin\AdminCourseController@store');
 
-Route::get('/manage/exam/add', 'admin\AdminExamController@create');
-Route::get('/manage/exam/review', 'admin\AdminExamController@review');
+    Route::get('/manage/exam/add', 'Admin\AdminExamController@create');
+    Route::get('/manage/exam/review', 'Admin\AdminExamController@review');
 
-Route::get('/manage/score', 'admin\AdminScoreController@index');
-Route::get('/manage/score/add', 'admin\AdminScoreController@create');
+    Route::get('/manage/score', 'Admin\AdminScoreController@index');
+    Route::get('/manage/score/add', 'Admin\AdminScoreController@create');
 
-Route::get('/manage/trainee', 'admin\AdminTraineeController@index');
-Route::get('/manage/trainee/add', 'admin\AdminTraineeController@create');
-Route::get('/manage/trainee/edit', 'admin\AdminTraineeController@testedit');
+    Route::get('/manage/trainee', 'Admin\AdminTraineeController@index');
+    Route::get('/manage/trainee/add', 'Admin\AdminTraineeController@create');
+    Route::post('/manage/trainee/add/save', 'Admin\AdminTraineeController@store');
+    Route::get('/manage/trainee/edit', 'Admin\AdminTraineeController@testedit');
+    Route::post('/manage/trainee/edit/save', 'Admin\AdminTraineeController@update');
+});
+
+

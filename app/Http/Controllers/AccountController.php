@@ -62,11 +62,20 @@ class AccountController extends Controller
     public function editPassword(Request $request)
     {
         $entity = User::find(Auth::user()->id);
+        if ($request->input("cpassword") != $request->input("new_password")){
+            $request->session()->flash('error', 'New password is different!');
+            return redirect('/account');}
+        elseif(Hash::check($request->input("old_password"), $entity->password ) != true){
+            $request->session()->flash('error', 'Incorrect old password!');
+            return redirect('/account');
+        }
+        else{
+        $entity = User::find(Auth::user()->id);
         $entity->name = $request->input('fullName');
         $entity->password = Hash::make($request->input('new_password'));
         $entity->save();
         Auth::logout();
-        return redirect('/');
+        return redirect('/');}
     }
 
     /**

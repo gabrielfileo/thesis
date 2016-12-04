@@ -77,8 +77,7 @@
         </div>
     </footer>
     --}}
-
-</body>
     @yield('script')
+</body>
 
 </html>

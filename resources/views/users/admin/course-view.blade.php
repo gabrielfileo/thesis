@@ -53,8 +53,8 @@
 
                     <div class="box-button ">
                         <div class="row">
-                            <a class="waves-effect waves-light btn grey darken-3" style="width:180px;" href="admin-dashboard.html"><i class="material-icons left">dashboard</i>Back</a>
-                            <a class="waves-effect waves-light btn red darken-4" style="width:180px;" href="admin-course-add.html"><i class="material-icons left">add</i>Upload</a>
+                            <a class="waves-effect waves-light btn grey darken-3" style="width:180px;" href="{{url('Admin')}}"><i class="material-icons left">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn red darken-4" style="width:180px;" href="{{url('/manage/course/add')}}"><i class="material-icons left">add</i>Upload</a>
                         </div>
                     </div>
                 </div>

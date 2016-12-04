@@ -24,13 +24,16 @@
                             </thead>
 
                             <tbody>
+                            @foreach($trainees as $trainee)
                                 <tr>
-                                    <td>Gabriel Fileo</td>
-                                    <td>25/08/2015</td>
+                                    <td>{{$trainee->name}}</td>
+                                    <td>{{$trainee->join_date}}</td>
                                     <td>85</td>
                                     <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
                                 </tr>
-                                <tr>
+                            @endforeach
+
+                               {{-- <tr>
                                     <td>Kevin Witomo</td>
                                     <td>25/08/2015</td>
                                     <td>83</td>
@@ -41,13 +44,13 @@
                                     <td>25/08/2015</td>
                                     <td>88</td>
                                     <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
-                                </tr>
+                                </tr>--}}
                             </tbody>
                         </table>
                     </div>
                     <div class="box-button ">
                         <div class="row">
-                            <a class="waves-effect waves-light btn red darken-4" href="admin-dashboard.html"><i class="material-icons left">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn red darken-4" href="{{url('Admin')}}"><i class="material-icons left">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>
