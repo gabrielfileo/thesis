@@ -40,10 +40,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');
 
     Route::get('/manage/trainee', 'Admin\AdminTraineeController@index');
+
     Route::get('/manage/trainee/add', 'Admin\AdminTraineeController@create');
     Route::post('/manage/trainee/add/save', 'Admin\AdminTraineeController@store');
+
     Route::get('/manage/trainee/edit', 'Admin\AdminTraineeController@testedit');
     Route::post('/manage/trainee/edit/save', 'Admin\AdminTraineeController@update');
 });
-
-

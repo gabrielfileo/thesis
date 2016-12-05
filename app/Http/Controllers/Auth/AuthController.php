@@ -79,7 +79,7 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'username' => $data['username'],
-            'role' => 'member',
+            'role' => 'trainee',
             'password' => bcrypt($data['password']),
             'join_date' => new \DateTime($data['join_date']),
         ]);

@@ -17,6 +17,9 @@
           <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="{{asset('assets/js/materialize.min.js')}}"></script>
+      <!--Import Select2 plugin-->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
       <style>
           body {
               background-image: url({{asset('assets/images/symphony.png')}});

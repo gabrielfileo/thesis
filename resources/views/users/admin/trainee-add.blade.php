@@ -15,7 +15,7 @@
 
                     <form method="POST" action="{{url('/manage/trainee/add/save')}}" class="col s12">
                         {{csrf_field()}}
-                        @if(Session::has("status"))
+                        @if(Session::has("status")) {{--Mohon dipercantik lagi tampilan error message ini--}}
                             {{Session::get("status")}}
                         @endif
                     <div class="box-content ">
@@ -55,7 +55,7 @@
                         <div class="row">
                             <a><button class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
                             <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('Admin')}}"><i class="material-icons right">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
                  </form>

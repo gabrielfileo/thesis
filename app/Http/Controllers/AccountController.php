@@ -61,7 +61,7 @@ class AccountController extends Controller
 
     public function editPassword(Request $request)
     {
-        $entity = User::find(Auth::user()->id);
+        $entity = User::find(Auth::user()->id); //find the user data according to id
         if ($request->input("cpassword") != $request->input("new_password")){
             $request->session()->flash('error', 'New password is different!');
             return redirect('/account');}
@@ -72,7 +72,9 @@ class AccountController extends Controller
         else{
         $entity = User::find(Auth::user()->id);
         $entity->name = $request->input('fullName');
-        $entity->password = Hash::make($request->input('new_password'));
+        if($request->input("new_password")!=NULL && $request->input("cpassword")!=NULL){
+          $entity->password = Hash::make($request->input('new_password')); //validate  not to change password if new_password and cpassword is empty
+        }
         $entity->save();
         Auth::logout();
         return redirect('/');}

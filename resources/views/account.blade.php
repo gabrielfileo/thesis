@@ -14,7 +14,7 @@
                 <div class="row">
                     <form method="POST" action="{{url('/account/save')}}" class="col s12">
                         {{csrf_field()}}
-                        @if(Session::has("error"))
+                        @if(Session::has("error")) {{--Mohon dipercantik lagi tampilan error message ini--}}
                             {{Session::get("error")}}
                         @endif
                         <div class="row">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="cpassword" type="password" name="cpassword" class="validate" required >
+                                <input id="cpassword" type="password" name="cpassword" class="validate">
                                 <label for="cpassword" style="font-size:14px;">Confirm Password</label>
                             </div>
                         </div>

@@ -23,7 +23,6 @@
                             {{--<label style="margin-left:-11px; font-size:16px;">Course</label>--}}
                         {{--</div>--}}
                         <div class="row">
-
                                 <div class="row">
                                     <select class="col s12" id="topics" name="topics_id">
                                         <option value="1">Photoshop</option>
@@ -33,13 +32,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="course_name" name="course_name" type="text" length="20">
+                                        <input id="course_name" name="course_name" type="text" required minlength="10" maxlength="20" length="20">
                                         <label for="course_name">Course Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <textarea id="course_desc" name="course_desc" class="materialize-textarea" length="150"></textarea>
+                                        <textarea id="course_desc" name="course_desc" class="materialize-textarea" required minlength="50" maxlength="150" length="150"></textarea>
                                         <label for="course_desc">Course Description</label>
                                     </div>
                                 </div>
@@ -64,7 +63,7 @@
                         <div class="row">
                             <a><button class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
                             <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('Admin')}}"><i class="material-icons right">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-course')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>

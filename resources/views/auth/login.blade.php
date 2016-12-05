@@ -12,7 +12,9 @@
             <h1 class="title">Sign in to continue</h1>
             <form  method="POST" action="{{ url('/login') }}">
                 {{ csrf_field() }}
+
                 <div class="input-container">
+
                     <input type="text" id="Username" name="username" value="{{ old('username') }}" required/>
                     <label for="Username">Username</label>
                     <div class="bar"></div>
@@ -27,7 +29,15 @@
                         <button type="submit"><span>LOGIN</span>
                         </button>
                 </div>
-                <div class="footer">Contact Your Leader / Administrator if You're having trouble accessing this dashboard.</div>
+                <div>
+                  @if (count($errors) > 0) {{--Mohon dipercantik lagi tampilan error message ini--}}
+                    @foreach ($errors->all() as $error)
+                        {{$error}}
+                    @endforeach
+                  @endif
+                </div>
+                <div class="footer">
+                  Contact Your Leader / Administrator if You're having trouble accessing this dashboard.</div>
             </form>
         </div>
         <div class="card alt">
