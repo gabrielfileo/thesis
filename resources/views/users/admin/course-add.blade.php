@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="course_name" name="course_name" type="text" required minlength="10" maxlength="20" length="20">
+                                        <input id="course_name" name="course_name" type="text" required minlength="10" maxlength="25" length="25">
                                         <label for="course_name">Course Name</label>
                                     </div>
                                 </div>

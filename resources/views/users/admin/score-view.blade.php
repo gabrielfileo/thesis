@@ -58,7 +58,7 @@
                     </div>
                     <div class="box-button ">
                         <div class="row">
-                            <a class="waves-effect waves-light btn red darken-4" href="{{url('Admin')}}"><i class="material-icons left">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn red darken-4" href="{{url('/dashboard#admin-reports')}}"><i class="material-icons left">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>

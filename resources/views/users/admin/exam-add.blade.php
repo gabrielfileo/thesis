@@ -66,7 +66,7 @@
                         <div class="row">
                             <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">send</i>Done</a>
                             <a class="waves-effect waves-light btn grey darken-3" href="admin-exam-add.html"><i class="material-icons right">replay</i>Reset</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('Admin')}}"><i class="material-icons right">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-exam')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>
