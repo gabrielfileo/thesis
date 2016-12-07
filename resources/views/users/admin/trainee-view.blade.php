@@ -16,9 +16,9 @@
                         <table class="responsive-table centered striped">
                             <thead>
                                 <tr>
+                                    <th data-field="username"  style="width:150px;">NIK</th>
                                     <th data-field="full_name" style="width:150px;">Member Name</th>
-                                    <th data-field="Join"  style="width:150px;">Join Date</th>
-                                    <th data-field="score"  style="width:150px;">Score</th>
+                                    <th data-field="Join Date"  style="width:150px;">Join Date</th>
                                     <th data-field="del">Delete</th>
                                 </tr>
                             </thead>
@@ -26,9 +26,9 @@
                             <tbody>
                             @foreach($trainees as $trainee)
                                 <tr>
+                                    <td>{{$trainee->username}}</td>
                                     <td>{{$trainee->name}}</td>
                                     <td>{{$trainee->join_date}}</td>
-                                    <td>85</td>
                                     <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
                                 </tr>
                             @endforeach

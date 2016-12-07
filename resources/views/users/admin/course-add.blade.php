@@ -8,7 +8,7 @@
             </div>
 
             <div class="box-content-material clearfix">
-                <form method="POST" action="{{url('/manage/course/add/save')}}" class="col s12">
+                <form method="POST" action="{{url('/manage/course/add/save')}}" class="col s12" enctype="multipart/form-data">
                     {{csrf_field()}}
                 <div class="box-course-add clearfix">
                     <div class="box-title">
@@ -49,7 +49,7 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                     <span>File</span>
-                                    <input type="file" name="file">
+                                    <input type="file" name="file_course" validate >
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" name="file_path" type="text">
@@ -91,5 +91,23 @@
       $(document).ready(function() {
           Materialize.updateTextFields();
       });
+
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#showgambar').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      $("#inputgambar").change(function () {
+        readURL(this);
+      });
   </script>
+
+
 @endsection

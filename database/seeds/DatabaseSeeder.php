@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         //dummy data for users table (1 admin, 5 trainees)
+        $date = strtotime('01-11-2016');
+        $new_date = date('Y-m-d',$date);
         DB::table('users')->delete();
         DB::table('users')->insert(
-          ['username' => 'admin', 'name' => 'Administrator', 'role' => 'administrator', 'password'=> bcrypt('test1234') ]);
+          ['username' => 'admin', 'name' => 'Administrator', 'role' => 'administrator', 'join_date' => $new_date, 'password'=> bcrypt('test1234') ]);
           factory(App\User::class, 5)->create();
 
         //dummy data for topics table

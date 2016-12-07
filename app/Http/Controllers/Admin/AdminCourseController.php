@@ -41,6 +41,12 @@ class AdminCourseController extends Controller
         $entity->name = $request->input("course_name");
         $entity->description = $request->input("course_desc");
         $entity->topics_id =$request->input("topics_id");
+
+        $file       = $request->file('file_course');
+        $fileName   = $file->getClientOriginalName();
+        $request->file('file_course')->move("video/", $fileName);
+        $entity->video_path = $fileName;
+
         $entity->save();
         return view('users/Admin/course-view');
     }

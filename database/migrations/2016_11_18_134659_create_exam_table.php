@@ -20,7 +20,8 @@ class CreateExamTable extends Migration
             $table->timestamps();
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')->references('id')->on('course');
-
+            $table->integer('topics_id')->unsigned();
+            $table->foreign('topics_id')->references('id')->on('topics');
         });
     }
 

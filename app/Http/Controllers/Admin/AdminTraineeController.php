@@ -17,10 +17,7 @@ class AdminTraineeController extends Controller
      */
     public function index()
     {
-        $users = User::where('role', 'trainee')
-        ->orderBy('name', 'asc')
-        ->get();
-
+        $users = User::where('role', 'trainee')->orderBy('name', 'asc')->get();
         return view('users.Admin.trainee-view')->with('trainees', $users);
     }
 
