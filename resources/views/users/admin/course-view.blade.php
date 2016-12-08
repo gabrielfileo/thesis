@@ -26,7 +26,16 @@
                             </thead>
 
                             <tbody>
-                                <tr>
+                              @foreach($courses as $course)
+                                  <tr>
+                                      <td>{{$course->name}}</td>
+                                      <td>{{$course->created_at}}</td>
+                                      <td>{{$course->description}}</td>
+                                      <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">mode_edit</i></a></td>
+                                      <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">delete</i></a></td>
+                                  </tr>
+                              @endforeach
+                              {{--  <tr>
                                     <td>Course 1</td>
                                     <td>25/08/2015</td>
                                     <td>This Adobe Photoshop training course will provide an introduction into the powerful Adobe Photoshop suite that will teach you how to optimise and create digital images. </td>
@@ -46,7 +55,7 @@
                                     <td>This Adobe Photoshop training course will provide an introduction into the powerful Adobe Photoshop suite that will teach you how to optimise and create digital images. </td>
                                     <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">mode_edit</i></a></td>
                                     <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">delete</i></a></td>
-                                </tr>
+                                </tr>--}}
                             </tbody>
                         </table>
                     </div>

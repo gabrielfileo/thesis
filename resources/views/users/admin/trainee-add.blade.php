@@ -53,7 +53,7 @@
 
                     <div class="box-button ">
                         <div class="row">
-                            <a><button class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
+                            <a><button onclick="return confirm('Are you sure?')" class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
                             <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-user')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>

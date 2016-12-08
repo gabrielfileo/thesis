@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Upload New Course')
+@section('title','Update New Course')
 @section('content')
     <div id="content">
         <div class="box">
@@ -12,7 +12,7 @@
                     {{csrf_field()}}
                 <div class="box-course-add clearfix">
                     <div class="box-title">
-                        <h3>Upload New Course</h3>
+                        <h3>Update Course</h3>
                     </div>
                     <div class="box-content ">
                         {{--<div class="input-field col s12">--}}
@@ -61,7 +61,7 @@
                     </div>
                     <div class="box-button ">
                         <div class="row">
-                            <a><button onclick="return confirm('Are you sure?')"  class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
+                            <a><button onclick="return confirm('Are you sure?')"  class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Update</button></a>
                             <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-course')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>

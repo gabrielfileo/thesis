@@ -16,7 +16,9 @@ class AdminCourseController extends Controller
      */
     public function index()
     {
-        return view('users/Admin/course-view');
+
+        $courses = Course::orderBy('created_at','desc')->get();
+        return view('users.Admin.course-view')->with('courses', $courses);
     }
 
     /**
@@ -41,10 +43,10 @@ class AdminCourseController extends Controller
         $entity->name = $request->input("course_name");
         $entity->description = $request->input("course_desc");
         $entity->topics_id =$request->input("topics_id");
-
+        $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
         $file       = $request->file('file_course');
         $fileName   = $file->getClientOriginalName();
-        $request->file('file_course')->move("video/", $fileName);
+        $request->file('file_course')->move("videos/", $fileName);
         $entity->video_path = $fileName;
 
         $entity->save();
@@ -68,9 +70,9 @@ class AdminCourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('users/Admin/course-update');
     }
 
     /**

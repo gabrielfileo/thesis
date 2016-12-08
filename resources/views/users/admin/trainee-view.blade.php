@@ -18,7 +18,7 @@
                                 <tr>
                                     <th data-field="username"  style="width:150px;">NIK</th>
                                     <th data-field="full_name" style="width:150px;">Member Name</th>
-                                    <th data-field="Join Date"  style="width:150px;">Join Date</th>
+                                    <th data-field="Join"  style="width:150px;">Join Date</th>
                                     <th data-field="del">Delete</th>
                                 </tr>
                             </thead>
