@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::auth();
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::resource('trainee','Admin\AdminTraineeController');
     Route::get('/dashboard', 'DashboardController@index');
 
     Route::post('/account/save', 'AccountController@editPassword');
@@ -44,6 +45,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/manage/trainee/add', 'Admin\AdminTraineeController@create');
     Route::post('/manage/trainee/add/save', 'Admin\AdminTraineeController@store');
+
+
 
     Route::get('/manage/trainee/edit', 'Admin\AdminTraineeController@testedit');
     Route::post('/manage/trainee/edit/save', 'Admin\AdminTraineeController@update');

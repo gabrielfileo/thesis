@@ -29,7 +29,22 @@
                                     <td>{{$trainee->username}}</td>
                                     <td>{{$trainee->name}}</td>
                                     <td>{{$trainee->join_date}}</td>
-                                    <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
+                                    <td>
+                                      <button data-target="delete" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
+                                      <div id="delete" class="modal">
+                                        <div class="modal-content">
+                                          <h2>Delete Confirmation</h2>
+                                          <p>Are you sure?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
+                                          {{ Form::open(['method' => 'DELETE','route' => ['trainee.destroy', $trainee->id],'style'=>'display:inline']) }}
+                                          {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                          {{ Form::close() }}
+                                          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Yes</a>
+                                        </div>
+                                      </div>
+                                    </td>
                                 </tr>
                             @endforeach
 
@@ -76,6 +91,10 @@
       });
       $(document).ready(function() {
           Materialize.updateTextFields();
+      });
+      $(document).ready(function() {
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
       });
   </script>
 @endsection
