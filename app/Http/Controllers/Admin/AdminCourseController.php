@@ -43,7 +43,8 @@ class AdminCourseController extends Controller
         $entity->name = $request->input("course_name");
         $entity->description = $request->input("course_desc");
         $entity->topics_id =$request->input("topics_id");
-        $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
+       // $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
+        //validate video masih error
         $file       = $request->file('file_course');
         $fileName   = $file->getClientOriginalName();
         $request->file('file_course')->move("videos/", $fileName);
