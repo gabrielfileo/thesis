@@ -18,6 +18,7 @@ class CreateCourseTable extends Migration
             $table->string('description');
             $table->string('video_path');
             $table->timestamps();
+            $table->softDeletes();
             $table->integer('topics_id')->unsigned();
             $table->foreign('topics_id')->references('id')->on('topics');
         });

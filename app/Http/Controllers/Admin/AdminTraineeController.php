@@ -104,7 +104,7 @@ class AdminTraineeController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('/manage/trainee')
+        return redirect()->route('trainee.index')
                      ->with('success','Item deleted successfully');
     }
 }

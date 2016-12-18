@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->date('join_date');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

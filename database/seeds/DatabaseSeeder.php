@@ -12,13 +12,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        //dummy data for users table (1 admin, 5 trainees)
+        //dummy data for users table (1 admin, 10 trainees)
         $date = strtotime('01-11-2016');
         $new_date = date('Y-m-d',$date);
         DB::table('users')->delete();
         DB::table('users')->insert(
           ['username' => 'admin', 'name' => 'Administrator', 'role' => 'administrator', 'join_date' => $new_date, 'password'=> bcrypt('test1234') ]);
-          factory(App\User::class, 5)->create();
+          factory(App\User::class, 10)->create();
 
         //dummy data for topics table
         DB::table('topics')->delete();
