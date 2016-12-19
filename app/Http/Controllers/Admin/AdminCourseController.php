@@ -17,7 +17,7 @@ class AdminCourseController extends Controller
     public function index()
     {
 
-        $courses = Course::orderBy('created_at','desc')->get();
+        $courses = Course::orderBy('id','asc')->get();
         return view('users.Admin.course-view')->with('courses', $courses);
     }
 
@@ -51,7 +51,8 @@ class AdminCourseController extends Controller
         $entity->video_path = $fileName;
 
         $entity->save();
-        return view('users/Admin/course-view');
+        $request->session()->flash('status', 'New data submitted successfully!');
+        return view('users/Admin/course-add');
     }
 
     /**
@@ -96,6 +97,9 @@ class AdminCourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+      dd($id);
+        Course::find($id)->delete();
+        return redirect()->route('course.index')
+                  ->with('success','Course deleted successfully');
     }
 }

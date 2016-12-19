@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Course extends Model
 {
-    protected $primaryKey="id";
+
     protected $fillable=['name','description','join_date'];
-    public $timestamps=false;
+    public $timestamps=true;
     use SoftDeletes;
 
     /**

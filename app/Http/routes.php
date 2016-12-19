@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/account', 'AccountController@index');
 
+    Route::resource('course','Admin\AdminCourseController');
     Route::get('/manage/course', 'Admin\AdminCourseController@index');
     Route::get('/manage/course/add', 'Admin\AdminCourseController@create');
     Route::post('/manage/course/add/save', 'Admin\AdminCourseController@store');

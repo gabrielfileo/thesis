@@ -556,3 +556,18 @@ input:not([type]).invalid+label:after, input:not([type]):focus.invalid+label:aft
       font-size:12px;
 
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 25% !important;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}

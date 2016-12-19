@@ -31,17 +31,16 @@
                                     <td>{{$trainee->join_date}}</td>
                                     <td>
                                       <button data-target="delete" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
-                                      <div id="delete" class="modal">
-                                        <div class="modal-content">
+                                      <div id="delete" class="modal" style="width: 20%" >
+                                        <div class="modal-content" >
                                           <h2>Delete Confirmation</h2>
                                           <p>Are you sure?</p>
                                         </div>
                                         <div class="modal-footer">
-                                          <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
+                                          <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
                                           {{ Form::open(['method' => 'DELETE','route' => ['trainee.destroy', $trainee->id],'style'=>'display:inline']) }}
-                                          {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                          {{ Form::submit('Yes', ['class' => 'btn btn-flat']) }}
                                           {{ Form::close() }}
-                                          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Yes</a>
                                         </div>
                                       </div>
                                     </td>
@@ -93,7 +92,7 @@
           Materialize.updateTextFields();
       });
       $(document).ready(function() {
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger').leanModal();
       });
   </script>

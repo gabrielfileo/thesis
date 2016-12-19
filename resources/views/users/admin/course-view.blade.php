@@ -10,7 +10,11 @@
                 <div class="box-course-view clearfix">
                     <div class="box-title ">
                         <h3>View Courses</h3>
+
                     </div>
+                    @if(Session::has("success")) {{--Mohon dipercantik lagi tampilan error message ini--}}
+                        {{Session::get("success")}}
+                    @endif
                     <div class="box-content ">
 
 
@@ -26,15 +30,30 @@
                             </thead>
 
                             <tbody>
-                              @foreach($courses as $course)
+                              @foreach($courses as $key=>$course)
                                   <tr>
-                                      <td>{{$course->name}}</td>
+                                      <td>{{$course->name}} {{$course->id}}</td>
                                       <td>{{$course->created_at}}</td>
                                       <td>{{$course->description}}</td>
                                       <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">mode_edit</i></a></td>
-                                      <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">delete</i></a></td>
+                                      <td>
+                                        <button data-target="delete" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
+                                        <div id="delete" class="modal" style="width: 20%" >
+                                          <div class="modal-content" >
+                                            <h2>Delete Confirmation</h2>
+                                            <p>Are you sure?</p>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
+                                            {!! Form::open(['method' => 'DELETE','route' => ['course.destroy', $course->id],'style'=>'display:inline']) !!}
+                                            {!! Form::submit('Yes', ['class' => 'btn btn-flat']) !!}
+                                            {!! Form::close() !!}
+                                          </div>
+                                        </div>
+                                      </td>
                                   </tr>
                               @endforeach
+
                               {{--  <tr>
                                     <td>Course 1</td>
                                     <td>25/08/2015</td>
@@ -89,6 +108,10 @@
     });
     $(document).ready(function() {
         Materialize.updateTextFields();
+    });
+    $(document).ready(function() {
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
     });
 </script>
 @endsection
