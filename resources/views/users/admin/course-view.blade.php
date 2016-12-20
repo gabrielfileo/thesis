@@ -30,24 +30,29 @@
                             </thead>
 
                             <tbody>
-                              @foreach($courses as $key=>$course)
+                              @foreach($courses as $course)
                                   <tr>
-                                      <td>{{$course->name}} {{$course->id}}</td>
+
+                                      <td>{{$course->name}}</td>
                                       <td>{{$course->created_at}}</td>
                                       <td>{{$course->description}}</td>
                                       <td><a class="waves-effect waves-teal btn-flat"><i class="material-icons">mode_edit</i></a></td>
                                       <td>
-                                        <button data-target="delete" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
-                                        <div id="delete" class="modal" style="width: 20%" >
+
+                                        <button data-target="delete{{$course->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
+                                        <div id="delete{{$course->id}}" class="modal" style="width: 20%" >
                                           <div class="modal-content" >
                                             <h2>Delete Confirmation</h2>
+                                            <p>Delete {{$course->name}}</p>
                                             <p>Are you sure?</p>
                                           </div>
                                           <div class="modal-footer">
                                             <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
-                                            {!! Form::open(['method' => 'DELETE','route' => ['course.destroy', $course->id],'style'=>'display:inline']) !!}
-                                            {!! Form::submit('Yes', ['class' => 'btn btn-flat']) !!}
-                                            {!! Form::close() !!}
+                                          {{--  {!! Form::open(array(['method' => 'DELETE','route' => ['course.destroy', $course->id],'style'=>'display:inline'])) !!} --}}
+                                            {{ Form::open(array('url' => '/manage/course/delete/'.$course->id,'style'=>'display:inline')) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::submit('Yes', array('class' => 'btn btn-flat')) }}
+                                            {{ Form::close() }}
                                           </div>
                                         </div>
                                       </td>

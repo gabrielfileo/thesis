@@ -30,10 +30,11 @@
                                     <td>{{$trainee->name}}</td>
                                     <td>{{$trainee->join_date}}</td>
                                     <td>
-                                      <button data-target="delete" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
-                                      <div id="delete" class="modal" style="width: 20%" >
+                                      <button data-target="delete{{$trainee->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
+                                      <div id="delete{{$trainee->id}}" class="modal" style="width: 20%" >
                                         <div class="modal-content" >
                                           <h2>Delete Confirmation</h2>
+                                          <p>Delete {{$trainee->name}}</p>
                                           <p>Are you sure?</p>
                                         </div>
                                         <div class="modal-footer">

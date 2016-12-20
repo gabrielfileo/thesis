@@ -97,7 +97,7 @@ class AdminCourseController extends Controller
      */
     public function destroy($id)
     {
-      dd($id);
+    
         Course::find($id)->delete();
         return redirect()->route('course.index')
                   ->with('success','Course deleted successfully');
