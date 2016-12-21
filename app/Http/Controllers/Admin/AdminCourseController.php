@@ -72,9 +72,12 @@ class AdminCourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('users/Admin/course-update');
+      $course = Course::where('id',$id)->get();
+      return view('users.Admin.course-update')->with('course', $course);
+
+
     }
 
     /**
@@ -86,7 +89,7 @@ class AdminCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -97,7 +100,7 @@ class AdminCourseController extends Controller
      */
     public function destroy($id)
     {
-    
+
         Course::find($id)->delete();
         return redirect()->route('course.index')
                   ->with('success','Course deleted successfully');

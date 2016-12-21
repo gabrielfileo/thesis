@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Update New Course')
+@section('title','Update Course')
 @section('content')
     <div id="content">
         <div class="box">
@@ -22,29 +22,30 @@
                             {{--</select>--}}
                             {{--<label style="margin-left:-11px; font-size:16px;">Course</label>--}}
                         {{--</div>--}}
+                        @foreach($course as $value)
                         <div class="row">
                                 <div class="row">
-                                    <select class="col s12" id="topics" name="topics_id">
-                                        <option value="1">Photoshop</option>
-                                        <option value="2">Illustrator</option>
+                                    <select disabled class="col s12" id="topics" name="topics_id" >
+                                      <option value="1">Photoshop</option>
+                                      <option value="2">Illustrator</option>
                                     </select>
                                     <label style="margin-left:-11px; font-size:16px;">Course</label>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="course_name" name="course_name" type="text" required minlength="10" maxlength="25" length="25">
+                                        <input id="course_name" name="course_name" type="text" value="{{ $value->name }}" required minlength="10" maxlength="25" length="25">
                                         <label for="course_name">Course Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <textarea id="course_desc" name="course_desc" class="materialize-textarea" required minlength="50" maxlength="150" length="150"></textarea>
+                                        <textarea id="course_desc" name="course_desc" class="materialize-textarea" value="{{ $value->description }}" required minlength="50" maxlength="150" length="150"></textarea>
                                         <label for="course_desc">Course Description</label>
                                     </div>
                                 </div>
 
                         </div>
-
+                        @endforeach
                         <div class="row">
                             <div class="file-field input-field">
                                 <div class="btn">
@@ -63,7 +64,7 @@
                         <div class="row">
                             <a><button onclick="return confirm('Are you sure?')"  class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Update</button></a>
                             <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-course')}}"><i class="material-icons right">dashboard</i>Back</a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/manage/course')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
                 </div>
