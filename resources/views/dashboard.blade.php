@@ -6,10 +6,10 @@
       <div id="content">
           <div class="box-admin">
               <div class="box-title">
-                  <h2>Dashboard - Administrator</h2>
+                  <h2>Dashboard</h2>
               </div>
               <blockquote>
-                  Welcome to The Admin Page, {{Auth::user()->name}} :)
+                  Welcome, {{Auth::user()->name}}
               </blockquote>
               <div class="row">
                   <div class="col s12">
@@ -130,7 +130,6 @@
           </div>
       </div>
   @endsection
-
 @else
   @section('content')
     <div id="content">
@@ -163,7 +162,7 @@
                        </div>
 
                        <div class="col s9">
-                           <p class="user">You can delete trainee member</p>
+                           <p class="user">You can view course list</p>
                        </div>
                    </div>
                </div>
@@ -176,7 +175,7 @@
                        </div>
 
                        <div class="col s9">
-                           <p class="user">You can delete trainee member</p>
+                           <p class="user">You can view exam list</p>
                        </div>
                    </div>
              </div>
@@ -189,7 +188,7 @@
                        </div>
 
                        <div class="col s9">
-                           <p class="user">You can delete trainee member</p>
+                           <p class="user">You can review your score</p>
                        </div>
                    </div>
                </div>

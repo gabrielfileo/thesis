@@ -16,8 +16,8 @@
                         <table class="responsive-table centered striped">
                             <thead>
                                 <tr>
-                                    <th data-field="username"  style="width:150px;">NIK</th>
-                                    <th data-field="full_name" style="width:150px;">Member Name</th>
+                                    <th data-field="username"  style="width:200px;">NIK</th>
+                                    <th data-field="full_name" style="width:250px;">Member Name</th>
                                     <th data-field="Join"  style="width:150px;">Join Date</th>
                                     <th data-field="del">Delete</th>
                                 </tr>
@@ -31,7 +31,7 @@
                                     <td>{{$trainee->join_date}}</td>
                                     <td>
                                       <button data-target="delete{{$trainee->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
-                                      <div id="delete{{$trainee->id}}" class="modal" style="width: 20%" >
+                                      <div id="delete{{$trainee->id}}" class="modal" style="top: 40%;">
                                         <div class="modal-content" >
                                           <h2>Delete "{{$trainee->name}}"</h2>
                                           <p>Are you sure?</p>

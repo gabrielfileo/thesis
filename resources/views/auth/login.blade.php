@@ -29,23 +29,43 @@
                         <button type="submit"><span>LOGIN</span>
                         </button>
                 </div>
-                <div>
-                  @if (count($errors) > 0) {{--Mohon dipercantik lagi tampilan error message ini--}}
-                    @foreach ($errors->all() as $error)
-                        {{$error}}
-                    @endforeach
-                  @endif
-                </div>
+                @if (count($errors) > 0) {{--Mohon dipercantik lagi tampilan error message ini--}}
+                  <div class="box-warn" style="background-color: #ce152b;
+                                              width: 50%;
+                                              margin: 0px 19%;
+                                              padding: 1px 25px;
+                                              border-radius: 3px;
+                                              margin-top: 25px;">
+                    <p style="color:white; text-align:center;">
+                      @foreach ($errors->all() as $error)
+                          {{$error}}
+                      @endforeach
+                    </p>
+                  </div>
+                @else
+                  <div class="box-trans" style="background-color: #ffffff;
+                                              width: 50%;
+                                              margin: 0px 19%;
+                                              padding: 1px 25px;
+                                              border-radius: 3px;
+                                              margin-top: 25px;">
+                    <p style="color:white; text-align:center;">
+
+                    </p>
+                  </div>
+                @endif
+
+
                 <div class="footer">
                   Contact Your Leader / Administrator if You're having trouble accessing this dashboard.</div>
             </form>
         </div>
         <div class="card alt">
             <div class="toggle"></div>
-            <h1 class="title">What is This?
+            <h1 class="title">Forgot password?
                 <div class="close"></div>
             </h1>
-            <h1 class="title subtitle">This app is used to train new design division staff</h1>
+            <h1 class="title subtitle">Contact your Team Leader</h1>
         </div>
     </div>
 

@@ -15,9 +15,15 @@
 
                     <form method="POST" action="{{url('/manage/trainee/add/save')}}" class="col s12">
                         {{csrf_field()}}
-                        @if(Session::has("status")) {{--Mohon dipercantik lagi tampilan error message ini--}}
-                            {{Session::get("status")}}
-                        @endif
+                        
+                        {{--Baru--}}
+                        <div class="box-succeed">
+                          <p style="color:white; text-align:center;">
+                            @if(Session::has("status"))
+                                {{Session::get("status")}}
+                            @endif
+                          </p>
+                        </div>
                     <div class="box-content ">
                         <div class="row">
                                 <div class="row">

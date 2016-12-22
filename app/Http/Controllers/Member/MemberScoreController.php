@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Member;
 
-
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
-class AccountController extends Controller
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class MemberScoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('account');
+        //
     }
 
     /**
@@ -58,26 +57,9 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    public function editPassword(Request $request)
+    public function edit($id)
     {
-        $entity = User::find(Auth::user()->id); //find the user data according to id
-        if (Hash::check($request->input("old_password"), $entity->password ) != true){
-            $request->session()->flash('error', 'Incorrect old password!');
-            return redirect('/account');
-        }
-        elseif ($request->input("cpassword") != $request->input("new_password")){
-             $request->session()->flash('error', 'New password is different!');
-             return redirect('/account');
-        }
-        else{
-        $entity->name = $request->input('fullName');
-        if($request->input("new_password")!=NULL && $request->input("cpassword")!=NULL){
-          $entity->password = Hash::make($request->input('new_password')); //validate  not to change password if new_password and cpassword is empty
-        }
-        $entity->save();
-        Auth::logout();
-        return redirect('/');}
+        //
     }
 
     /**

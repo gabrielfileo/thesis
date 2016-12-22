@@ -14,9 +14,16 @@
                     <div class="box-title">
                         <h3>Upload New Course</h3>
                     </div>
-                    @if(Session::has("status")) {{--Mohon dipercantik lagi tampilan error message ini--}}
-                        {{Session::get("status")}}
-                    @endif
+
+                    {{--Baru--}}
+                    <div class="box-succeed">
+                      <p style="color:white; text-align:center;">
+                        @if(Session::has("status"))
+                            {{Session::get("status")}}
+                        @endif
+                      </p>
+                    </div>
+
                     <div class="box-content ">
                         {{--<div class="input-field col s12">--}}
                             {{--<select>--}}

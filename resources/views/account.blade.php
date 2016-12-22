@@ -6,17 +6,24 @@
     <div id="content">
             <div class="box-account">
                 <div class="box-title">
-                    <h2>Account Setting</h2>
+                    <h2>Account Settings</h2>
                 </div>
                 <blockquote>
                     You'll be automatically logged out if the password changing was success!. Leave New Password & Confirmation Blank if you don't want to change your password.
                 </blockquote>
+
                 <div class="row">
                     <form method="POST" action="{{url('/account/save')}}" class="col s12">
                         {{csrf_field()}}
-                        @if(Session::has("error")) {{--Mohon dipercantik lagi tampilan error message ini--}}
-                            {{Session::get("error")}}
-                        @endif
+
+                            <div class="box-warn">
+                              <p style="color:white; text-align:center;">
+                                @if(Session::has('error'))
+                                  {{Session::get('error')}}
+                                @endif
+                              </p>
+                            </div>
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <input disabled value="{{Auth::user()->username}}" id="disabled" type="text" class="validate" name="username"  style="margin-left:0px; width:100%">

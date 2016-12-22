@@ -12,18 +12,36 @@
                         <h3>View Courses</h3>
 
                     </div>
-                    @if(Session::has('success')) {{--Mohon dipercantik lagi tampilan error message ini--}}
-                        {{Session::get('success')}}
-                    @endif
+
+                    {{--Baru--}}
+                    <div class="box-succeed">
+                      <p style="color:white; text-align:center;">
+                        @if(Session::has("error"))
+                          {{Session::get("error")}}
+                        @endif
+                        @if(Session::has("success"))
+                            {{Session::get("success")}}
+                        @endif
+                      </p>
+                    </div>
+                  
                     <div class="box-content ">
 
+                      {{--Baru--}}
+                      <div class="row">
+                          <select class="col s3" id="topics" name="topics_id">
+                              <option value="1">Photoshop</option>
+                              <option value="2">Illustrator</option>
+                          </select>
+                          <label style="margin-left:-11px; font-size:16px;">Course</label>
+                      </div>
 
                         <table class="responsive-table centered striped">
                             <thead>
                                 <tr class="courses">
                                     <th data-field="full_name" style="width:250px; font-size:16px;">Course Name</th>
                                     <th data-field="Join" style="width:250px;font-size:16px;">Upload Date</th>
-                                    <th data-field="score" style="font-size:16px;">Description</th>
+                                    <th data-field="score" style="width: 400px;font-size:16px;">Description</th> {{--Baru--}}
                                     <th data-field="edit" style="width:50px;font-size:16px;">Edit</th>
                                     <th data-field="del" style="width:50px;font-size:16px;"font-size:16px;>Delete</th>
                                 </tr>

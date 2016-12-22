@@ -74,8 +74,8 @@ class AdminCourseController extends Controller
      */
     public function edit($id)
     {
-      $course = Course::where('id',$id)->get();
-      return view('users.Admin.course-update')->with('course', $course);
+      $course = Course::where('id',$id)->first();
+      return view('users.Admin.course-update')->with('value', $course);
 
 
     }
@@ -89,7 +89,17 @@ class AdminCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $entity = Course::where('id', $id)->first();
+        $entity->name = $request->input('course_name');
+        $entity->description = $request->input('course_desc');
+        $file       = $request->file('file_course');
+        $fileName   = $file->getClientOriginalName();
+        $request->file('file_course')->move("videos/", $fileName);
+        $entity->video_path = $fileName;
 
+        $entity->save();
+        $request->session()->flash('success', $entity->name.' edited successfully!');
+        return redirect()->action('Admin\AdminCourseController@index');
     }
 
     /**
