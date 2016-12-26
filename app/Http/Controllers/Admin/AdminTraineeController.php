@@ -71,16 +71,12 @@ class AdminTraineeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function testedit()
-     {
-
-         return view('users/Admin/trainee-update');
-     }
 
 
-    public function edit($id)
+    public function edit()
     {
-        return view('users/Admin/trainee-edit');
+        $users = User::where('role', 'trainee')->orderBy('name', 'asc')->get();
+        return view('users.Admin.trainee-update')->with('trainees', $users);
     }
 
     /**

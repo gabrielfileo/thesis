@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -26,7 +27,8 @@ class AdminScoreController extends Controller
      */
     public function create()
     {
-        return view('users/Admin/score-add');
+        $users = User::where('role', 'trainee')->orderBy('name','asc')->get(); //belum bisa get bbrp tabel
+        return view('users.admin.score-add')->with('users', $users);
     }
 
     /**

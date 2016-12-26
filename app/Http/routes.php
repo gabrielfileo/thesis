@@ -27,14 +27,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index');
 
     Route::post('/account/save', 'AccountController@editPassword');
-
     Route::get('/account', 'AccountController@index');
 
     Route::resource('course','Admin\AdminCourseController');
     Route::get('/manage/course', 'Admin\AdminCourseController@index');
     Route::get('/manage/course/add', 'Admin\AdminCourseController@create');
     Route::post('/manage/course/add/save', 'Admin\AdminCourseController@store');
-    Route::get('/manage/course/edit/{id}', 'Admin\AdminCourseController@edit');
+    Route::get('/manage/course/edit/{id}', 'Admin\
+    AdminCourseController@edit');
     Route::post('//manage/course/edit/{id}/update', 'Admin\AdminCourseController@update');
     Route::delete('/manage/course/delete/{id}','Admin\AdminCourseController@destroy');
 
@@ -45,12 +45,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');
 
     Route::get('/manage/trainee', 'Admin\AdminTraineeController@index');
-
     Route::get('/manage/trainee/add', 'Admin\AdminTraineeController@create');
     Route::post('/manage/trainee/add/save', 'Admin\AdminTraineeController@store');
-
-    Route::get('/manage/trainee/edit', 'Admin\AdminTraineeController@testedit');
+    Route::get('/manage/trainee/edit', 'Admin\AdminTraineeController@edit');
     Route::post('/manage/trainee/edit/save', 'Admin\AdminTraineeController@update');
 
-    Route::get('/topics', 'Admin\AdminExamController@create');
+    Route::get('/topics', 'Member\MemberTopicsController@index');
+    Route::get('/topics/{id}', 'Member\MemberCourseController@index');
+    Route::get('/exam', 'Member\MemberExamController@index');
+    Route::get('/score', 'Member\MemberScoreController@index');
+
 });

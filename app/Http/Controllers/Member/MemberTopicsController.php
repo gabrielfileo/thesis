@@ -16,7 +16,7 @@ class MemberTopicsController extends Controller
      */
     public function index()
     {
-        //
+        return view('users.member.topics-view');
     }
 
     /**

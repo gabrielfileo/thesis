@@ -16,7 +16,6 @@ class AdminCourseController extends Controller
      */
     public function index()
     {
-
         $courses = Course::orderBy('id','asc')->get();
         return view('users.Admin.course-view')->with('courses', $courses);
     }

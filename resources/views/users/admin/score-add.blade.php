@@ -19,11 +19,9 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <select style="height:50px !important;">
-                                            <option value="1">Gabriel</option>
-                                            <option value="2">Kevin</option>
-                                            <option value="3">Yosua</option>
-                                            <option value="4">Nakae-San</option>
-                                            <option value="5">Masa-San</option>
+                                            @foreach($users as $user)
+                                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                            @endforeach
                                         </select>
                                         <label style="margin-left:0px; font-size:16px; margin-top:-10px;">Member Name</label>
                                     </div>

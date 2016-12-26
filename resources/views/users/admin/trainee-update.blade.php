@@ -15,6 +15,7 @@
                         <div class="row">
 
                             <form class="col s12">
+
                                 <div class="row">
                                     <div class="input-field col s6">
                                       <input disabled value="1701340240" id="NIK" type="text" class="validate" style="width:100%;  margin-left:0%;">
@@ -22,15 +23,14 @@
                                     </div>
                                     <div class="input-field col s16">
                                         <select style="height:50px !important;">
-                                            <option value="1">Gabriel</option>
-                                            <option value="2">Kevin</option>
-                                            <option value="3">Yosua</option>
-                                            <option value="4">Nakae-San</option>
-                                            <option value="5">Masa-San</option>
+                                            @foreach($trainees as $trainee)
+                                            <option value="{{$trainee->id}}">{{$trainee->name}}</option>
+                                            @endforeach
                                         </select>
                                         <label style="margin-left:0px; font-size:16px; margin-top:-10px;">Member</label>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <input id="password_curr" type="password" class="validate">
