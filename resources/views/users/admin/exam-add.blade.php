@@ -13,7 +13,9 @@
                     </div>
                     <div class="box-content ">
                         <div class="row">
-                            <form class="col s12" style="padding:0 0">
+                            <form class="col s12" id="topics" name="topics_id" style="padding:0 0">
+                            {{ Form::open(['url' => '/manage/exam/add/save']) }}
+                                {{csrf_field()}}
                                 <div class="row">
                                     <div class="input-field col s12" style="padding:0 0">
                                         <select class="input-opt">
@@ -25,13 +27,13 @@
 
                                 </div>
 
-                                <form action="" method="post">
+
                                 <div class="row">
-                                    <div class="input-field col s12" style="padding:0 0">
+                                    <div class="input-field col s12" id="course" name="course_id" style="padding:0 0">
                                         <select style="height:50px !important;">
-                                            <option value="1">Course 1</option>
-                                            <option value="2">Course 2</option>
-                                            <option value="2">Course 3</option>
+                                            @foreach ($courses as $key => $course)
+                                              <option value="{{$course->id}}">{{$course->name}}</option>
+                                            @endforeach
                                         </select>
                                         <label style="margin-left:-11px; font-size:16px; margin-top:-10px;">Sub-Course</label>
                                     </div>
@@ -39,36 +41,49 @@
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <textarea id="course_desc" class="materialize-textarea" style="margin-left:-11px;" length="150"></textarea>
+                                        <textarea id="exam_desc" name="exam_desc" class="materialize-textarea" style="margin-left:-11px;" length="150"></textarea>
                                         <label for="course_desc" style="margin-left:-11px;">Exam Description</label>
                                     </div>
                                 </div>
-
-                            </form>
                         </div>
 
-                        <form action="#">
-                            <div class="file-field input-field">
-                                <div class="btn">
-                                    <span>File</span>
-                                    <input type="file">
+                          <div class="row">
+                              <div class="file-field input-field">
+                                  <div class="btn">
+                                      <span>Upload Exam Photo</span>
+                                      <input type="file" name="photo_exam" validate >
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                      <input class="file-path validate" name="photo_path" type="text">
+                                  </div>
+                              </div>
+                          </div>
+
+                            <div class="row">
+                                <div class="file-field input-field">
+                                    <div class="btn">
+                                        <span>File</span>
+                                        <input type="file" name="file_exam" validate >
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" name="file_path" type="text">
+                                    </div>
+
                                 </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
-                                </div>
+                                  <label>Firstly, please ZIP the file</label>
                             </div>
-                            <label>Firstly, please ZIP the file</label>
-                        </form>
+
 
 
                     </div>
                     <div class="box-button ">
                         <div class="row">
-                            <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">send</i>Done</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="admin-exam-add.html"><i class="material-icons right">replay</i>Reset</a>
+                            <a><button onclick="return confirm('Are you sure?')"  class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
+                            <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-exam')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>

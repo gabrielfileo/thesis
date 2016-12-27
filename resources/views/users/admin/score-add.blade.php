@@ -19,7 +19,7 @@
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <select style="height:50px !important;">
-                                            @foreach($users as $user)
+                                            @foreach($users as $key=> $user)
                                             <option value="{{$user->id}}">{{$user->name}}</option>
                                             @endforeach
                                         </select>
@@ -64,7 +64,7 @@
                     <div class="box-button ">
                         <div class="row">
                             <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">send</i>Done</a>
-                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/manage/score/add')}}"><i class="material-icons right">replay</i>Reset</a>
+                            <a class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</a>
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-reports')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>

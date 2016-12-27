@@ -16,6 +16,7 @@ class CreateExamTable extends Migration
             $table->increments('id');
             $table->string('description');
             $table->string('image_path');
+            $table->string('file_path');
             $table->timestamps();
             $table->softDeletes();
             $table->integer('course_id')->unsigned();

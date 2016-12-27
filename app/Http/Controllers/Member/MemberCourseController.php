@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-
+use App\Course;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -48,7 +48,9 @@ class MemberCourseController extends Controller
      */
     public function show($id)
     {
-        //
+      $course = Course::where('id',$id)->first();
+      return view('users/Member/course-view')->with('value', $course);
+
     }
 
     /**

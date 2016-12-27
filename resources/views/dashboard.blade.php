@@ -158,7 +158,7 @@
                    <br>
                    <div class="row">
                        <div class="col s3">
-                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="/topics">View Course List</a>
+                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="{{url('/topics')}}">View Course List</a>
                        </div>
 
                        <div class="col s9">
@@ -171,7 +171,7 @@
                    <br>
                    <div class="row">
                        <div class="col s3">
-                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="/exam">View Exam List</a>
+                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="{{url('/exam')}}">View Exam List</a>
                        </div>
 
                        <div class="col s9">
@@ -184,7 +184,7 @@
                    <br>
                    <div class="row">
                        <div class="col s3">
-                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="/score">Review Score</a>
+                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="{{url('/score')}}">Review Score</a>
                        </div>
 
                        <div class="col s9">

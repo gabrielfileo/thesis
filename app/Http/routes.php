@@ -33,12 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/manage/course', 'Admin\AdminCourseController@index');
     Route::get('/manage/course/add', 'Admin\AdminCourseController@create');
     Route::post('/manage/course/add/save', 'Admin\AdminCourseController@store');
-    Route::get('/manage/course/edit/{id}', 'Admin\
-    AdminCourseController@edit');
+    Route::get('/manage/course/edit/{id}', 'Admin\AdminCourseController@edit');
     Route::post('//manage/course/edit/{id}/update', 'Admin\AdminCourseController@update');
     Route::delete('/manage/course/delete/{id}','Admin\AdminCourseController@destroy');
 
     Route::get('/manage/exam/add', 'Admin\AdminExamController@create');
+    Route::get('/manage/exam/add/save', 'Admin\AdminExamController@store');
     Route::get('/manage/exam/review', 'Admin\AdminExamController@review');
 
     Route::get('/manage/score', 'Admin\AdminScoreController@index');
@@ -52,7 +52,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/topics', 'Member\MemberTopicsController@index');
     Route::get('/topics/{id}', 'Member\MemberCourseController@index');
+    Route::get('/doCourse/{id}', 'Member\MemberCourseController@show');
     Route::get('/exam', 'Member\MemberExamController@index');
+    Route::get('/exam/upload', 'Member\MemberExamController@upload');
     Route::get('/score', 'Member\MemberScoreController@index');
 
 });

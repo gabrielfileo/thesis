@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-
+use App\Course;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -31,7 +31,8 @@ class AdminExamController extends Controller
      */
     public function create()
     {
-        return view('users/Admin/exam-add');
+        $courses = Course::orderBy('id','asc')->get();
+        return view('users/Admin/exam-add')->with('courses', $courses);
     }
 
     /**
@@ -42,7 +43,24 @@ class AdminExamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $entity = new Exam();
+      $entity->topics_id =$request->input("topics_id");
+      $entity->course_id =$request->input("course_id");
+      $entity->description =$request->input("exam_desc");
+
+      $photo       = $request->file('photo_exam');
+      $photoName   = $file->getClientOriginalName();
+      $request->file('photo_exam')->move("photos/", $photoName);
+      $entity->photo_path = $photoName;
+
+      $file       = $request->file('file_exam');
+      $fileName   = $file->getClientOriginalName();
+      $request->file('file_exam')->move("files/", $fileName);
+      $entity->file_path = $fileName;
+
+      $entity->save();
+      $request->session()->flash('status', 'New data submitted successfully!');
+      return view('users/Admin/exam-add');
     }
 
     /**

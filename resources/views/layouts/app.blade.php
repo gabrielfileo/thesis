@@ -20,6 +20,9 @@
       <!--Import Select2 plugin-->
       <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+      <!--Import VideoJS plugin-->
+      <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+
       <style>
           body {
               background-image: url({{asset('assets/images/symphony.png')}});

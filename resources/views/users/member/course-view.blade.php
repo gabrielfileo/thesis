@@ -5,24 +5,27 @@
 
          <div class="box-course-content">
              <div class="box-title">
-                 <h2>Adobe Illustrator</h2>
+                 <h2> @if($value->topics_id == 1) Adobe Photoshop
+                      @elseif ($value->topics_id == 2) Adobe Illustrator @endif
+                 </h2>
              </div>
              <div class="box-content-material clearfix">
                  <div class="box-video clearfix">
                      <div class="box-title">
-                         <h3>Course 1</h3>
+                         <h3>{{ $value->name }}</h3>
                      </div>
                      <div class="box-content">
                          <video class="responsive-video" controls>
-                             <source src="videos/Wildlife.wmv" type="video/wmv">
-                         </video>
+                             <source src="{{url('videos/'.$value->video_path)}}" type="video/mp4">
+                               <body>
+                          </video>
                          <div class="divider vivid"></div>
-                         <p>Although during its first decade Adobe developed Illustrator primarily for Macintosh, it sporadically supported other platforms. In the early 1990s, Adobe released versions of Illustrator for NeXT, Silicon Graphics, and Sun Solaris platforms, but they were discontinued due to poor market acceptance. The first version of Illustrator for Windows, version 2.0, was released in early 1989 and flopped.</p>
+                         <p>{{ $value->description }}</p>
                      </div>
                      <div class="box-button">
                          <a class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;;"><i class="material-icons left">person_pin</i>ASK</a>
-                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;;"><i class="material-icons left">skip_previous</i>PREV</a>
-                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;;"><i class="material-icons right">skip_next</i>NEXT</a>
+                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" disabled><i class="material-icons left">skip_previous</i>PREV</a>
+                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" ><i class="material-icons right">skip_next</i>NEXT</a>
                          <a href="exam-ills-main.html" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;;"><i class="material-icons left">mode_edit</i>TEST</a>
                      </div>
                  </div>

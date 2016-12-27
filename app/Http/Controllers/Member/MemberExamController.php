@@ -28,7 +28,10 @@ class MemberExamController extends Controller
     {
         //
     }
-
+    public function upload()
+    {
+          return view('users/Member/exam-upload');
+    }
     /**
      * Store a newly created resource in storage.
      *
