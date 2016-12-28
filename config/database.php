@@ -5,10 +5,10 @@
  */
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
+$host =  !isset($url) ? $url["host"] : "";
+$username = !isset($url) ? $url["user"] : "";
+$password = !isset($url) ? $url["pass"] : "";
+$database = !isset($url) ? substr($url["path"], 1) : "";
 
 return [
 
@@ -68,10 +68,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host'      => $host,
-            'database'  => $database,
-            'username'  => $username,
-            'password'  => $password,
+            'host'      => !isset($host) ? $host :  env('DB_HOST', 'localhost'),
+            'database'  => !isset($database)? $database : env('DB_DATABASE', 'forge'),
+            'username'  => !isset($username)? $username : env('DB_USERNAME', 'forge'),
+            'password'  => !isset($password) ? $password: env('DB_PASSWORD', ''),
             'port' => env('DB_PORT', '3306'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
