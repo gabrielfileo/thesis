@@ -16,12 +16,12 @@ class AdminExamController extends Controller
      */
     public function index()
     {
-       //
+       return view('users/Admin/exam-view');
     }
 
     public function review()
     {
-        return view('users/Admin/exam-review');
+        return view('users/Admin/exam-result-review');
     }
 
     /**
@@ -71,7 +71,7 @@ class AdminExamController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
@@ -80,9 +80,9 @@ class AdminExamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+          return view('users/Admin/exam-update');
     }
 
     /**

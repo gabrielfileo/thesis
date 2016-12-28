@@ -95,11 +95,21 @@
 
                       <div class="row">
                           <div class="col s3">
-                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/exam/review">Review Exam</a>
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/exam">View Exam List</a>
                           </div>
 
                           <div class="col s9">
-                              <p class="admin">You can review existing exam</p>
+                              <p class="admin">You can view exam list here.</p>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col s3">
+                              <a class="waves-effect waves-light btn grey darken-3" style="width:260px;" href="manage/exam/review">Review Exam Result</a>
+                          </div>
+
+                          <div class="col s9">
+                              <p class="admin">You can review exam results from trainee.</p>
                           </div>
                       </div>
                   </div>

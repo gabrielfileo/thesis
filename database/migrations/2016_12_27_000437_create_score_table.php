@@ -22,7 +22,7 @@ class CreateScoreTable extends Migration
             $table->foreign('topics_id')->references('id')->on('topics');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('score');
+            $table->integer('score');
             $table->string('comment');
             $table->timestamps();
             $table->softDeletes();

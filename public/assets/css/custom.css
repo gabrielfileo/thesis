@@ -355,7 +355,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label{
 }
 
 .red.darken-4 {
-    width: 140px;
+    width: 150px;
 }
 
 #fixedbutton {

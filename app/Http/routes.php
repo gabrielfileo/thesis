@@ -37,9 +37,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('//manage/course/edit/{id}/update', 'Admin\AdminCourseController@update');
     Route::delete('/manage/course/delete/{id}','Admin\AdminCourseController@destroy');
 
+    Route::get('/manage/exam', 'Admin\AdminExamController@index');
     Route::get('/manage/exam/add', 'Admin\AdminExamController@create');
     Route::get('/manage/exam/add/save', 'Admin\AdminExamController@store');
     Route::get('/manage/exam/review', 'Admin\AdminExamController@review');
+    Route::get('/manage/exam/edit', 'Admin\AdminExamController@edit');
 
     Route::get('/manage/score', 'Admin\AdminScoreController@index');
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');

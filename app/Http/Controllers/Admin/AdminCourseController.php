@@ -45,7 +45,7 @@ class AdminCourseController extends Controller
        // $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
         //validate video masih error
         $file       = $request->file('file_course');
-        $fileName   = $file->getClientOriginalName();
+        $fileName   = md5($file->getClientOriginalName() . microtime()) . '.mp4';
         $request->file('file_course')->move("videos/", $fileName);
         $entity->video_path = $fileName;
 
