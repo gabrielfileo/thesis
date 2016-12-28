@@ -54,8 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/topics', 'Member\MemberTopicsController@index');
     Route::get('/topics/{id}', 'Member\MemberCourseController@index');
-    Route::get('/doCourse/{id}', 'Member\MemberCourseController@show');
-    Route::get('/exam', 'Member\MemberExamController@index');
+    Route::get('/topics/{id1}/course/{id2}', 'Member\MemberCourseController@show');
+    Route::get('/topics/{id1}/course/{id2}/exam', 'Member\MemberExamController@index');
     Route::get('/exam/upload', 'Member\MemberExamController@upload');
     Route::get('/score', 'Member\MemberScoreController@index');
 

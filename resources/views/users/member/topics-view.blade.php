@@ -16,7 +16,7 @@
                   <p>Adobe Photoshop is a raster graphics editor developed and published by Adobe Systems for macOS and Windows. Photoshop was created in 1988 by Thomas and John Knoll.</p>
               </div>
               <div class="box-button">
-                  <a href="/topics/1" class="waves-effect waves-light btn red darken-4" style="width: 100%;">ENTER COURSE</a>
+                  <a href="{{url('/topics/1')}}" class="waves-effect waves-light btn red darken-4" style="width: 100%;">ENTER COURSE</a>
               </div>
           </div>
           <div class="box2 fR">
@@ -27,7 +27,7 @@
                   <p>Adobe Illustrator is a vector graphics editor developed and marketed by Adobe Systems. The latest version, Illustrator CC 2015.3, is the twentieth generation in the product line.</p>
               </div>
               <div class="box-button">
-                  <a href="/topics/2" class="waves-effect waves-light btn red darken-4" style="width: 100%;">ENTER COURSE</a>
+                  <a href="{{url('/topics/2')}}" class="waves-effect waves-light btn red darken-4" style="width: 100%;">ENTER COURSE</a>
               </div>
           </div>
       </div>

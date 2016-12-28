@@ -9,80 +9,19 @@
                   <h2>Adobe Illustrator</h2>
               </div>
               <div class="box-content clearfix">
+                @foreach ($courses as $key => $course)
                   <div class="box2">
                       <div class="box-title">
-                          <h3>Course 1</h3>
+                          <h3>{{$course->name}}</h3>
                       </div>
                       <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
+                          <p>{{$course->description}}</p>
                       </div>
                       <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
+                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="{{url('/topics/'.$course->topics_id.'/course/'.$course->id)}}">ENTER COURSE</a>
                       </div>
                   </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 2</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 3</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 4</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 5</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 6</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <ul class="pagination">
-                    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                    <li class="active"><a href="#!">1</a></li>
-                    <li class="waves-effect"><a href="#!">2</a></li>
-                    <li class="waves-effect"><a href="#!">3</a></li>
-                    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-                  </ul>
-
+                @endforeach
               </div>
           </div>
       </div>

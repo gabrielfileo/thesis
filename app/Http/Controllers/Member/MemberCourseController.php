@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Member;
 use Illuminate\Http\Request;
 use App\Course;
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class MemberCourseController extends Controller
@@ -14,9 +15,10 @@ class MemberCourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $courses = Course::where('topics_id',$id)->orderBy('id','asc')->get();
+        return view('users.Member.courselist-view')->with('courses', $courses);
     }
 
     /**
@@ -46,9 +48,9 @@ class MemberCourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id1, $id2)
     {
-      $course = Course::where('id',$id)->first();
+      $course = Course::where('topics_id',$id1)->where('id',$id2)->first();
       return view('users/Member/course-view')->with('value', $course);
 
     }
