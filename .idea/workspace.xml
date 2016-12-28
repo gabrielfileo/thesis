@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a43a57c-ca13-4213-8138-169e0543340d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCourseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCourseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_12_28_092548_create_trainee_history_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_12_28_092548_create_trainee_history_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/admin/course-view.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/admin/course-view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/admin/exam-add.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/admin/exam-add.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/videos/30445f9f5dcc9e6dcc1bcd35403c401a.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/videos/47a2544e1b452b238bf3261274026cb7.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/videos/bec425af22e0877ca4805b9731932328.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/videos/c5fe16d06d54ee09bdec23eeea539e0b.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/videos/da8fd0e3c6d055a210b45ade22f6f7b4.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/videos/de3824378f017ec25894a3454f88bbf0.mp4" afterPath="" />
     </list>
     <ignored path="thesis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -237,6 +236,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thesis" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -339,12 +352,12 @@
       <workItem from="1482061818628" duration="6546000" />
       <workItem from="1482561040498" duration="4225000" />
       <workItem from="1482747275734" duration="11064000" />
-      <workItem from="1482932140974" duration="11479000" />
+      <workItem from="1482932140974" duration="12079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92229000" />
+    <option name="totallyTimeSpent" value="92829000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -356,7 +369,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
