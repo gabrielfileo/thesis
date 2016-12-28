@@ -59,4 +59,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exam/upload', 'Member\MemberExamController@upload');
     Route::get('/score', 'Member\MemberScoreController@index');
 
+
 });
+
+Route::group(['prefix' => 'ajax'], function () {
+    Route::post('courses', array('as' => 'ajaxCourseList', 'uses' => 'AjaxController@fetchCourseBasedOnID'));
+});
+

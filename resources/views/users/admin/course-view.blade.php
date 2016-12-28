@@ -56,7 +56,7 @@
                                       </thead>
 
                                       <tbody>
-                                        @foreach($courses as $course)
+                                        @foreach($photoshop as $course)
                                             <tr>
 
                                                 <td>{{$course->name}}</td>
@@ -101,7 +101,7 @@
                                           </thead>
 
                                           <tbody>
-                                            @foreach($courses as $course)
+                                            @foreach($illustrator as $course)
                                                 <tr>
 
                                                     <td>{{$course->name}}</td>

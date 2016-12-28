@@ -18,7 +18,7 @@
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="input-field col s12" style="padding:0 0">
-                                        <select class="input-opt">
+                                        <select id="topic_selection" class="input-opt">
                                             <option value="1">Photoshop</option>
                                             <option value="2">Illustrator</option>
                                         </select>
@@ -30,11 +30,10 @@
 
                                 <div class="row">
                                     <div class="input-field col s12" id="course" name="course_id" style="padding:0 0">
-                                        <select style="height:50px !important;">
-                                            @foreach ($courses as $key => $course)
-                                              <option value="{{$course->id}}">{{$course->name}}</option>
-                                            @endforeach
+                                        <select class="course_selection" style="height:50px !important;">
+
                                         </select>
+
                                         <label style="margin-left:-11px; font-size:16px; margin-top:-10px;">Sub-Course</label>
                                     </div>
                                 </div>
@@ -95,6 +94,29 @@
       $(document).ready(function() {
           $(".button-collapse ").sideNav();
           $('.collapsible').collapsible();
+
+          $("#topic_selection").on('change', function () {
+              var topic = $(this).val();
+              $.ajax({
+                  method: "POST",
+                  url: "{{route('ajaxCourseList')}}",
+                  data:{
+                      id : topic,
+                  }
+              })
+              .done(function (data) {
+
+                  $(".course_selection option").remove();
+                  $(".course_selection").material_select('destroy');
+                  $.each(JSON.parse(data), function (index, ccourse) {
+                     $(".course_selection").append("<option value='" + ccourse.id + "'>" + ccourse.name + "</option>");
+                  });
+                  $(".course_selection").material_select('destroy');
+                  $(".course_selection").material_select();
+                 /* masukin ini */
+              });
+          });
+
       });
 
       $('.datepicker').pickadate({
@@ -105,6 +127,7 @@
       $(document).ready(function() {
           $('select').material_select();
       });
+
       $(document).ready(function() {
           Materialize.updateTextFields();
       });

@@ -23,7 +23,7 @@ class CreateTraineeHistoryTable extends Migration
           $table->integer('exam_id')->unsigned();
           $table->foreign('exam_id')->references('id')->on('exam');
           $table->integer('status');
-          $table->integer('score');
+          $table->integer('score')->nullable();
           $table->timestamps();
       });
     }

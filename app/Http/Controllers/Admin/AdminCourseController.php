@@ -16,8 +16,13 @@ class AdminCourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::orderBy('id','asc')->get();
-        return view('users.Admin.course-view')->with('courses', $courses);
+        $photoshop = Course::where('topics_id',1)->orderBy('id','asc')->get();
+        $illustrator = Course::where('topics_id',2)->orderBy('id','asc')->get();
+        /*print_r(json_encode($courses));exit;*/
+        return view('users.Admin.course-view')->with(array(
+            'photoshop' => $photoshop,
+            'illustrator' => $illustrator
+        ));
     }
 
     /**
