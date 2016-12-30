@@ -7,7 +7,7 @@
 
     <div class="box">
         <div class="box-title">
-            <h2>[USER NAME]</h2>
+            <h2>{{Auth::user()->name}}</h2>
         </div>
         <div class="box-content-material clearfix">
             <div class="box-trainee-view clearfix">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="box-button ">
                     <div class="row">
-                        <a class="waves-effect waves-light btn grey darken-3" style="width:180px;" href="user-dashboard.html"><i class="material-icons left">dashboard</i>Back</a>
+                        <a class="waves-effect waves-light btn grey darken-3" style="width:180px;" href="{{url('dashboard')}}"><i class="material-icons left">dashboard</i>Back</a>
                     </div>
                 </div>
             </div>

@@ -50,6 +50,7 @@ class AdminCourseController extends Controller
        // $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
         //validate video masih error
         $file       = $request->file('file_course');
+
         $fileName   = md5($file->getClientOriginalName() . microtime()) . '.mp4';
         $request->file('file_course')->move("storage/videos/", $fileName);
         $entity->video_path = $fileName;
@@ -80,8 +81,6 @@ class AdminCourseController extends Controller
     {
       $course = Course::where('id',$id)->first();
       return view('users.Admin.course-update')->with('value', $course);
-
-
     }
 
     /**
@@ -93,15 +92,13 @@ class AdminCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd(json_encode($request));
         $entity = Course::where('id', $id)->first();
         $entity->name = $request->input('course_name');
         $entity->description = $request->input('course_desc');
         $file       = $request->file('file_course');
-        $fileName   = $file->getClientOriginalName();
-        $request->file('file_course')->move("videos/", $fileName);
+        $fileName   = md5($file->getClientOriginalName() . microtime()) . '.mp4';
+        $request->file('file_course')->move("storage/videos/", $fileName);
         $entity->video_path = $fileName;
-
         $entity->save();
         $request->session()->flash('success', $entity->name.' edited successfully!');
         return redirect()->action('Admin\AdminCourseController@index');
@@ -115,7 +112,6 @@ class AdminCourseController extends Controller
      */
     public function destroy($id)
     {
-
         Course::find($id)->delete();
         return redirect()->route('course.index')
                   ->with('success','Course deleted successfully');

@@ -14,14 +14,20 @@
                       <div class="box-title">
                           <h3>{{$course->name}}</h3>
                       </div>
-                      <div class="box-content">
-                          <p>{{$course->description}}</p>
+                      <div class="box-content" style="height: 135px;">
+                          <p style="word-wrap: break-word;">{{$course->description}}</p>
                       </div>
                       <div class="box-button">
                           <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="{{url('/topics/'.$course->topics_id.'/course/'.$course->id)}}">ENTER COURSE</a>
                       </div>
                   </div>
                 @endforeach
+              </div>
+              <ul class="pagination">
+                {{$courses->links()}}
+              </ul>
+              <div class="box-button">
+                  <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/')}}"><i class="material-icons left" >dashboard</i>BACK</a>
               </div>
           </div>
       </div>

@@ -12,6 +12,16 @@ class Exam extends Model
     public $timestamps=true;
     use SoftDeletes;
 
+      public function course()
+     {
+         return $this->belongsTo('App\Course','course_id');
+     }
+
+     public static function course1()
+    {
+        return $this->belongsTo('App\Course','course_id');
+    }
+
     /**
      * The attributes that should be mutated to dates.
      *
@@ -24,5 +34,5 @@ class Exam extends Model
      *
      * @var string
      */
-    protected $table="course";
+    protected $table="exam";
 }

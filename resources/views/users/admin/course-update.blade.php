@@ -14,7 +14,7 @@
                     <div class="box-title">
                         <h3>Update Course</h3>
                     </div>
-                  
+
                     <div class="box-content ">
                         {{--<div class="input-field col s12">--}}
                             {{--<select>--}}
@@ -34,13 +34,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="course_name" name="course_name" type="text" value="{{ $value->name }}" required minlength="10" maxlength="25" length="25">
+                                        <input id="course_name" name="course_name" type="text" value="{{ $value->name }}" required minlength="5" maxlength="40" length="40">
                                         <label for="course_name">Course Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <textarea id="course_desc" name="course_desc" class="materialize-textarea" required minlength="50" maxlength="150" length="150">{{ $value->description }}</textarea>
+                                        <textarea id="course_desc" name="course_desc" class="materialize-textarea" required minlength="25" maxlength="150" length="150">{{ $value->description }}</textarea>
                                         <label for="course_desc">Course Description</label>
                                     </div>
                                 </div>

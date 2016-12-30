@@ -12,34 +12,30 @@
                         <h3>Review Exam Result</h3>
                     </div>
                     <div class="box-content ">
-                    	 <div class="input-field col s3">
-                            <select>
-                                <option value="1">Photoshop</option>
-                                <option value="2">Illustrator</option>
-                            </select>
-                            <label style="margin-left:-11px; font-size:16px;">Course</label>
+                      <div class="row">
+                          <div class="col s12">
+                              <ul class="tabs">
+                                  <li class="tab col s6"><a class="active" href="#exam-psd">Photoshop</a>
+                                  </li>
+                                  <li class="tab col s6"><a href="#exam-ills">Ilustrator</a>
+                                  </li>
+                              </ul>
+                          </div>
                         </div>
 
-                        <div class="input-field col s6"  style="margin-top:25px;">
-                             <select>
-                                 <option value="1">Course 1</option>
-                                 <option value="2">Course 2</option>
-                             </select>
-                             <label style="margin-left:-11px; font-size:16px;">Sub-Course</label>
-                         </div>
+                        <div id="exam-psd" class="col s12">
+                            <br>
+                                <table class="responsive-table centered striped">
+                                  <thead>
+                               <tr>
+                                   <th data-field="name"  style="width:300px;">Name</th>
+                                   <th data-field="submit_time"  style="width:250px;">Submit Time</th>
+                                   <th data-field="del">Delete</th>
+                                   <th data-field="download">Download</th>
+                               </tr>
+                           </thead>
 
-
-                        <table class="responsive-table centered striped">
-                            <thead>
-                                <tr>
-                                    <th data-field="name"  style="width:300px;">Name</th>
-                                    <th data-field="submit_time"  style="width:250px;">Submit Time</th>
-                                    <th data-field="del">Delete</th>
-                                    <th data-field="download">Download</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
+                                    <tbody>
                                 <tr>
                                     <td>Angelica</td>
                                     <td>25/08/2016</td>
@@ -60,12 +56,50 @@
                                     <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
                                 </tr>
                             </tbody>
-                        </table>
+
+                                  </table>
+                        </div>
+
+                        <div id="exam-ills" class="col s12">
+                            <br>
+                                <table class="responsive-table centered striped">
+                                  <thead>
+                                     <tr>
+                                         <th data-field="name"  style="width:300px;">Name</th>
+                                         <th data-field="submit_time"  style="width:250px;">Submit Time</th>
+                                         <th data-field="del">Delete</th>
+                                         <th data-field="download">Download</th>
+                                     </tr>
+                                  </thead>
+
+                                    <tbody>
+                                  <tr>
+                                      <td>Angelica</td>
+                                      <td>25/08/2016</td>
+                                      <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
+                                      <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+
+                                  </tr>
+                                  <tr>
+                                      <td>Gatot</td>
+                                      <td>27/08/2016</td>
+                                      <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
+                                      <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Togar Pardamean Sitorus</td>
+                                      <td>29/08/2016</td>
+                                      <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">delete</i></a></td>
+                                      <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                                  </tr>
+                              </tbody>
+                                  </table>
+                        </div>
                     </div>
                     <div class="box-button ">
                         <div class="row">
                             <a class="waves-effect waves-light btn grey darken-3" style="width:180px;" href="{{url('/dashboard#admin-exam')}}"><i class="material-icons left">dashboard</i>Back</a>
-                            <a class="waves-effect waves-light btn red darken-4" style="width:180px;" href="{{url('/manage/exam/add')}}"><i class="material-icons left">add</i>Upload</a>
+                          
                         </div>
                     </div>
                 </div>

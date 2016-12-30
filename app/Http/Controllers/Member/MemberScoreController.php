@@ -16,7 +16,7 @@ class MemberScoreController extends Controller
      */
     public function index()
     {
-        //
+       return view('users.member.scorelist-view');
     }
 
     /**

@@ -355,7 +355,7 @@ textarea.materialize-textarea:focus:not([readonly]) + label{
 }
 
 .red.darken-4 {
-    width: 150px;
+    width: 155px;
 }
 
 #fixedbutton {
@@ -594,6 +594,14 @@ input:not([type]).invalid+label:after, input:not([type]):focus.invalid+label:aft
 		display: inline-block;
 		width: 300px;
 		border-radius:3px;
-		margin-top: 25px;
+		margin-top: 20px;
 
+}
+
+table{
+    table-layout: fixed;
+}
+
+td{
+    word-wrap:break-word
 }

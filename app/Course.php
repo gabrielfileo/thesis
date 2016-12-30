@@ -12,6 +12,11 @@ class Course extends Model
     public $timestamps=true;
     use SoftDeletes;
 
+    public function label()
+   {
+       return $this->hasMany('App\Exam','id');
+   }
+
     /**
      * The attributes that should be mutated to dates.
      *

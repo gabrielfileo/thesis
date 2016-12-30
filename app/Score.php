@@ -24,5 +24,5 @@ class Score extends Model
      *
      * @var string
      */
-    protected $table="course";
+    protected $table="score";
 }

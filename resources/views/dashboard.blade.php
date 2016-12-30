@@ -146,7 +146,7 @@
 
        <div class="box-user">
            <div class="box-title">
-               <h2>Dashboard - {{Auth::user()->name}}</h2>
+               <h2>Dashboard</h2>
            </div>
            <blockquote>
                Welcome, {{Auth::user()->name}}.
@@ -181,7 +181,7 @@
                    <br>
                    <div class="row">
                        <div class="col s3">
-                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="{{url('/exam')}}">View Exam List</a>
+                           <a class="waves-effect waves-light btn red darken-4" style="width:260px;" href="{{url('/exam/view')}}">View Exam List</a>
                        </div>
 
                        <div class="col s9">

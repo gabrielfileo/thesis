@@ -30,6 +30,9 @@
                   <a href="{{url('/topics/2')}}" class="waves-effect waves-light btn red darken-4" style="width: 100%;">ENTER COURSE</a>
               </div>
           </div>
+          <div class="box-button">
+              <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('dashboard/')}}"><i class="material-icons left" >dashboard</i>BACK</a>
+          </div>
       </div>
   </div>
 </div>

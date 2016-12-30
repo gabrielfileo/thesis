@@ -39,12 +39,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/manage/exam', 'Admin\AdminExamController@index');
     Route::get('/manage/exam/add', 'Admin\AdminExamController@create');
-    Route::get('/manage/exam/add/save', 'Admin\AdminExamController@store');
+    Route::post('/manage/exam/add/save', 'Admin\AdminExamController@store');
+
     Route::get('/manage/exam/review', 'Admin\AdminExamController@review');
     Route::get('/manage/exam/edit', 'Admin\AdminExamController@edit');
 
     Route::get('/manage/score', 'Admin\AdminScoreController@index');
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');
+    Route::post('/manage/score/save', 'Admin\AdminScoreController@store');
 
     Route::get('/manage/trainee', 'Admin\AdminTraineeController@index');
     Route::get('/manage/trainee/add', 'Admin\AdminTraineeController@create');
@@ -55,7 +57,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/topics', 'Member\MemberTopicsController@index');
     Route::get('/topics/{id}', 'Member\MemberCourseController@index');
     Route::get('/topics/{id1}/course/{id2}', 'Member\MemberCourseController@show');
-    Route::get('/topics/{id1}/course/{id2}/exam', 'Member\MemberExamController@index');
+    Route::get('/topics/{id1}/course/{id2}/exam', 'Member\MemberExamController@show');
+    Route::get('/exam/view', 'Member\MemberExamController@index');
     Route::get('/exam/upload', 'Member\MemberExamController@upload');
     Route::get('/score', 'Member\MemberScoreController@index');
 
@@ -65,4 +68,5 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['prefix' => 'ajax'], function () {
     Route::post('courses', array('as' => 'ajaxCourseList', 'uses' => 'AjaxController@fetchCourseBasedOnID'));
     Route::post('users', array('as' => 'ajaxUserList', 'uses' => 'AjaxController@fetchUser'));
+    Route::post('exams', array('as' => 'ajaxExamList', 'uses' => 'AjaxController@fetchExamBasedOnID'));
 });

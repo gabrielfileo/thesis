@@ -2,90 +2,66 @@
 @section('title','View Score List')
 @section('content')
 
-      <div id="content">
+  <div id="content">
 
-          <div class="box-course-content">
-              <div class="box-title">
-                  <h2>Adobe Illustrator</h2>
-              </div>
-              <div class="box-content clearfix">
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 1</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
+      <div class="box">
+          <div class="box-title">
+              <h2>{{Auth::user()->name}}</h2>
+          </div>
+          <div class="box-content-material clearfix">
+              <div class="box-trainee-view clearfix">
+                  <div class="box-title ">
+                      <h3>Your Score</h3>
                   </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 2</h3>
+                  <div class="box-content ">
+                     <div class="input-field col s12">
+                          <select>
+                              <option value="1">Photoshop</option>
+                              <option value="2">Illustrator</option>
+                          </select>
+                          <label style="margin-left:-11px; font-size:16px;">Course</label>
                       </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 3</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 4</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 5</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <div class="box2">
-                      <div class="box-title">
-                          <h3>Course 6</h3>
-                      </div>
-                      <div class="box-content">
-                          <p>Adobe Illustrator was first developed for the Apple Macintosh in December 1986 (shipping in January 1987) as a commercialization of Adobe's in-house font development software and PostScript file format.</p>
-                      </div>
-                      <div class="box-button">
-                          <a class="waves-effect waves-light btn red darken-4" style="width: 100%;" href="course-ills-main.html">ENTER COURSE</a>
-                      </div>
-                  </div>
-                  <ul class="pagination">
-                    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                    <li class="active"><a href="#!">1</a></li>
-                    <li class="waves-effect"><a href="#!">2</a></li>
-                    <li class="waves-effect"><a href="#!">3</a></li>
-                    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-                  </ul>
 
+                      <table class="responsive-table centered striped">
+                          <thead>
+                              <tr>
+                                  <th data-field="course"  style="width:150px;">Course</th>
+                                  <th data-field="score"  style="width:150px;">Score</th>
+                                  <th data-field="comment">Comment</th>
+                              </tr>
+                          </thead>
+
+                          <tbody>
+                              <tr>
+                                  <td>Course 1</td>
+                                  <td>85</td>
+                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+
+                              </tr>
+                              <tr>
+                                  <td>Course 2</td>
+                                  <td>83</td>
+                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+
+                              </tr>
+                              <tr>
+                                  <td>Course 3</td>
+                                  <td>88</td>
+                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="box-button ">
+                      <div class="row">
+                          <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-reports')}}"><i class="material-icons right">dashboard</i>Back</a>
+                  </div>
               </div>
           </div>
       </div>
+  </div>
+
 @endsection
 
 @section('script')

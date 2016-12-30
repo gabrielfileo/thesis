@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\User;
+use App\Score;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -39,7 +40,16 @@ class AdminScoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entity = new Score();
+        $entity->name = $request->input("course_name");
+        $entity->description = $request->input("course_desc");
+        $entity->topics_id =$request->input("topics_id");
+       // $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
+        //validate video masih error
+
+        $entity->save();
+        $request->session()->flash('status', 'New data submitted successfully!');
+        return view('users/Admin/score-add');
     }
 
     /**

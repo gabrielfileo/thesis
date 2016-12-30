@@ -11,14 +11,21 @@
                     <div class="box-title">
                         <h3>Upload New Exam</h3>
                     </div>
+                    <div class="box-succeed">
+                      <p style="color:white; text-align:center;">
+                        @if(Session::has("status"))
+                            {{Session::get("status")}}
+                        @endif
+                      </p>
+                    </div>
+
                     <div class="box-content ">
                         <div class="row">
-                            <form class="col s12" id="topics" name="topics_id" style="padding:0 0">
-                            {{ Form::open(['url' => '/manage/exam/add/save']) }}
+                            <form class="col s12" method="POST" action="{{url('/manage/exam/add/save')}}" enctype="multipart/form-data" style="padding:0 0">
                                 {{csrf_field()}}
                                 <div class="row">
                                     <div class="input-field col s12" style="padding:0 0">
-                                        <select id="topic_selection" class="input-opt">
+                                        <select id="topic_selection" name="topics_id" class="input-opt">
                                             <option value="1">Photoshop</option>
                                             <option value="2">Illustrator</option>
                                         </select>
@@ -29,11 +36,10 @@
 
 
                                 <div class="row">
-                                    <div class="input-field col s12" id="course" name="course_id" style="padding:0 0">
-                                        <select class="course_selection" style="height:50px !important;">
-
+                                    <div class="input-field col s12" id="course"  style="padding:0 0">
+                                        <select name="course_id" class="course_selection" style="height:50px !important;">
+                                            {{--courselist ajax goes here--}}
                                         </select>
-
                                         <label style="margin-left:-11px; font-size:16px; margin-top:-10px;">Sub-Course</label>
                                     </div>
                                 </div>
@@ -82,7 +88,7 @@
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-exam')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                     </div>
-                    {{ Form::close() }}
+                  </form>
                 </div>
             </div>
         </div>

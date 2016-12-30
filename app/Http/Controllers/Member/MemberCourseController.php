@@ -17,7 +17,7 @@ class MemberCourseController extends Controller
      */
     public function index($id)
     {
-        $courses = Course::where('topics_id',$id)->orderBy('id','asc')->get();
+        $courses = Course::where('topics_id',$id)->orderBy('id','asc')->simplePaginate(6);
         return view('users.Member.courselist-view')->with('courses', $courses);
     }
 

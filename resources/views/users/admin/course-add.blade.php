@@ -15,7 +15,7 @@
                         <h3>Upload New Course</h3>
                     </div>
 
-                    {{--Baru--}}
+                    {{--Alert Message Box--}}
                     <div class="box-succeed">
                       <p style="color:white; text-align:center;">
                         @if(Session::has("status"))
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input id="course_name" name="course_name" type="text" required minlength="5" maxlength="25" length="25">
+                                        <input id="course_name" name="course_name" type="text" required minlength="5" maxlength="40" length="40">
                                         <label for="course_name">Course Name</label>
                                     </div>
                                 </div>

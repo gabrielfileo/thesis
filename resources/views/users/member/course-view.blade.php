@@ -1,8 +1,9 @@
 @extends('layouts.app')
-@section('title','COURSE NAME HERE')
+@section('title')
+  {{$value->name}}
+@endsection
 @section('content')
   <div id="content">
-
          <div class="box-course-content">
              <div class="box-title">
                  <h2> @if($value->topics_id == 1) Adobe Photoshop
@@ -23,10 +24,12 @@
                          <p>{{ $value->description }}</p>
                      </div>
                      <div class="box-button">
-                         <a class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;;"><i class="material-icons left">person_pin</i>ASK</a>
-                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" disabled><i class="material-icons left">skip_previous</i>PREV</a>
+                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/'.$value->topics_id)}}"><i class="material-icons left" >dashboard</i>BACK</a>
+                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" ><i class="material-icons left">skip_previous</i>PREV</a>
                          <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" ><i class="material-icons right">skip_next</i>NEXT</a>
-                         <a href="exam-ills-main.html" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;;"><i class="material-icons left">mode_edit</i>TEST</a>
+                         <a class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;"><i class="material-icons left">person_pin</i>ASK</a>
+                         <a href="{{url('/topics/'.$value->topics_id.'/course/'.$value->id.'/exam')}}" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;" ><i class="material-icons left">mode_edit</i>TEST</a>
+
                      </div>
                  </div>
              </div>

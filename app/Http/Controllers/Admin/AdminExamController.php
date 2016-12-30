@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
-use Illuminate\Http\Request;
+use App\Exam;
 use App\Course;
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +17,12 @@ class AdminExamController extends Controller
      */
     public function index()
     {
-       return view('users/Admin/exam-view');
+        $photoshop = Exam::where('topics_id',1)->orderBy('id','asc')->get();
+        $illustrator = Exam::where('topics_id',2)->orderBy('id','asc')->get();
+        return view('users/Admin/exam-view')->with(array(
+            'photoshop' => $photoshop,
+            'illustrator' => $illustrator
+        ));;
     }
 
     public function review()
@@ -47,11 +53,10 @@ class AdminExamController extends Controller
       $entity->topics_id =$request->input("topics_id");
       $entity->course_id =$request->input("course_id");
       $entity->description =$request->input("exam_desc");
-
-      $photo       = $request->file('photo_exam');
-      $photoName   = md5($file->getClientOriginalName() . microtime()) . '.jpg';
+      $photo        = $request->file('photo_exam');
+      $photoName   = md5($photo->getClientOriginalName() . microtime()) . '.jpg';
       $request->file('photo_exam')->move("storage/photos/", $photoName);
-      $entity->photo_path = $photoName;
+      $entity->image_path = $photoName;
 
       $file       = $request->file('file_exam');
       $fileName   = md5($file->getClientOriginalName() . microtime()) . '.zip';

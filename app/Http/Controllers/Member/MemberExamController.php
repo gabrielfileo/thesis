@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-
+use App\Exam;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class MemberExamController extends Controller
      */
     public function index()
     {
-        //
+         return view('users/Member/examlist-view');
     }
 
     /**
@@ -49,9 +49,10 @@ class MemberExamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id1, $id2)
     {
-        //
+      $value = Exam::where('topics_id',$id1)->where('course_id',$id2)->first();
+      return view('users/Member/exam-view')->with('value', $value);
     }
 
     /**

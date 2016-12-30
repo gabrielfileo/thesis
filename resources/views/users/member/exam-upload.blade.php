@@ -7,7 +7,7 @@
 
         <div class="box">
             <div class="box-title">
-                <h2>[USER NAME]</h2>
+                <h2>{{Auth::user()->name}}</h2>
             </div>
             <div class="box-content-material clearfix">
                 <div class="box-course-add clearfix">
