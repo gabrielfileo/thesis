@@ -49,13 +49,13 @@ class AdminExamController extends Controller
       $entity->description =$request->input("exam_desc");
 
       $photo       = $request->file('photo_exam');
-      $photoName   = $file->getClientOriginalName();
-      $request->file('photo_exam')->move("photos/", $photoName);
+      $photoName   = md5($file->getClientOriginalName() . microtime()) . '.jpg';
+      $request->file('photo_exam')->move("storage/photos/", $photoName);
       $entity->photo_path = $photoName;
 
       $file       = $request->file('file_exam');
-      $fileName   = $file->getClientOriginalName();
-      $request->file('file_exam')->move("files/", $fileName);
+      $fileName   = md5($file->getClientOriginalName() . microtime()) . '.zip';
+      $request->file('file_exam')->move("storage/files/", $fileName);
       $entity->file_path = $fileName;
 
       $entity->save();

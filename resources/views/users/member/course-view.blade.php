@@ -16,7 +16,7 @@
                      </div>
                      <div class="box-content">
                          <video class="responsive-video" controls>
-                             <source src="{{url('videos/'.$value->video_path)}}" type="video/mp4">
+                             <source src="{{url('storage/videos/'.$value->video_path)}}" type="video/mp4">
                                <body>
                           </video>
                          <div class="divider vivid"></div>
