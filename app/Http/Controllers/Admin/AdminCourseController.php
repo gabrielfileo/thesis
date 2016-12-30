@@ -93,6 +93,7 @@ class AdminCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd(json_encode($request));
         $entity = Course::where('id', $id)->first();
         $entity->name = $request->input('course_name');
         $entity->description = $request->input('course_desc');

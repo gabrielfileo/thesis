@@ -105,7 +105,6 @@
                   }
               })
               .done(function (data) {
-
                   $(".course_selection option").remove();
                   $(".course_selection").material_select('destroy');
                   $.each(JSON.parse(data), function (index, ccourse) {

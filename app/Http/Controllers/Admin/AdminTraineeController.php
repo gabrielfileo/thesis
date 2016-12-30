@@ -18,7 +18,7 @@ class AdminTraineeController extends Controller
     public function index()
     {
         $users = User::where('role', 'trainee')->orderBy('name', 'asc')->get();
-        return view('users.Admin.trainee-view')->with('trainees', $users);
+        return view('users/admin/trainee-view')->with('trainees', $users);
     }
 
     /**
@@ -86,9 +86,26 @@ class AdminTraineeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-
+      $trainee_id = $request->input('trainee_id');
+      $entity = User::where('role','trainee')->where('id', $trainee_id)->first();
+      if (Hash::check($request->input("old_password"), $entity->password ) != true){
+          $request->session()->flash('error', 'Incorrect old password!');
+          return redirect('/manage/trainee/edit');
+      }
+      elseif ($request->input("cpassword") != $request->input("new_password")){
+           $request->session()->flash('error', 'New password is different!');
+           return redirect('/manage/trainee/edit');
+      }
+      else{
+        if($request->input("new_password")!=NULL && $request->input("cpassword")!=NULL){
+          $entity->password = Hash::make($request->input('new_password')); //validate  not to change password if new_password and cpassword is empty
+        }
+      $entity->save();
+      $request->session()->flash('success', $entity->name.' edited successfully!');
+      return redirect()->action('Admin\AdminTraineeController@index');
+      }
     }
 
     /**

@@ -64,5 +64,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'ajax'], function () {
     Route::post('courses', array('as' => 'ajaxCourseList', 'uses' => 'AjaxController@fetchCourseBasedOnID'));
+    Route::post('users', array('as' => 'ajaxUserList', 'uses' => 'AjaxController@fetchUser'));
 });
-
