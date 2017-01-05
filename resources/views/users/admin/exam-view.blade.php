@@ -13,6 +13,18 @@
                     </div>
                     <div class="box-content ">
                       <div class="row">
+                          <div class="box-succeed">
+                            <p style="color:white; text-align:center;">
+                              @if(Session::has("error"))
+                                {{Session::get("error")}}
+                              @endif
+                              @if(Session::has("success"))
+                                  {{Session::get("success")}}
+                              @endif
+                            </p>
+                          </div>
+                      </div>
+                      <div class="row">
                           <div class="col s12">
                               <ul class="tabs">
                                   <li class="tab col s6"><a class="active" href="#exam-psd">Photoshop</a>
@@ -37,24 +49,24 @@
                                   </thead>
 
                                   <tbody>
-                                    @foreach($photoshop as $exam)
+                                    @foreach($photoshop as $ps)
                                         <tr>
 
-                                            <td>{{$exam->course->name}}</td>
-                                            <td>{{$exam->created_at}}</td>
-                                            <td><a class="waves-effect waves-teal btn-flat" href="{{url('/manage/exam/edit/'.$exam->id)}}"><i class="material-icons">mode_edit</i></a></td>
+                                            <td>{{$ps->course->name}}</td>
+                                            <td>{{$ps->created_at}}</td>
+                                            <td><a class="waves-effect waves-teal btn-flat" href="{{url('/manage/exam/edit/'.$ps->id)}}"><i class="material-icons">mode_edit</i></a></td>
                                             <td>
 
-                                              <button data-target="delete{{$exam->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
-                                              <div id="delete{{$exam->id}}" class="modal" style="width: 20%" >
+                                              <button data-target="delete{{$ps->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
+                                              <div id="delete{{$ps->id}}" class="modal" style="width: 20%" >
                                                 <div class="modal-content" >
-                                                  <h2>Delete "{{$exam->name}}"</h2>
+                                                  <h2>Delete "{{$ps->course->name}}"</h2>
                                                   <p>Are you sure?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                   <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
-                                                {{--  {!! Form::open(array(['method' => 'DELETE','route' => ['course.destroy', $exam->id],'style'=>'display:inline'])) !!} --}}
-                                                  {{ Form::open(array('url' => '/manage/exam/delete/'.$exam->id,'style'=>'display:inline')) }}
+                                                {{--  {!! Form::open(array(['method' => 'DELETE','route' => ['course.destroy', $ps->id],'style'=>'display:inline'])) !!} --}}
+                                                  {{ Form::open(array('url' => '/manage/exam/delete/'.$ps->id,'style'=>'display:inline')) }}
                                                   {{ Form::hidden('_method', 'DELETE') }}
                                                   {{ Form::submit('Yes', array('class' => 'btn btn-flat')) }}
                                                   {{ Form::close() }}
@@ -83,24 +95,24 @@
                                   </thead>
 
                                   <tbody>
-                                    @foreach($illustrator as $exam)
+                                    @foreach($illustrator as $ills)
                                         <tr>
-                                            <td>{{$exam->course->name}}</td>
-                                            <td>{{$exam->created_at}}</td>
-                                            <td><a class="waves-effect waves-teal btn-flat" href="{{url('/manage/exam/edit/'.$exam->id)}}"><i class="material-icons">mode_edit</i></a></td>
+                                            <td>{{$ills->track->name}}</td>
+                                            <td>{{$ills->created_at}}</td>
+                                            <td><a class="waves-effect waves-teal btn-flat" href="{{url('/manage/exam/edit/'.$ills->id)}}"><i class="material-icons">mode_edit</i></a></td>
                                             <td>
 
-                                              <button data-target="delete{{$exam->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
-                                              <div id="delete{{$exam->id}}" class="modal" style="width: 20%" >
+                                              <button data-target="delete{{$ills->id}}" class="waves-effect waves-red darken-4 btn-flat modal-trigger"><i class="material-icons">delete</i></button>
+                                              <div id="delete{{$ills->id}}" class="modal" style="width: 20%" >
                                                 <div class="modal-content" >
-                                                  <h2>Delete "{{$exam->name}}"</h2>
+                                                  <h2>Delete "{{$ills->track->name}}"</h2>
                                                   <p>Are you sure?</p>
                                                 </div>
 
                                                 <div class="modal-footer">
                                                   <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
-                                                {{--  {!! Form::open(array(['method' => 'DELETE','route' => ['course.destroy', $exam->id],'style'=>'display:inline'])) !!} --}}
-                                                  {{ Form::open(array('url' => '/manage/exam/delete/'.$exam->id,'style'=>'display:inline')) }}
+                                                {{--  {!! Form::open(array(['method' => 'DELETE','route' => ['course.destroy', $ills->id],'style'=>'display:inline'])) !!} --}}
+                                                  {{ Form::open(array('url' => '/manage/exam/delete/'.$ills->id,'style'=>'display:inline')) }}
                                                   {{ Form::hidden('_method', 'DELETE') }}
                                                   {{ Form::submit('Yes', array('class' => 'btn btn-flat')) }}
                                                   {{ Form::close() }}
@@ -131,6 +143,11 @@
       $(document).ready(function() {
           $(".button-collapse ").sideNav();
           $('.collapsible').collapsible();
+          $('select').material_select();
+          Materialize.updateTextFields();
+
+          // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
       });
 
       $('.datepicker').pickadate({
@@ -138,11 +155,6 @@
           selectYears: 15 // Creates a dropdown of 15 years to control year
       });
 
-      $(document).ready(function() {
-          $('select').material_select();
-      });
-      $(document).ready(function() {
-          Materialize.updateTextFields();
-      });
+
   </script>
 @endsection

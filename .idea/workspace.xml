@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/users/admin/exam-add.blade.php" line="116" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a43a57c-ca13-4213-8138-169e0543340d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-    </list>
+    <list default="true" id="7a43a57c-ca13-4213-8138-169e0543340d" name="Default" comment="" />
     <ignored path="thesis.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -436,12 +432,12 @@
       <workItem from="1482747275734" duration="11064000" />
       <workItem from="1482932140974" duration="16307000" />
       <workItem from="1483009180372" duration="996000" />
-      <workItem from="1483524326679" duration="6026000" />
+      <workItem from="1483524326679" duration="6029000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104079000" />
+    <option name="totallyTimeSpent" value="104082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,7 +449,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="35" width="1378" height="744" extended-state="0" />
+    <frame x="0" y="35" width="1378" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />

@@ -16,13 +16,6 @@
                     </div>
 
                     <div class="box-content ">
-                        {{--<div class="input-field col s12">--}}
-                            {{--<select>--}}
-                                {{--<option value="1">Photoshop</option>--}}
-                                {{--<option value="2">Illustrator</option>--}}
-                            {{--</select>--}}
-                            {{--<label style="margin-left:-11px; font-size:16px;">Course</label>--}}
-                        {{--</div>--}}
 
                         <div class="row">
                                 <div class="row">

@@ -22,7 +22,7 @@ class AdminExamController extends Controller
         return view('users/Admin/exam-view')->with(array(
             'photoshop' => $photoshop,
             'illustrator' => $illustrator
-        ));;
+        ));
     }
 
     public function review()
@@ -87,7 +87,8 @@ class AdminExamController extends Controller
      */
     public function edit($id)
     {
-          return view('users/Admin/exam-update');
+          $exam = Exam::where('id', $id)->first();
+          return view('users/Admin/exam-update')->with('value', $exam);
     }
 
     /**
@@ -99,7 +100,15 @@ class AdminExamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $entity = Exam::where('id', $id)->first();
+      $entity->description = $request->input('exam_desc');
+      $file       = $request->file('file_exam');
+      $fileName   = md5($file->getClientOriginalName() . microtime()) . '.zip';
+      $request->file('file_exam')->move("storage/files/", $fileName);
+      $entity->file_path = $fileName;
+      $entity->save();
+      $request->session()->flash('success', $entity->course->name.' edited successfully!');
+      return redirect()->action('Admin\AdminExamController@index');
     }
 
     /**
@@ -110,6 +119,8 @@ class AdminExamController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Exam::find($id)->delete();
+      return redirect()->action('Admin\AdminExamController@index')
+                ->with('success','Course deleted successfully');
     }
 }
