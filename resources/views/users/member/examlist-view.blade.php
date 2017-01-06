@@ -15,43 +15,97 @@
                     <h3>Download Exam</h3>
                 </div>
                 <div class="box-content ">
-                   <div class="input-field col s12">
-                        <select>
-                            <option value="1">Photoshop</option>
-                            <option value="2">Illustrator</option>
-                        </select>
-                        <label style="margin-left:-11px; font-size:16px;">Course</label>
-                    </div>
+                  <div class="row">
+                      <div class="col s12">
+                          <ul class="tabs">
+                              <li class="tab col s6"><a class="active" href="#view-psd">Photoshop</a>
+                              </li>
+                              <li class="tab col s6"><a href="#view-ills">Illustrator</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
 
+                  <div id="view-psd" class="col s12">
                     <table class="responsive-table centered striped">
                         <thead>
                             <tr>
-                                <th data-field="course"  style="width:150px;">Course</th>
-                                <th data-field="uploaded"  style="width:150px;">Uploaded on</th>
-                                <th data-field="download">Download</th>
+                                <th data-field="course"  style="width:300px;"> Course Name</th>
+                                <th data-field="date"  style="width:150px;">Upload Date</th>
+                                <th data-field="desc" style="width:500px;">Description</th>
+                                <th data-field="download" style="width:150px;">Problems</th>
+                                <th data-field="download" style="width:150px;">Answer</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>Course 1</td>
-                                <td>25/08/2016</td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                              <td>Course 1</td>
+                              <td>85</td>
+                              <td>-</td>
+                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
 
                             </tr>
                             <tr>
-                                <td>Course 2</td>
-                                <td>27/08/2016</td>
+                                <td>Course 1</td>
+                                <td>83</td>
+                                <td>-</td>
+                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
                                 <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
                             </tr>
                             <tr>
-                                <td>Course 3</td>
-                                <td>29/08/2016</td>
+                                <td>Course 1</td>
+                                <td>88</td>
+                                <td>-</td>
+                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
                                 <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
                             </tr>
                         </tbody>
                     </table>
+                  </div>
+
+                  <div id="view-ills" class="col s12">
+                    <table class="responsive-table centered striped">
+                        <thead>
+                            <tr>
+                                <th data-field="course"  style="width:300px;"> Course Name</th>
+                                <th data-field="date"  style="width:150px;">Upload Date</th>
+                                <th data-field="desc" style="width:500px;">Description</th>
+                                <th data-field="download" style="width:150px;">Problems</th>
+                                <th data-field="download" style="width:150px;">Answer</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                              <td>Course 1</td>
+                              <td>85</td>
+                              <td>-</td>
+                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+
+                            </tr>
+                            <tr>
+                                <td>Course 1</td>
+                                <td>83</td>
+                                <td>-</td>
+                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Course 1</td>
+                                <td>88</td>
+                                <td>-</td>
+                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+
                 </div>
+
                 <div class="box-button ">
                     <div class="row">
                         <a class="waves-effect waves-light btn grey darken-3" style="width:180px;" href="{{url('dashboard')}}"><i class="material-icons left">dashboard</i>Back</a>

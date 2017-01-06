@@ -14,44 +14,77 @@
                       <h3>Your Score</h3>
                   </div>
                   <div class="box-content ">
-                     <div class="input-field col s12">
-                          <select>
-                              <option value="1">Photoshop</option>
-                              <option value="2">Illustrator</option>
-                          </select>
-                          <label style="margin-left:-11px; font-size:16px;">Course</label>
-                      </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab col s6"><a class="active" href="#score-psd">Photoshop</a>
+                                </li>
+                                <li class="tab col s6"><a href="#score-ills">Illustrator</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div id="score-psd" class="col s12">
                       <table class="responsive-table centered striped">
                           <thead>
                               <tr>
-                                  <th data-field="course"  style="width:150px;">Course</th>
+                                  <th data-field="course"  style="width:300px;"> Course Name</th>
                                   <th data-field="score"  style="width:150px;">Score</th>
-                                  <th data-field="comment">Comment</th>
+                                  <th data-field="comms" style="width:500px;">Comments</th>
                               </tr>
                           </thead>
 
                           <tbody>
                               <tr>
+                                <td>Course 1</td>
+                                <td>85</td>
+                                <td>-</td>
+
+                              </tr>
+                              <tr>
                                   <td>Course 1</td>
-                                  <td>85</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-
-                              </tr>
-                              <tr>
-                                  <td>Course 2</td>
                                   <td>83</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-
+                                  <td>-</td>
                               </tr>
                               <tr>
-                                  <td>Course 3</td>
+                                  <td>Course 1</td>
                                   <td>88</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-
+                                  <td>-</td>
                               </tr>
                           </tbody>
                       </table>
+                    </div>
+
+                    <div id="score-ills" class="col s12">
+                      <table class="responsive-table centered striped">
+                          <thead>
+                              <tr>
+                                  <th data-field="course"  style="width:300px;"> Course Name</th>
+                                  <th data-field="score"  style="width:150px;">Score</th>
+                                  <th data-field="comms" style="width:500px;">Comments</th>
+                              </tr>
+                          </thead>
+
+                          <tbody>
+                              <tr>
+                                <td>Course 1</td>
+                                <td>85</td>
+                                <td>-</td>
+                              </tr>
+                              <tr>
+                                  <td>Course 1</td>
+                                  <td>83</td>
+                                  <td>-</td>
+                              </tr>
+                              <tr>
+                                  <td>Course 1</td>
+                                  <td>88</td>
+                                  <td>-</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
                   </div>
                   <div class="box-button ">
                       <div class="row">

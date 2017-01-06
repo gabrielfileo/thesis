@@ -16,7 +16,7 @@
                    </div>
                    <div class="box-content">
                        <div class="valign-wrapper">
-                         <h5 class="valign"><img class="materialboxed" width="300" src="{{url('storage/photos/'.$value->image_path)}}" ></h5>
+                         <p class="valign" style="text-align: center;"><img class="materialboxed" width="300" src="{{url('storage/photos/'.$value->image_path)}}"></p>
                        </div>
                        <div class="divider vivid"></div>
                        <p>{{$value->course->description}}</p>

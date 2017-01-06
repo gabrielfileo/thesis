@@ -59,7 +59,8 @@
 
                         <div class="row">
                             <a><button class="waves-effect waves-light btn red darken-4" data-target="modal1" id="submitForm" type="submit"><i class="material-icons left">done</i>Save</button></a>
-                            <a class="waves-effect waves-light btn grey darken-3"><i class="material-icons left">replay</i>Reset</a>
+                            <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
+                            <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
                         <div id="modal1" class="modal bottom-sheet">
                             <div class="modal-content">

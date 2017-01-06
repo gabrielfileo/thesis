@@ -46,7 +46,7 @@ font-weight:400;
     margin-bottom: 20px;
 	text-align: center;
     font-weight: 500;
-	font-size:24px;
+	font-size:20px;
 }
 
 .card-panel {
@@ -106,7 +106,7 @@ a {
     cursor: initial;
     pointer-events: none;
     color: rgba(0,0,0,0.54);
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 48px;
 }
@@ -573,11 +573,15 @@ input:not([type]).invalid+label:after, input:not([type]):focus.invalid+label:aft
     border-radius: 2px;
     will-change: top, opacity;
 }
-
-.modal .open{
-		top: 40%;
+/*
+.modal.open{
+		top: 40% !important;
 }
 
+.modal.close{
+		top: 40% !important;
+}
+*/
 /*Baru*/
 .box-warn{
 		background-color:#ce152b;

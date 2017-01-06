@@ -42,7 +42,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/manage/exam/add/save', 'Admin\AdminExamController@store');
 
     Route::get('/manage/exam/review', 'Admin\AdminExamController@review');
-    Route::get('/manage/exam/edit', 'Admin\AdminExamController@edit');
+    Route::get('/manage/exam/edit/{id}', 'Admin\AdminExamController@edit');
+    Route::post('/manage/exam/edit/{id}/update', 'Admin\AdminExamController@update');
+    Route::delete('/manage/exam/delete/{id}','Admin\AdminExamController@destroy');
 
     Route::get('/manage/score', 'Admin\AdminScoreController@index');
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');

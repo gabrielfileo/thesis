@@ -17,7 +17,7 @@ class Exam extends Model
          return $this->belongsTo('App\Course','course_id');
      }
 
-     public static function course1()
+     public function track()
     {
         return $this->belongsTo('App\Course','course_id');
     }
