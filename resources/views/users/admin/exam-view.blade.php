@@ -23,6 +23,18 @@
                             </p>
                           </div>
                       <div class="row">
+                          <div class="box-succeed">
+                            <p style="color:white; text-align:center;">
+                              @if(Session::has("error"))
+                                {{Session::get("error")}}
+                              @endif
+                              @if(Session::has("success"))
+                                  {{Session::get("success")}}
+                              @endif
+                            </p>
+                          </div>
+                      </div>
+                      <div class="row">
                           <div class="col s12">
                               <ul class="tabs">
                                   <li class="tab col s6"><a class="active" href="#exam-psd">Photoshop</a>
