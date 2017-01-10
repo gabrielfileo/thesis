@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Topics;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -18,7 +19,11 @@ class MemberCourseController extends Controller
     public function index($id)
     {
         $courses = Course::where('topics_id',$id)->orderBy('id','asc')->simplePaginate(6);
-        return view('users.Member.courselist-view')->with('courses', $courses);
+        $topics_id = Topics::where('id',$id)->first();
+        return view('users.Member.courselist-view')->with(array(
+          'courses' => $courses,
+          'topics_id' =>$topics_id
+        ));
     }
 
     /**

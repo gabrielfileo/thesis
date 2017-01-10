@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title','COURSE NAME Exam')
+@section('title')
+  {{'Exam: '.$value->course->name}}
+@endsection
 @section('content')
 
 

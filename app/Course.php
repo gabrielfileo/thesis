@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Course extends Model
 {
 
-    protected $fillable=['name','description','join_date'];
+    protected $fillable=['name','description'];
     public $timestamps=true;
     use SoftDeletes;
 
@@ -17,6 +17,7 @@ class Course extends Model
        return $this->hasMany('App\Exam','id');
    }
 
+  
     /**
      * The attributes that should be mutated to dates.
      *

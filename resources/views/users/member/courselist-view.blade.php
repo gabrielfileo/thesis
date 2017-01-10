@@ -6,7 +6,7 @@
 
           <div class="box-course-content">
               <div class="box-title">
-                  <h2>Adobe Illustrator</h2>
+                  <h2>{{$topics_id->name}}</h2>
               </div>
               <div class="box-content clearfix">
                 @foreach ($courses as $key => $course)

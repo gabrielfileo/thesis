@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>DLC - @yield('title')</title>
+  <title>@yield('title') | DLC</title>
 
       <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
 
