@@ -66,8 +66,8 @@
 
             <li><a class="waves-effect" href="{{url('/account')}}">Account Setting</a>
             </li>
-            <li><a class="waves-effect" href="">Help</a>
-            </li>
+          {{--  <li><a class="waves-effect" href="">Help</a>
+            </li>--}}
             <li><a class="waves-effect" href="{{ url('/logout') }}">Log Out</a>
             </li>
         </ul>

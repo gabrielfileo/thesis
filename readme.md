@@ -1,3 +1,3 @@
-#hayang modol euy anying
+#need more issues.
 
-nb: abis git clone, composer install dulu yha di folder projectnya hehe
+#IT'S THE FINAL COUNTDOWN
