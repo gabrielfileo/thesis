@@ -12,7 +12,7 @@ class CreateExamResultTable extends Migration
      */
     public function up()
     {
-        Schema::create('result', function (Blueprint $table) {
+        Schema::create('exam_result', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('exam_id')->unsigned();
             $table->foreign('exam_id')->references('id')->on('exam');
@@ -23,7 +23,7 @@ class CreateExamResultTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('file_path');
-            $table->string('comment');
+            $table->string('comment'); //trainee comment
             $table->timestamps();
             $table->softDeletes();
 

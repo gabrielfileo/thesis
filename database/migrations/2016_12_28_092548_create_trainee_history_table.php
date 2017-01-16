@@ -12,7 +12,7 @@ class CreateTraineeHistoryTable extends Migration
      */
     public function up()
     {
-      Schema::create('history', function (Blueprint $table) {
+      Schema::create('trainee_exam_history', function (Blueprint $table) { //perlu ada modelnya nih buat ngambil filepath dari tabel exam&result
           $table->increments('id');
           $table->integer('user_id')->unsigned();
           $table->foreign('user_id')->references('id')->on('users');

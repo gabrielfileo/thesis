@@ -23,7 +23,7 @@ class CreateScoreTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('score');
-            $table->string('comment');
+            $table->string('comment'); //comment from admin
             $table->timestamps();
             $table->softDeletes();
 
