@@ -11,7 +11,7 @@
         <div class="card">
             <h1 class="title">Sign in to continue</h1>
             <form  method="POST" action="{{ url('/login') }}">
-                {{ csrf_field() }}
+                 {{ csrf_field() }}
 
                 <div class="input-container">
 

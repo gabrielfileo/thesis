@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Exam;
+use App\Course;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -76,6 +77,16 @@ class MemberExamController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function download($id)
+    {
+        $exam= Exam::where('id',$id)->first;
+        $myFile = public_path("/storage/files".$exam->file_path);
+        $headers = ['Content-Type: application/octet-stream'];
+        $newName = 'exam.rar';
+
+        return response()->download($myFile, $newName, $headers);
     }
 
     /**

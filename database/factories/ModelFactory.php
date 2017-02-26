@@ -20,7 +20,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'username' => mt_rand(111111,222222),
         'password' => bcrypt('trainee'),
         'role' => 'trainee',
-        'gender' => $faker->randomElement($array = ['Male', 'Female']),
         'join_date' => $newdate,
         'remember_token' => str_random(10),
     ];

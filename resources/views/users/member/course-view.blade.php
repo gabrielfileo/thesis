@@ -25,11 +25,16 @@
                      </div>
                      <div class="box-button">
                          <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/'.$value->topics_id)}}"><i class="material-icons left" >dashboard</i>BACK</a>
-                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" ><i class="material-icons left">skip_previous</i>PREV</a>
-                         <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" ><i class="material-icons right">skip_next</i>NEXT</a>
+                         @if($previous == null) <a disabled class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" ><i class="material-icons left">skip_previous</i>PREV</a>
+                         @else <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/'.$value->topics_id).'/course/'.$previous}}"><i class="material-icons left">skip_previous</i>PREV</a>
+                         @endif
+                         @if($next == null)  <a disabled class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;"><i class="material-icons right">skip_next</i>NEXT</a>
+                         @else <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/'.$value->topics_id).'/course/'.$next}}"><i class="material-icons right">skip_next</i>NEXT</a>
+                         @endif
                          <a class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;"><i class="material-icons left">person_pin</i>ASK</a>
-                         <a href="{{url('/topics/'.$value->topics_id.'/course/'.$value->id.'/exam')}}" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;" ><i class="material-icons left">mode_edit</i>TEST</a>
-
+                         @if($exam == null) <a disabled href="{{url('/topics/'.$value->topics_id.'/course/'.$value->id.'/exam')}}" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;" ><i class="material-icons left">mode_edit</i>TEST</a>
+                         @else <a href="{{url('/topics/'.$value->topics_id.'/course/'.$value->id.'/exam')}}" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;" ><i class="material-icons left">mode_edit</i>TEST</a>
+                         @endif
                      </div>
                  </div>
              </div>

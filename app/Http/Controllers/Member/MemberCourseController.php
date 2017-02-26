@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Exam;
 use App\Topics;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,7 @@ class MemberCourseController extends Controller
      */
     public function index($id)
     {
-        $courses = Course::where('topics_id',$id)->orderBy('id','asc')->simplePaginate(6);
+        $courses = Course::where('topics_id',$id)->orderBy('id','asc')->paginate(6);
         $topics_id = Topics::where('id',$id)->first();
         return view('users.Member.courselist-view')->with(array(
           'courses' => $courses,
@@ -55,8 +56,11 @@ class MemberCourseController extends Controller
      */
     public function show($id1, $id2)
     {
+      $previous = Course::where('topics_id',$id1)->where('id', '<', $id2)->max('id');
+      $next = Course::where('topics_id',$id1)->where('id', '>', $id2)->min('id');
+      $exam = Exam::where('topics_id',$id1)->where('course_id',$id2)->first();
       $course = Course::where('topics_id',$id1)->where('id',$id2)->first();
-      return view('users/Member/course-view')->with('value', $course);
+      return view('users/Member/course-view')->with('value', $course)->with('previous', $previous)->with('next',$next)->with('exam',$exam);
 
     }
 

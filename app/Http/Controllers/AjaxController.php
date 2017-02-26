@@ -28,7 +28,8 @@ class AjaxController extends Controller
     public function fetchExamBasedOnID(Request $request)
     {
         $topics_id = $request->input('id');
-        $exams = Exam::course1()->where('topics_id',$topics_id)->orderBy('id','asc')->get();
+
+        $exams = Exam::where('topics_id',$topics_id)->orderBy('id','asc')->get();
         //$exams_course = $exams->course->get();
         return json_encode($exams);
     }

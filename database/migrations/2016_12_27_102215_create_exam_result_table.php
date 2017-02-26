@@ -12,7 +12,7 @@ class CreateExamResultTable extends Migration
      */
     public function up()
     {
-        Schema::create('exam_result', function (Blueprint $table) {
+        Schema::create('answer', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('exam_id')->unsigned();
             $table->foreign('exam_id')->references('id')->on('exam');
@@ -37,6 +37,6 @@ class CreateExamResultTable extends Migration
      */
     public function down()
     {
-         Schema::drop('result');
+         Schema::drop('answer');
     }
 }

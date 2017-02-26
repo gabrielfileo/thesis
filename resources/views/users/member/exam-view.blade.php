@@ -21,12 +21,16 @@
                          <p class="valign" style="text-align: center;"><img class="materialboxed" width="300" src="{{url('storage/photos/'.$value->image_path)}}"></p>
                        </div>
                        <div class="divider vivid"></div>
-                       <p>{{$value->course->description}}</p>
+                       <p>{{$value->description}}</p>
                    </div>
                    <div class="box-button">
                       <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/'.$value->topics_id.'/course/'.$value->course_id)}}"><i class="material-icons left" >dashboard</i>BACK</a>
                        <a class="waves-effect waves-light btn red darken-4" style="width: 150px; border-radius:5px;;"><i class="material-icons left">person_pin</i>ASK</a>
-                       <a class="waves-effect waves-light btn teal" style="width: 200px; border-radius:5px;;"><i class="material-icons left">play_for_work</i>Download</a>
+                       {{--{{ Form::open(['method' => 'GET','route' => ['/download_exam/'.$value->id],'style'=>'display:inline']) }}--}}
+                       {{--<a><button class="waves-effect waves-light btn teal" style="width: 200px; border-radius:5px;"  type="submit"><i class="material-icons left">send</i>Download</button></a>--}}
+                        <a class="waves-effect waves-light btn teal" style="width: 200px; border-radius:5px;;" href="{{asset('/storage/files/'.$value->file_path)}}"><i class="material-icons left">play_for_work</i>Download</a>
+                        {{--{{ Form::submit('Yes', ['class' => 'btn btn-flat']) }}--}}
+                       {{--{{ Form::close() }}--}}
                        <a href="{{url('/exam/upload')}}" class="waves-effect waves-light btn red darken-4" style="width: 250px; border-radius:5px;;"><i class="material-icons left">send</i>Upload Result</a>
                    </div>
                </div>

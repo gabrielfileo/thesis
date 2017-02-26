@@ -60,6 +60,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/topics/{id}', 'Member\MemberCourseController@index');
     Route::get('/topics/{id1}/course/{id2}', 'Member\MemberCourseController@show');
     Route::get('/topics/{id1}/course/{id2}/exam', 'Member\MemberExamController@show');
+    Route::get('/download_exam/{id}', 'Member\MemberExamController@download');
+
     Route::get('/exam/view', 'Member\MemberExamController@index');
     Route::get('/exam/upload', 'Member\MemberExamController@upload');
     Route::get('/score', 'Member\MemberScoreController@index');

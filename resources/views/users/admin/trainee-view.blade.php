@@ -37,7 +37,7 @@
                                           <p>Are you sure?</p>
                                         </div>
                                         <div class="modal-footer">
-                                          <a href="" class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
+                                          <a class="modal-action modal-close waves-effect waves-red btn-flat">No</a>
                                           {{ Form::open(['method' => 'DELETE','route' => ['trainee.destroy', $trainee->id],'style'=>'display:inline']) }}
                                           {{ Form::submit('Yes', ['class' => 'btn btn-flat']) }}
                                           {{ Form::close() }}
