@@ -49,6 +49,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/manage/score', 'Admin\AdminScoreController@index');
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');
     Route::post('/manage/score/save', 'Admin\AdminScoreController@store');
+    Route::get('/manage/score/update', 'Admin\AdminScoreController@update1');
+
 
     Route::get('/manage/trainee', 'Admin\AdminTraineeController@index');
     Route::get('/manage/trainee/add', 'Admin\AdminTraineeController@create');

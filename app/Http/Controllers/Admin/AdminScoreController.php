@@ -81,6 +81,12 @@ class AdminScoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function update1()
+     {
+        return view('users.Admin.score-update');
+         //dummy
+     }
     public function update(Request $request, $id)
     {
         //
