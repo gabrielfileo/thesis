@@ -75,4 +75,5 @@ Route::group(['prefix' => 'ajax'], function () {
     Route::post('courses', array('as' => 'ajaxCourseList', 'uses' => 'AjaxController@fetchCourseBasedOnID'));
     Route::post('users', array('as' => 'ajaxUserList', 'uses' => 'AjaxController@fetchUser'));
     Route::post('exams', array('as' => 'ajaxExamList', 'uses' => 'AjaxController@fetchExamBasedOnID'));
+    Route::post('ask', array('as' => 'ajaxAskBtn', 'uses' => 'AjaxController@triggerAskBtn'));
 });

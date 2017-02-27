@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Course;
 use App\User;
 use App\Exam;
@@ -29,8 +30,23 @@ class AjaxController extends Controller
     {
         $topics_id = $request->input('id');
 
-        $exams = Exam::where('topics_id',$topics_id)->orderBy('id','asc')->get();
+        $exams = DB::table('exam')->join('course', 'exam.course_id', '=', 'course.id')
+            ->select('exam.*', 'course.name')->orderBy('exam.id','asc')->get();
+        ;
+
+
+        //Exam::where('topics_id',$topics_id)->orderBy('id','asc')->get();
         //$exams_course = $exams->course->get();
         return json_encode($exams);
     }
+
+    public function triggerAskBtn(Request $request)
+    {
+        $user_id = $request->input('id');
+        $user = User::where('id',$user_id)->first();
+        $user->flag = 1;
+        $user->save();
+        return json_encode("success");
+    }
+
 }
