@@ -31,7 +31,7 @@
                          @if($next == null)  <a disabled class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;"><i class="material-icons right">skip_next</i>NEXT</a>
                          @else <a class="waves-effect waves-light btn grey darken-3" style="width: 140px; border-radius:5px;" href="{{url('topics/'.$value->topics_id).'/course/'.$next}}"><i class="material-icons right">skip_next</i>NEXT</a>
                          @endif
-                         <a class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;"><i class="material-icons left">person_pin</i>ASK</a>
+                         <a id="ask_btn" class="waves-effect waves-light btn red darken-4" style="width: 140px; border-radius:5px;"><i class="material-icons left">person_pin</i>ASK</a>
                          @if($exam == null) <a disabled href="{{url('/topics/'.$value->topics_id.'/course/'.$value->id.'/exam')}}" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;" ><i class="material-icons left">mode_edit</i>TEST</a>
                          @else <a href="{{url('/topics/'.$value->topics_id.'/course/'.$value->id.'/exam')}}" class="waves-effect waves-light btn teal" style="width: 140px; border-radius:5px;" ><i class="material-icons left">mode_edit</i>TEST</a>
                          @endif
@@ -53,7 +53,20 @@
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
+    $(document).ready(function() {
+        var aa = "{{Auth::user()->id}}";
+        $("#ask_btn").on('click', function(){
+            alert("Success");
+            $.ajax({
+                method: "POST",
+                url: "{{route('ajaxAskBtn')}}",
+                data:{
+                    id : aa
+                }
+            });
 
+        })
+    });
     $(document).ready(function() {
         $('select').material_select();
     });

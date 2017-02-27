@@ -56,7 +56,7 @@
                               <div class="file-field input-field">
                                   <div class="btn">
                                       <span>Upload Exam Photo</span>
-                                      <input type="file" name="photo_exam" validate >
+                                      <input type="file" name="photo_exam"  >
                                   </div>
                                   <div class="file-path-wrapper">
                                       <input class="file-path validate" name="photo_path" type="text">
@@ -68,7 +68,7 @@
                                 <div class="file-field input-field">
                                     <div class="btn">
                                         <span>File</span>
-                                        <input type="file" name="file_exam" validate >
+                                        <input type="file" name="file_exam" >
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" name="file_path" type="text">

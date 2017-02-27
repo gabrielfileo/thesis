@@ -31,7 +31,7 @@ class AjaxController extends Controller
         $topics_id = $request->input('id');
 
         $exams = DB::table('exam')->join('course', 'exam.course_id', '=', 'course.id')
-            ->select('exam.*', 'course.name')->orderBy('exam.id','asc')->get();
+            ->select('exam.*', 'course.name')->where('exam.topics_id', '=', $topics_id)->orderBy('exam.id','asc')->get();
         ;
 
 

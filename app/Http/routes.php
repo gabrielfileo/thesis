@@ -66,6 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/exam/view', 'Member\MemberExamController@index');
     Route::get('/exam/upload', 'Member\MemberExamController@upload');
+    Route::get('/exam/upload/save', 'Member\MemberExamController@store');
     Route::get('/score', 'Member\MemberScoreController@index');
 
 

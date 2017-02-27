@@ -9,7 +9,7 @@
 
        <div class="box-course-content">
            <div class="box-title">
-               <h2>Adobe Illustrator {{Auth::user()->name}} {{Auth::user()->id}}</h2>
+               <h2>Adobe Illustrator</h2>
            </div>
            <div class="box-content-material clearfix">
                <div class="box-video clearfix">
@@ -34,7 +34,6 @@
                        <a href="{{url('/exam/upload')}}" class="waves-effect waves-light btn red darken-4" style="width: 250px; border-radius:5px;;"><i class="material-icons left">send</i>Upload Result</a>
                    </div>
                </div>
-               <?php $re =Auth::user()->name; ?>
            </div>
        </div>
    </div>
@@ -55,7 +54,7 @@
                 method: "POST",
                 url: "{{route('ajaxAskBtn')}}",
                 data:{
-                    id : aa,
+                    id : aa
                 }
             });
 
