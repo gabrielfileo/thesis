@@ -627,7 +627,7 @@ input:not([type]).invalid+label:after, input:not([type]):focus.invalid+label:aft
 	top:  20%;
 }
 .top-none{
-	top:  -200px;
+	top:  -1000px;
 }
 .btn-dismiss{
 	position: absolute;

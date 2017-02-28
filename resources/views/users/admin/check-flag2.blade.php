@@ -3,40 +3,39 @@
         $link = mysqli_connect("localhost", "root", "test12345", "test");
         $result = mysqli_query($link, "SELECT * from users WHERE flag = 1");
         $result2 = mysqli_query($link, "SELECT * from users WHERE flag = 1");
+        $num_results = mysqli_num_rows($result);
 
-        while($row = mysqli_fetch_array($result))
-        {
-          if($row['flag']>=1){
+        if ($num_results > 0){
+
           ?>
         <div class="popup-box top-change">
-          <?php while($row2 = mysqli_fetch_array($result2))
+          <?php while($row = mysqli_fetch_array($result))
           {
             ?>
-            <p><?=$row2['name'];?></p>
-            <button type="button" id="dismiss">DISMISS</button>
+            <p><?=$row['name'];?></p>
+
             <?php
           }
           ?>
+          <button type="button" id="dismiss">DISMISS</button>
         </div>
         <?php
-      }else if($row['flag']==0){
+      }else if($num_results==0){
 ?>
         <div class="popup-box top-none">
           <p><?=$row['name'];?></p>
         </div>
   <?php
       }
-    }
         ?>
 
 <script>
 
 $(document).ready(function(){
   $("#dismiss").on('click',function(){
-    alert("cobacoba");
     $.ajax({
         method: "POST",
-        url: "/thesis/publicajax/dismiss",
+        url: "/thesis/public/ajax/dismiss",
         data:{},
 
     });

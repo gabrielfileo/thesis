@@ -153,20 +153,9 @@
 			}
       setInterval( function () {
 					updateFlag();
-			}, 3000 );
+			}, 2000 );
     });
-    $(document).ready(function(){
-      $("#dismiss").on('click',function(){
-        alert("tes");
-        $.ajax({
-            method: "POST",
-            url: "{{route('ajaxDismissBtn')}}",
-            data:{},
-  					contentType: "application/json; charset=utf-8",
-  					dataType: "json"
-        });
-      });
-    });
+
 
 
     $('.datepicker').pickadate({
