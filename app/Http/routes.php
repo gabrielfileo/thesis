@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('course','Admin\AdminCourseController');
     Route::get('/manage/course', 'Admin\AdminCourseController@index');
-    Route::get('/manage/course/add', 'Admin\AdminCourseController@create');
+    Route::get('/manage/course/add', 'Admin\AdminCourseControl.ler@create');
     Route::post('/manage/course/add/save', 'Admin\AdminCourseController@store');
     Route::get('/manage/course/edit/{id}', 'Admin\AdminCourseController@edit');
     Route::post('//manage/course/edit/{id}/update', 'Admin\AdminCourseController@update');
@@ -69,7 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exam/upload/save', 'Member\MemberExamController@store');
     Route::get('/score', 'Member\MemberScoreController@index');
 
-
+    
 });
 
 Route::group(['prefix' => 'ajax'], function () {
@@ -77,4 +77,5 @@ Route::group(['prefix' => 'ajax'], function () {
     Route::post('users', array('as' => 'ajaxUserList', 'uses' => 'AjaxController@fetchUser'));
     Route::post('exams', array('as' => 'ajaxExamList', 'uses' => 'AjaxController@fetchExamBasedOnID'));
     Route::post('ask', array('as' => 'ajaxAskBtn', 'uses' => 'AjaxController@triggerAskBtn'));
+    Route::post('dismiss', array('as' => 'ajaxDismissBtn', 'uses' => 'AjaxController@triggerDismissBtn'));
 });

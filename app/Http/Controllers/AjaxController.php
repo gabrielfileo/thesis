@@ -49,4 +49,11 @@ class AjaxController extends Controller
         return json_encode("success");
     }
 
+
+    public function triggerDismissBtn(Request $request)
+    {
+        $user = User::where('role','trainee')->update(['flag' => 0]);
+        return json_encode("success");
+    }
+
 }

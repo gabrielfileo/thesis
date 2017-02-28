@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use DB;
 use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -18,11 +19,13 @@ class AdminCourseController extends Controller
     {
         $photoshop = Course::where('topics_id',1)->orderBy('id','asc')->get();
         $illustrator = Course::where('topics_id',2)->orderBy('id','asc')->get();
+        $users = DB::table('users')->groupBy('flag')->get();
         /*print_r(json_encode($courses));exit;*/
+
         return view('users.Admin.course-view')->with(array(
             'photoshop' => $photoshop,
             'illustrator' => $illustrator
-        ));
+        ))->with('users', $users);
     }
 
     /**

@@ -2,6 +2,9 @@
 @section('title','View Course')
 @section('content')
     <div id="content">
+      <div id="check-flag">
+
+      </div>
         <div class="box">
             <div class="box-title">
                 <h2>Administrator</h2>
@@ -143,6 +146,28 @@
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal-trigger').leanModal();
     });
+
+    $(document).ready(function() {
+      function updateFlag(){
+			     $('#check-flag').load('/thesis/resources/views/users/admin/check-flag2.blade.php');
+			}
+      setInterval( function () {
+					updateFlag();
+			}, 3000 );
+    });
+    $(document).ready(function(){
+      $("#dismiss").on('click',function(){
+        alert("tes");
+        $.ajax({
+            method: "POST",
+            url: "{{route('ajaxDismissBtn')}}",
+            data:{},
+  					contentType: "application/json; charset=utf-8",
+  					dataType: "json"
+        });
+      });
+    });
+
 
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
