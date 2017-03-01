@@ -30,12 +30,18 @@ class AjaxController extends Controller
     {
         $topics_id = $request->input('id');
 
-        $exams = DB::table('exam')->join('course', 'exam.course_id', '=', 'course.id')
+        $exams = DB::table('exam')
+            ->join('course', 'exam.course_id', '=', 'course.id')
             ->select('exam.*', 'course.name')->where('exam.topics_id', '=', $topics_id)->orderBy('exam.id','asc')->get();
         ;
 
-
-        //Exam::where('topics_id',$topics_id)->orderBy('id','asc')->get();
+       /* $exams = DB::table('exam')
+            ->join('course', 'exam.course_id', '=', 'course.id')
+            ->join('topics', 'course.topics_id', '=', 'topics.id')
+            ->select('exam.*', 'course.name as courseName', 'topics.name as topicsName')->where('exam.topics_id', '=', $topics_id)->orderBy('exam.id','asc')->get();
+        ;
+       */
+       //Exam::where('topics_id',$topics_id)->orderBy('id','asc')->get();
         //$exams_course = $exams->course->get();
         return json_encode($exams);
     }

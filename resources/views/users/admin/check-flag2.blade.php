@@ -1,6 +1,5 @@
-
 <?php
-        $link = mysqli_connect("localhost", "root", "test12345", "test");
+        $link = mysqli_connect("localhost", "root", "", "test");
         $result = mysqli_query($link, "SELECT * from users WHERE flag = 1");
         $result2 = mysqli_query($link, "SELECT * from users WHERE flag = 1");
         $num_results = mysqli_num_rows($result);
@@ -9,6 +8,7 @@
 
           ?>
         <div class="popup-box top-change">
+            <p>Who pressed the button?</p>
           <?php while($row = mysqli_fetch_array($result))
           {
             ?>
@@ -23,7 +23,7 @@
       }else if($num_results==0){
 ?>
         <div class="popup-box top-none">
-          <p><?=$row['name'];?></p>
+          <p></p>
         </div>
   <?php
       }

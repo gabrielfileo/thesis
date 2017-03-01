@@ -28,7 +28,7 @@
                         <div class="row">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input placeholder="1701340240" id="NIK" type="text"  name="username" class="validate" style="width:100%; margin-left:0%;">
+                                        <input placeholder="123456" id="NIK" type="text"  name="username" class="validate" style="width:100%; margin-left:0%;">
                                         <label for="NIK">Nomor Induk Karyawan</label>
                                     </div>
                                     <div class="input-field col s6">
@@ -59,7 +59,7 @@
 
                     <div class="box-button ">
                         <div class="row">
-                            <a><button onclick="return confirm('yakin?')" class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
+                            <a><button onclick="return confirm('Are you sure to submit?')" class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
                             <a><button class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</button></a>
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-user')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>

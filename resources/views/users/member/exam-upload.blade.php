@@ -22,12 +22,13 @@
                         </p>
                     </div>
                     <div class="box-content ">
-                        <form class="col s12" method="POST" action="{{url('/manage/exam/upload/save')}}" enctype="multipart/form-data" style="padding:0 0">
+                        <form class="col s12" method="POST" action="{{url('/exam/upload/save')}}" enctype="multipart/form-data" style="padding:0 0">
                             {{csrf_field()}}
                         <div class="row">
                                 <div class="row">
                                     <div class="input-field col s12" style="padding:0 0">
                                         <select id="topic_selection" name="topics_id" class="input-opt" style="height:50px !important;">
+                                            <option selected disabled>-- choose one --</option>
                                             <option value="1">Photoshop</option>
                                             <option value="2">Illustrator</option>
                                         </select>
@@ -38,7 +39,8 @@
 
                                 <div class="row">
                                     <div class="input-field col s12" style="padding:0 0">
-                                        <select name="course_id" class="course_selection" style="height:50px !important;">
+                                        <select name="exam_id" class="course_selection" style="height:50px !important;">
+
                                             {{--examlist parsed data goes here--}}
                                         </select>
                                         <label style="margin-left:-11px; font-size:16px; margin-top:-10px;">Sub-Course</label>
@@ -47,8 +49,8 @@
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <textarea id="course_desc" class="materialize-textarea" style="margin-left:-11px;" length="150"></textarea>
-                                        <label for="course_desc" style="margin-left:-11px;">Comment</label>
+                                        <textarea id="answer_comment" name="answer_comment" class="materialize-textarea" style="margin-left:-11px;" length="150"></textarea>
+                                        <label for="answer_comment" style="margin-left:-11px;">Comment</label>
                                     </div>
                                 </div>
                         </div>

@@ -16,10 +16,6 @@ class CreateExamResultTable extends Migration
             $table->increments('id');
             $table->integer('exam_id')->unsigned();
             $table->foreign('exam_id')->references('id')->on('exam');
-            $table->integer('course_id')->unsigned();
-            $table->foreign('course_id')->references('id')->on('course');
-            $table->integer('topics_id')->unsigned();
-            $table->foreign('topics_id')->references('id')->on('topics');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('file_path');
@@ -37,6 +33,6 @@ class CreateExamResultTable extends Migration
      */
     public function down()
     {
-         Schema::drop('answer');
+        Schema::drop('answer');
     }
 }

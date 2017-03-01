@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Exam;
+use App\Answer;
 use App\Course;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MemberExamController extends Controller
 {
@@ -17,8 +20,27 @@ class MemberExamController extends Controller
      */
     public function index()
     {
-         return view('users/Member/examlist-view');
+        $user_id = Auth::user()->id;
+        $photoshop= DB::table('answer')
+                    ->join('exam', 'answer.exam_id', '=', 'exam.id')
+                    ->join('course','course.id', '=','exam.course_id' )
+                    ->select('answer.*', 'exam.description as exam_description', 'exam.file_path as exam_file_path', 'exam.topics_id as topics_id', 'course.name as course_name')
+                    ->where('answer.user_id' ,'=',$user_id)
+                    ->where('exam.topics_id','=',1)->get();
+        $illustrator = DB::table('answer')
+                    ->join('exam', 'answer.exam_id', '=', 'exam.id')
+                    ->join('course','course.id', '=','exam.course_id' )
+                    ->select('answer.*', 'exam.description as exam_description', 'exam.file_path as exam_file_path', 'exam.topics_id as topics_id', 'course.name as course_name')
+                    ->where('answer.user_id' ,'=',$user_id)
+                    ->where('exam.topics_id','=',2)->get();
+
+         return view('users/Member/examlist-view')->with (array(
+                    'photoshop'=>$photoshop,
+                    'illustrator'=>$illustrator
+         ));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,7 +63,18 @@ class MemberExamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entity = new Answer();
+        $entity->exam_id =$request->input("exam_id");
+        $entity->user_id = Auth::user()->id;
+        $entity->comment =$request->input("answer_comment");
+        $answer        = $request->file('file_answer');
+        $answerName   = md5($answer->getClientOriginalName() . microtime()) . '.zip';
+        $request->file('file_answer')->move("storage/files/", $answerName);
+        $entity->file_path = $answerName;
+
+        $entity->save();
+        $request->session()->flash('status', 'New data submitted successfully!');
+        return view('users/Member/exam-upload');
     }
 
     /**

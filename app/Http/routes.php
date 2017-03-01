@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('course','Admin\AdminCourseController');
     Route::get('/manage/course', 'Admin\AdminCourseController@index');
-    Route::get('/manage/course/add', 'Admin\AdminCourseControl.ler@create');
+    Route::get('/manage/course/add', 'Admin\AdminCourseController@create');
     Route::post('/manage/course/add/save', 'Admin\AdminCourseController@store');
     Route::get('/manage/course/edit/{id}', 'Admin\AdminCourseController@edit');
     Route::post('//manage/course/edit/{id}/update', 'Admin\AdminCourseController@update');
@@ -66,7 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/exam/view', 'Member\MemberExamController@index');
     Route::get('/exam/upload', 'Member\MemberExamController@upload');
-    Route::get('/exam/upload/save', 'Member\MemberExamController@store');
+    Route::post('/exam/upload/save', 'Member\MemberExamController@store');
     Route::get('/score', 'Member\MemberScoreController@index');
 
     

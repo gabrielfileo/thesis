@@ -39,28 +39,20 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                              <td>Course 1</td>
-                              <td>85</td>
-                              <td>-</td>
-                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
 
-                            </tr>
                             <tr>
-                                <td>Course 1</td>
-                                <td>83</td>
-                                <td>-</td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Course 1</td>
-                                <td>88</td>
-                                <td>-</td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                            </tr>
+
+                            @foreach($photoshop as $course)
+                                <tr>
+
+                                    <td>{{$course->course_name}}</td>
+                                    <td>{{$course->created_at}}</td>
+                                    <td>{{$course->exam_description}}</td>
+                                    <td><a class="waves-effect waves-red darken-4 btn-flat" href="{{asset('/storage/files/'.$course->exam_file_path)}}"><i class="material-icons">play_for_work</i></a></td>
+                                    <td><a class="waves-effect waves-red darken-4 btn-flat" href={{asset('/storage/files/'.$course->file_path)}}"><i class="material-icons">play_for_work</i></a></td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                   </div>
@@ -78,28 +70,16 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                              <td>Course 1</td>
-                              <td>85</td>
-                              <td>-</td>
-                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                              <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
+                            @foreach($illustrator as $course)
+                                <tr>
 
-                            </tr>
-                            <tr>
-                                <td>Course 1</td>
-                                <td>83</td>
-                                <td>-</td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Course 1</td>
-                                <td>88</td>
-                                <td>-</td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                                <td><a class="waves-effect waves-red darken-4 btn-flat"><i class="material-icons">play_for_work</i></a></td>
-                            </tr>
+                                    <td>{{$course->course_name}}</td>
+                                    <td>{{$course->created_at}}</td>
+                                    <td>{{$course->exam_description}}</td>
+                                    <td><a class="waves-effect waves-red darken-4 btn-flat" href="{{asset('/storage/files/'.$course->exam_file_path)}}"><i class="material-icons">play_for_work</i></a></td>
+                                    <td><a class="waves-effect waves-red darken-4 btn-flat" href="{{asset('/storage/files/'.$course->file_path)}}"><i class="material-icons">play_for_work</i></a></td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                   </div>
