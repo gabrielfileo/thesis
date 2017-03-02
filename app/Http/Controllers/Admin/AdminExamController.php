@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Answer;
 use App\Exam;
 use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class AdminExamController extends Controller
 {
@@ -27,7 +29,23 @@ class AdminExamController extends Controller
 
     public function review()
     {
-        return view('users/Admin/exam-result-review');
+        $photoshop= DB::table('answer')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course', 'course.id', '=','exam.course_id' )
+            ->join('users', 'answer.user_id', '=', 'users.id')
+            ->select('answer.*', 'exam.topics_id as topics_id', 'users.name as user_name', 'exam.id as exam_id', 'course.name as course_name')
+            ->where('exam.topics_id','=',1)->where('answer.deleted_at','=',null)->get();
+        $illustrator= DB::table('answer')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','course.id', '=','exam.course_id' )
+            ->join('users', 'answer.user_id', '=', 'users.id')
+            ->select('answer.*', 'exam.topics_id as topics_id', 'users.name as user_name', 'exam.id as exam_id', 'course.name as course_name')
+            ->where('exam.topics_id','=',2)->where('answer.deleted_at','=',null)->get();
+
+        return view('users/Admin/exam-result-review')->with(array(
+            'photoshop' => $photoshop,
+            'illustrator' => $illustrator
+        ));
     }
 
     /**
@@ -122,5 +140,11 @@ class AdminExamController extends Controller
       Exam::find($id)->delete();
       return redirect()->action('Admin\AdminExamController@index')
                 ->with('success','Course deleted successfully');
+    }
+    public function destroyAns($id)
+    {
+        Answer::find($id)->delete();
+        return redirect()->action('Admin\AdminExamController@review')
+            ->with('success','Exam Result deleted successfully');
     }
 }
