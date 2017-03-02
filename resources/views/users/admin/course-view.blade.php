@@ -17,8 +17,8 @@
                     <div class="box-content ">
                           <div class="box-succeed">
                             <p style="color:white; text-align:center;">
-                              @if(Session::has("error"))
-                                {{Session::get("error")}}
+                              @if(Session::has("warning"))
+                                {{Session::get("warning")}}
                               @endif
                               @if(Session::has("success"))
                                   {{Session::get("success")}}
@@ -42,7 +42,7 @@
                                           <tr class="courses">
                                               <th data-field="full_name" style="width:250px; font-size:16px;">Course Name</th>
                                               <th data-field="Join" style="width:250px;font-size:16px;">Upload Date</th>
-                                              <th data-field="score" style="width: 400px;font-size:16px;">Description</th> {{--Baru--}}
+                                              <th data-field="score" style="width: 400px;font-size:16px;">Description</th>
                                               <th data-field="edit" style="width:100px;font-size:16px;">Edit</th>
                                               <th data-field="del" style="width:100px;font-size:16px;">Delete</th>
                                           </tr>

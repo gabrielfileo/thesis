@@ -463,7 +463,7 @@ textarea.materialize-textarea:focus:not([readonly]){
     height: 50px;
     line-height: 0rem;
     width: 100%;
-    font-size: 14px;
+    font-size: 16px !important;
 	font-weight:300;
 	color:#5c5c5c;
     margin: 0px 0 0px 0;

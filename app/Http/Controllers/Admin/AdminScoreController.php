@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Exam;
+use DB;
 use App\User;
 use App\Score;
 use Illuminate\Http\Request;
@@ -18,7 +20,23 @@ class AdminScoreController extends Controller
      */
     public function index()
     {
-        return view('users/Admin/score-view');
+        $psd_scores = DB::table('score')
+            ->join('answer', 'answer.id','=', 'score.answer_id')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','exam.course_id', '=', 'course.id')
+            ->join('users', 'users.id', '=', 'answer.user_id')
+            ->select('score.*','course.name as course_name', 'users.name as user_name')
+            ->where('exam.topics_id','=',1)->get();
+        $ills_scores = DB::table('score')
+            ->join('answer', 'answer.id','=', 'score.answer_id')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','exam.course_id', '=', 'course.id')
+            ->join('users', 'users.id', '=', 'answer.user_id')
+            ->select('score.*','course.name as course_name', 'users.name as user_name')
+        ->where('exam.topics_id','=',2)->get();
+        return view('users/Admin/score-view')->with (array(
+            'photoshop'=>$psd_scores,
+            'illustrator'=>$ills_scores));
     }
 
     /**
@@ -28,7 +46,7 @@ class AdminScoreController extends Controller
      */
     public function create()
     {
-        $users = User::where('role', 'trainee')->orderBy('name','asc')->get(); //belum bisa get bbrp tabel
+        $users = User::where('role', 'trainee')->orderBy('name','asc')->get();
         return view('users.admin.score-add')->with('users', $users);
     }
 
@@ -41,15 +59,14 @@ class AdminScoreController extends Controller
     public function store(Request $request)
     {
         $entity = new Score();
-        $entity->name = $request->input("course_name");
-        $entity->description = $request->input("course_desc");
-        $entity->topics_id =$request->input("topics_id");
-       // $this->validate($request,['file_course'=>'required|video|mimes:mp4|max:10240']);
-        //validate video masih error
+        $entity->answer_id = $request->input("answer_id");
+        $entity->user_id = $request->input("trainee_id");
+        $entity->score = (int)$request->input("answer_score");
+        $entity->comment = $request->input("score_comment");
 
         $entity->save();
         $request->session()->flash('status', 'New data submitted successfully!');
-        return view('users/Admin/score-add');
+        return redirect('/manage/score/add');
     }
 
     /**
@@ -71,7 +88,15 @@ class AdminScoreController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $score = DB::table('score')
+            ->join('answer', 'answer.id','=', 'score.answer_id')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','exam.course_id', '=', 'course.id')
+            ->join('users', 'users.id', '=', 'answer.user_id')
+            ->select('score.*','answer.id as answer_id','course.name as course_name', 'course.topics_id', 'users.id as user_id', 'users.name as user_name')
+            ->where('score.id','=',$id)->first();
+        return view('users.Admin.score-update')->with('value',$score);
     }
 
     /**
@@ -82,14 +107,16 @@ class AdminScoreController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function update1()
-     {
-        return view('users.Admin.score-update');
-         //dummy
-     }
+
     public function update(Request $request, $id)
     {
-        //
+        $entity = Score::where('id', $id)->first();
+        $entity->score =(int)$request->input('answer_score');
+        $entity->comment = $request->input('score_comment');
+        $entity->save();
+        $request->session()->flash('success', 'Score edited successfully!');
+        return redirect('/manage/score/edit/'.$id);
+
     }
 
     /**

@@ -34,16 +34,21 @@ class AjaxController extends Controller
             ->join('course', 'exam.course_id', '=', 'course.id')
             ->select('exam.*', 'course.name')->where('exam.topics_id', '=', $topics_id)->orderBy('exam.id','asc')->get();
         ;
-
-       /* $exams = DB::table('exam')
-            ->join('course', 'exam.course_id', '=', 'course.id')
-            ->join('topics', 'course.topics_id', '=', 'topics.id')
-            ->select('exam.*', 'course.name as courseName', 'topics.name as topicsName')->where('exam.topics_id', '=', $topics_id)->orderBy('exam.id','asc')->get();
-        ;
-       */
-       //Exam::where('topics_id',$topics_id)->orderBy('id','asc')->get();
-        //$exams_course = $exams->course->get();
         return json_encode($exams);
+    }
+
+    public function fetchExamAnswerBasedOnID(Request $request)
+    {
+        $topics_id = $request->input('id');
+        $user_id = $request->input('user');
+        $answers = DB::table('answer')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','exam.course_id', '=', 'course.id')
+            ->select('answer.*', 'course.name')
+            ->where('course.topics_id', '=', $topics_id)
+            ->where('answer.user_id', '=', $user_id)
+            ->orderBy('course.id','asc')->get();
+        return json_encode($answers);
     }
 
     public function triggerAskBtn(Request $request)

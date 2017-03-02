@@ -48,8 +48,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/manage/score', 'Admin\AdminScoreController@index');
     Route::get('/manage/score/add', 'Admin\AdminScoreController@create');
-    Route::post('/manage/score/save', 'Admin\AdminScoreController@store');
-    Route::get('/manage/score/update', 'Admin\AdminScoreController@update1');
+    Route::post('/manage/score/add/save', 'Admin\AdminScoreController@store');
+    Route::get('/manage/score/edit/{id}', 'Admin\AdminScoreController@edit');
+    Route::post('/manage/score/edit/{id}/update', 'Admin\AdminScoreController@update');
 
 
     Route::get('/manage/trainee', 'Admin\AdminTraineeController@index');
@@ -78,4 +79,5 @@ Route::group(['prefix' => 'ajax'], function () {
     Route::post('exams', array('as' => 'ajaxExamList', 'uses' => 'AjaxController@fetchExamBasedOnID'));
     Route::post('ask', array('as' => 'ajaxAskBtn', 'uses' => 'AjaxController@triggerAskBtn'));
     Route::post('dismiss', array('as' => 'ajaxDismissBtn', 'uses' => 'AjaxController@triggerDismissBtn'));
+    Route::post('answers', array('as' => 'ajaxAnswerList', 'uses' => 'AjaxController@fetchExamAnswerBasedOnID'));
 });

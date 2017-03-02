@@ -37,20 +37,13 @@
 
                           <tbody>
                               <tr>
-                                <td>Course 1</td>
-                                <td>85</td>
-                                <td>-</td>
-
-                              </tr>
-                              <tr>
-                                  <td>Course 1</td>
-                                  <td>83</td>
-                                  <td>-</td>
-                              </tr>
-                              <tr>
-                                  <td>Course 1</td>
-                                  <td>88</td>
-                                  <td>-</td>
+                              @foreach($score_psd as $score)
+                                  <tr>
+                                      <td>{{$score->course_name}}</td>
+                                      <td>{{$score->score}}</td>
+                                      <td>{{$score->comment}}</td>
+                                      </tr>
+                                  @endforeach
                               </tr>
                           </tbody>
                       </table>
@@ -67,20 +60,14 @@
                           </thead>
 
                           <tbody>
+                          <tr>
+                            @foreach($score_ills as $score)
                               <tr>
-                                <td>Course 1</td>
-                                <td>85</td>
-                                <td>-</td>
+                                  <td>{{$score->course_name}}</td>
+                                  <td>{{$score->score}}</td>
+                                  <td>{{$score->comment}}</td>
                               </tr>
-                              <tr>
-                                  <td>Course 1</td>
-                                  <td>83</td>
-                                  <td>-</td>
-                              </tr>
-                              <tr>
-                                  <td>Course 1</td>
-                                  <td>88</td>
-                                  <td>-</td>
+                              @endforeach
                               </tr>
                           </tbody>
                       </table>

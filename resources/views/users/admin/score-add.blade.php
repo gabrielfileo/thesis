@@ -11,14 +11,23 @@
                     <div class="box-title ">
                         <h3>Input Trainee Score</h3>
                     </div>
+
+                    <div class="box-succeed">
+                        <p style="color:white; text-align:center;">
+                            @if(Session::has("status"))
+                                {{Session::get("status")}}
+                            @endif
+                        </p>
+                    </div>
+
                     <div class="box-content ">
                         <div class="row">
 
-                          <form action="{{url('/manage/exam/add/save')}}" method="POST" class="col s12" >
+                          <form action="{{url('/manage/score/add/save')}}" method="POST" class="col s12" >
                             {{csrf_field()}}
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <select name="trainee_id" style="height:50px !important;">
+                                        <select id="trainee_selection" name="trainee_id" style="height:50px !important;">
                                             @foreach($users as $key=> $user)
                                             <option value="{{$user->id}}">{{$user->name}}</option>
                                             @endforeach
@@ -37,7 +46,7 @@
                                     </div>
 
                                     <div class="input-field col s6">
-                                        <select name="course_id" class="course_selection" style="height:50px !important;">
+                                        <select name="answer_id" class="course_selection" style="height:50px !important;">
                                             {{--courselist ajax goes here--}}
                                         </select>
                                         <label style="margin-left:0px; font-size:16px; margin-top:-10px;">Sub-Course</label>
@@ -46,7 +55,7 @@
 
                                 <div class="row">
                                     <div class="input-field col s3">
-                                        <input id="score" name="exam_score" type="text" class="validate" style="width:100%;  margin-left:0%;">
+                                        <input id="score" name="answer_score" type="text" class="validate" style="width:100%;  margin-left:0%;">
                                         <label for="score">Score</label>
                                     </div>
                                     <div class="input-field col s9">
@@ -59,7 +68,7 @@
                     </div>
                     <div class="box-button ">
                         <div class="row">
-                            <a class="waves-effect waves-light btn red darken-4"><i class="material-icons right">send</i>Done</a>
+                            <a><button onclick="return confirm('Are you sure?')"  class="waves-effect waves-light btn red darken-4" type="submit"><i class="material-icons right">send</i>Done</button></a>
                             <a class="waves-effect waves-light btn grey darken-3" type="reset"><i class="material-icons right">replay</i>Reset</a>
                             <a class="waves-effect waves-light btn grey darken-3" href="{{url('/dashboard#admin-reports')}}"><i class="material-icons right">dashboard</i>Back</a>
                         </div>
@@ -76,29 +85,34 @@
       $(document).ready(function() {
           $(".button-collapse ").sideNav();
           $('.collapsible').collapsible();
+      });
 
+      $(document).ready(function() {
           $("#topic_selection").on('change', function () {
               var topic = $(this).val();
+              var user_id = $("#trainee_selection").val();
               $.ajax({
                   method: "POST",
-                  url: "{{route('ajaxCourseList')}}",
+                  url: "{{route('ajaxAnswerList')}}",
                   data:{
                       id : topic,
+                      user : user_id
                   }
               })
-              .done(function (data) {
-                  console.log(data);
-                  $(".course_selection option").remove();
-                  $(".course_selection").material_select('destroy');
-                  $.each(JSON.parse(data), function (index, ccourse) {
-                     $(".course_selection").append("<option value='" + ccourse.id + "'>" + ccourse.name + "</option>");
+                  .done(function (data) {
+                      console.log(data);
+                      $(".course_selection option").remove();
+                      $(".course_selection").material_select('destroy');
+                      $.each(JSON.parse(data), function (index, aanswer) {
+                          $(".course_selection").append("<option value='" + aanswer.id + "'>" + aanswer.name + "</option>");
+                      });
+                      $(".course_selection").material_select('destroy');
+                      $(".course_selection").material_select();
+                      /* masukin ini */
                   });
-                  $(".course_selection").material_select('destroy');
-                  $(".course_selection").material_select();
-                 /* masukin ini */
-              });
           });
       });
+
 
       $('.datepicker').pickadate({
           selectMonths: true, // Creates a dropdown to control month

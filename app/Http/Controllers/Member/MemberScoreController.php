@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class MemberScoreController extends Controller
 {
@@ -16,7 +17,25 @@ class MemberScoreController extends Controller
      */
     public function index()
     {
-       return view('users.member.scorelist-view');
+        $user_id = Auth::user()->id;
+        $photoshop= DB::table('score')
+            ->join('answer', 'score.answer_id', '=','answer.id')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','course.id', '=','exam.course_id' )
+            ->select('score.*', 'exam.topics_id as topics_id', 'course.name as course_name')
+            ->where('score.user_id' ,'=',$user_id)
+            ->where('exam.topics_id','=',1)->get();
+        $illustrator= DB::table('score')
+            ->join('answer', 'score.answer_id', '=','answer.id')
+            ->join('exam', 'answer.exam_id', '=', 'exam.id')
+            ->join('course','course.id', '=','exam.course_id' )
+            ->select('score.*', 'exam.topics_id as topics_id', 'course.name as course_name')
+            ->where('score.user_id' ,'=',$user_id)
+            ->where('exam.topics_id','=',2)->get();
+       return view('users.member.scorelist-view')->with (array(
+           'score_psd'=>$photoshop,
+           'score_ills'=>$illustrator
+       ));;
     }
 
     /**

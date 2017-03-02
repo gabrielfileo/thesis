@@ -24,6 +24,14 @@
                         </div>
 
                         <div id="exam-psd" class="col s12">
+                            <div class="input-field col s6">
+                                <select class="course_selection" style="height:40px !important;">
+                                    <option value="1">Photoshop</option>
+                                    <option value="2">Illustrator</option>
+                                    {{--courselist ajax goes here--}}
+                                </select>
+                                <label style="margin-left:-12px; font-size:16px; margin-top:10px;">Sub-Course</label>
+                            </div>
                             <br>
                                 <table class="responsive-table centered striped">
                                   <thead>
