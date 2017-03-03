@@ -8,16 +8,16 @@
 
           ?>
         <div class="popup-box top-change">
-            <p>Who pressed the button?</p>
+            <p>Who Need The Help?</p>
           <?php while($row = mysqli_fetch_array($result))
           {
             ?>
-            <p><?=$row['name'];?></p>
+            <p style="font-weight: bold;"><?=$row['name'];?></p>
 
             <?php
           }
           ?>
-          <button type="button" id="dismiss">DISMISS</button>
+          <a class="waves-effect waves-light red darken-4 btn" id="dismiss">DISMISS</a>
         </div>
         <?php
       }else if($num_results==0){
