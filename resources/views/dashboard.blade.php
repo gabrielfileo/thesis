@@ -4,6 +4,9 @@
 @if(Auth::user()->role == 'administrator')
   @section('content')
       <div id="content">
+          <div id="check-flag">
+
+          </div>
           <div class="box-admin">
               <div class="box-title">
                   <h2>Dashboard</h2>
@@ -219,6 +222,16 @@
                    Materialize.toast('{{Session::get('info')}}', 4000); // 4000 is the duration of the toast
           @endif
       });
+
+      $(document).ready(function() {
+          function updateFlag(){
+              $('#check-flag').load('/thesis/resources/views/users/admin/check-flag2.blade.php');
+          }
+          setInterval( function () {
+              updateFlag();
+          }, 2000 );
+      });
+
 
       $('.datepicker').pickadate({
           selectMonths: true, // Creates a dropdown to control month
