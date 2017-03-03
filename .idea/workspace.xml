@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a43a57c-ca13-4213-8138-169e0543340d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/admin/exam-result-review.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/admin/exam-result-review.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/member/course-view.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/member/course-view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php" />
     </list>
     <ignored path="thesis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +36,7 @@
     <favorites_list name="thesis" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57617944">
+    <splitter split-orientation="horizontal" split-proportion="0.49110594">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="course-view.blade.php" pinned="false" current-in-tab="false">
@@ -49,11 +49,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AdminExamController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="254">
+                  <caret line="53" column="51" lean-forward="true" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AdminExamController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="441">
-                  <caret line="147" column="36" lean-forward="false" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
                   <folding>
                     <element signature="e#46#61#0#PHP" expanded="true" />
                   </folding>
@@ -96,20 +106,40 @@
             </entry>
           </file>
           <file leaf-file-name="exam-view.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php">
+            <entry file="file://$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="46" lean-forward="true" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+                <state relative-caret-position="543">
+                  <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="exam-result-review.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="course-view.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/users/member/course-view.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="203">
+                  <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="exam-view.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="exam-result-review.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-result-review.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+                <state relative-caret-position="574">
+                  <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
                   <folding>
                     <element signature="e#1856#1876#0#HTML" expanded="true" />
                     <element signature="e#1952#1972#0#HTML" expanded="true" />
@@ -123,6 +153,19 @@
                     <marker date="1488441803003" expanded="true" signature="9135:9183" ph="..." />
                     <marker date="1488441803003" expanded="true" signature="9211:9273" ph="..." />
                     <marker date="1488441803003" expanded="true" signature="9223:9272" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="check-flag2.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+                  <folding>
+                    <marker date="1488501341953" expanded="true" signature="110:144" ph="SELECT * fro... users" />
+                    <marker date="1488501341953" expanded="true" signature="188:222" ph="SELECT * fro... users" />
                   </folding>
                 </state>
               </provider>
@@ -185,8 +228,6 @@
         <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_11_18_131006_create_topics_table.php" />
         <option value="$PROJECT_DIR$/resources/views/users/admin/course-add.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/member/course-view.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/admin/exam-add.blade.php" />
         <option value="$PROJECT_DIR$/app/Answer.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
@@ -201,7 +242,6 @@
         <option value="$PROJECT_DIR$/resources/views/users/member/examlist-view.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/admin/course-view.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/admin/score-view.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/admin/score-update.blade.php" />
@@ -212,8 +252,11 @@
         <option value="$PROJECT_DIR$/resources/views/users/admin/score-add.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/admin/exam-result-review.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/admin/exam-result-review.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/member/course-view.blade.php" />
       </list>
     </option>
   </component>
@@ -470,12 +513,12 @@
       <workItem from="1484969211464" duration="9151000" />
       <workItem from="1485176214154" duration="600000" />
       <workItem from="1487954991182" duration="31635000" />
-      <workItem from="1488235567884" duration="55317000" />
+      <workItem from="1488235567884" duration="56889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222170000" />
+    <option name="totallyTimeSpent" value="223742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -761,14 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/member/course-view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -792,17 +827,6 @@
         <state relative-caret-position="575">
           <caret line="34" column="54" lean-forward="true" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <marker date="1488376246538" expanded="true" signature="110:144" ph="SELECT * fro... users" />
-            <marker date="1488376246538" expanded="true" signature="188:222" ph="SELECT * fro... users" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,14 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="46" column="40" lean-forward="false" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/admin/score-view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-459">
@@ -958,14 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -990,18 +998,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="46" lean-forward="true" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-result-review.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        <state relative-caret-position="574">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="e#1856#1876#0#HTML" expanded="true" />
             <element signature="e#1952#1972#0#HTML" expanded="true" />
@@ -1019,13 +1019,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/admin/check-flag2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding>
+            <marker date="1488501341953" expanded="true" signature="110:144" ph="SELECT * fro... users" />
+            <marker date="1488501341953" expanded="true" signature="188:222" ph="SELECT * fro... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/admin/exam-view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminExamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="147" column="36" lean-forward="false" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
+        <state relative-caret-position="170">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding>
             <element signature="e#46#61#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="53" column="51" lean-forward="true" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/member/exam-view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/users/member/course-view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

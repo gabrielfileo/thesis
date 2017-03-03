@@ -49,7 +49,7 @@
     $(document).ready(function() {
         var aa = "{{Auth::user()->id}}";
         $("#ask_btn").on('click', function(){
-            alert("Success");
+            alert("Ask message sent.");
             $.ajax({
                 method: "POST",
                 url: "{{route('ajaxAskBtn')}}",

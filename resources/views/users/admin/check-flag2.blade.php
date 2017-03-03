@@ -8,7 +8,7 @@
 
           ?>
         <div class="popup-box top-change">
-            <p>Who Need The Help?</p>
+            <p>This trainee needs your assistance:</p>
           <?php while($row = mysqli_fetch_array($result))
           {
             ?>
